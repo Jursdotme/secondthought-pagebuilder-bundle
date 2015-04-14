@@ -1,0 +1,203 @@
+
+@import '../../../themes/secondthought/sass/../bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import '../../../themes/secondthought/sass/base/grid-settings';
+
+@import '../../../themes/secondthought/sass/base/variables';
+@import '../../../themes/secondthought/sass/base/typography';
+@import '../../../themes/secondthought/sass/base/mixins';
+
+
+.limit-width {
+  padding: 0;
+
+  @include secondthought-container;
+
+  &.wrapper-shadow-1 {
+    box-shadow: $shadow-lvl-1;
+  }
+
+  &.wrapper-shadow-2 {
+    box-shadow: $shadow-lvl-2;
+  }
+
+  &.wrapper-shadow-3 {
+    box-shadow: $shadow-lvl-3;
+  }
+
+  &.wrapper-shadow-4 {
+    box-shadow: $shadow-lvl-4;
+  }
+
+  &.wrapper-shadow-5 {
+    box-shadow: $shadow-lvl-5;
+  }
+}
+
+body:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  content: '';
+}
+
+
+.wrapper {
+  overflow: hidden;
+}
+
+.fill-left {
+  position: relative;
+
+  @include media($sm-up) {
+    padding-left: 0;
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 2000px;
+    height: 100%;
+    background-color: inherit;
+    content: '';
+
+    @include media($xs) {
+      display: none;
+    }
+  }
+}
+
+.fill-right {
+  position: relative;
+
+  @include media($sm-up) {
+    padding-right: 0;
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 2000px;
+    height: 100%;
+    background-color: inherit;
+    content: '';
+
+    @include media($xs) {
+      display: none;
+    }
+  }
+}
+
+.parallax {
+  // height: 450px;
+  position: relative;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  // background-attachment: fixed;
+}
+
+.no-touch .parallax {
+  background-attachment: fixed;
+}
+
+.shadow {
+  box-shadow: $shadow-lvl-2;
+}
+
+.shadow-1 {
+  box-shadow: $shadow-lvl-1;
+}
+
+.shadow-2 {
+  box-shadow: $shadow-lvl-2;
+}
+
+.shadow-3 {
+  box-shadow: $shadow-lvl-3;
+}
+
+.shadow-4 {
+  box-shadow: $shadow-lvl-4;
+}
+
+.shadow-5 {
+  box-shadow: $shadow-lvl-5;
+}
+
+.border-radius {
+  border-radius: $base-border-radius;
+}
+
+.no-text-margin {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+}
+
+.panel-widget-style {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+  }
+}
+
+.panel-row-style[class*=" background-"] {
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: inherit;
+  }
+}
+
+.scroll-arrow {
+  position: absolute;
+  bottom: 0;
+  //background: #fff;
+  left: 50%;
+  width: 80px;
+  margin-left: -40px;
+  height: 80px;
+  display: block;
+  text-align: center;
+  .fa {
+    font-size: 50px;
+    color: #fff;
+  }
+}
+
+.fill-image {
+  background-position: center;
+  @include media($xs) {
+    height: 500px !important;
+    margin: 0 -15px;
+  }
+}
+
+.panel-last-child p:last-child {
+  margin-bottom: 0;
+}
