@@ -3,7 +3,7 @@
 /*
 Plugin Name: Secondthought Widget Pack
 Description: An example plugin to demonstrate extending the SiteOrigin Widgets Bundle.
-Version: 0.1
+Version: 1.0
 Author: Rasmus Jürs
 Author URI: http://siteorigin.com
 License: GPL3
