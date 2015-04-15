@@ -6,6 +6,8 @@
 @import '../../../themes/secondthought/sass/base/typography';
 @import '../../../themes/secondthought/sass/base/mixins';
 
+@import '../secondthought-widgets/secondthought-slider-widget/styles/secondthought-slider-widget-style';
+@import '../secondthought-widgets/secondthought-tabs-widget/styles/secondthought-tabs-widget-style';
 
 .limit-width {
   padding: 0;

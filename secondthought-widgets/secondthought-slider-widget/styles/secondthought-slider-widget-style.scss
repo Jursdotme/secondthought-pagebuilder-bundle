@@ -1,15 +1,15 @@
-@slick-font-family: 'FontAwesome';
-@slick-arrow-color: #fff;
-@slick-dot-color: #000;
-@slick-dot-color-active: #f06d06;
-@slick-prev-character: '\f104';
-@slick-next-character: '\f105';
-@slick-dot-character: '\f111';
-@slick-dot-size: 6px;
-@slick-opacity-default: .75;
-@slick-opacity-on-hover: 1;
-@slick-opacity-not-active: .25;
-@slick-slide-height: 500px;
+$slick-font-family: 'FontAwesome';
+$slick-arrow-color: #fff;
+$slick-dot-color: #000;
+$slick-dot-color-active: #f06d06;
+$slick-prev-character: '\f104';
+$slick-next-character: '\f105';
+$slick-dot-character: '\f111';
+$slick-dot-size: 6px;
+$slick-opacity-default: .75;
+$slick-opacity-on-hover: 1;
+$slick-opacity-not-active: .25;
+$slick-slide-height: 500px;
 
 // Slider
 
@@ -71,16 +71,20 @@
   // scss-lint:enable DuplicateProperty
 }
 
-.slick-list when (@slick-slide-height = 100%) {
-  height: 100%;
+.slick-list {
+  @if $slick-slide-height == 100% {
+    height: 100%;
+  }
 }
 
 .secondthought-slider.slick-slider .slick-track {
   transform: translate3d(0, 0, 0);
 }
 
-.secondthought-slider.slick-slider .slick-track when (@slick-slide-height = 100%) {
-  height: 100%;
+.secondthought-slider.slick-slider .slick-track {
+  @if $slick-slide-height == 100% {
+    height: 100%;
+  }
 }
 
 .slick-track {
@@ -107,7 +111,7 @@
 .slick-slide {
   float: left;
   min-height: 1px;
-  height: @slick-slide-height;
+  height: $slick-slide-height;
 
   [dir='rtl'] & {
     float: right;
@@ -169,22 +173,22 @@
     color: transparent;
 
     &:before {
-      opacity: @slick-opacity-on-hover;
+      opacity: $slick-opacity-on-hover;
     }
   }
 
   &.slick-disabled:before {
-    opacity: @slick-opacity-not-active;
+    opacity: $slick-opacity-not-active;
   }
 }
 
 .slick-prev:before,
 .slick-next:before {
-  color: @slick-arrow-color;
+  color: $slick-arrow-color;
   font-size: inherit;
-  font-family: @slick-font-family;
+  font-family: $slick-font-family;
   line-height: 1;
-  opacity: @slick-opacity-default;
+  opacity: $slick-opacity-default;
 }
 
 .slick-prev {
@@ -196,10 +200,10 @@
   }
 
   // &:before {
-  //   content: @slick-prev-character;
+  //   content: $slick-prev-character;
   //
   //   [dir='rtl'] & {
-  //     content: @slick-next-character;
+  //     content: $slick-next-character;
   //   }
   // }
 }
@@ -213,10 +217,10 @@
   }
 
   // &:before {
-  //   content: @slick-next-character;
+  //   content: $slick-next-character;
   //
   //   [dir='rtl'] & {
-  //     content: @slick-prev-character;
+  //     content: $slick-prev-character;
   //   }
   // }
 }
@@ -263,7 +267,7 @@
         outline: none;
 
         &:before {
-          // opacity: @slick-opacity-on-hover;
+          // opacity: $slick-opacity-on-hover;
         }
       }
 
@@ -274,18 +278,18 @@
         width: 20px;
         height: 20px;
         color: inherit;
-        content: @slick-dot-character;
+        content: $slick-dot-character;
         text-align: center;
         font-size: inherit;
-        font-family: @slick-font-family;
+        font-family: $slick-font-family;
         line-height: 20px;
-        // opacity: @slick-opacity-not-active;
+        // opacity: $slick-opacity-not-active;
       }
     }
 
     &.slick-active button:before {
       color: inherit;
-      // opacity: @slick-opacity-default;
+      // opacity: $slick-opacity-default;
     }
   }
 
