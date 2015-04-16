@@ -3,7 +3,7 @@
   <?php
     // Setup Image data
     $id = $instance['image'];
-    $size = 'medium'; // (thumbnail, medium, large, full or custom size)
+    $size = 'secondthought_feature'; // (thumbnail, medium, large, full or custom size)
     $image_attributes = wp_get_attachment_image_src( $id, $size );
   ?>
   <a href="<?php echo $instance['link']; ?>">
