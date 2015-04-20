@@ -37,5 +37,10 @@ $(function() {
         $this.find('.slick-active button').css('color', $this.data('dots-color-active'));
       });
 
+      // Find sliders within full-height-elements
+      $('[class*=full-height-]').find('.slick-slider').parent().css('height', 'inherit');
+      $('[class*=full-height-]').find('.slick-slider').parent().parent().css('height', 'inherit');
+      $('[class*=full-height-]').find('.slick-slider').parent().parent().parent().css('height', 'inherit');
+
     })
 });

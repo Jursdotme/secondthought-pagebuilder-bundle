@@ -39,7 +39,7 @@ class secondthought_tabs_widget extends SiteOrigin_Widget {
 			        'allow_html_formatting' => true,
 			        'rows' => 10
 				    )
-	        )
+	        ),
 		    )
 			),
 			plugin_dir_path(__FILE__)

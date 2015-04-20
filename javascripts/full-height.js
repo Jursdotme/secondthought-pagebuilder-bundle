@@ -6,7 +6,9 @@ $(document).ready(function(){
 
   fullHeighElement.each(function(){
 
-    var theClass = $(this).attr('class');
+    $this = $(this);
+
+    var theClass = $this.attr('class');
 
     var classArray = theClass.split(' ');
 
@@ -28,7 +30,7 @@ $(document).ready(function(){
     var fullHeightSettings = fullHeightSettings.split('-');
 
     // console.log(fullHeightSettings);
-    $(this).Fillerup({
+    $this.Fillerup({
       subtract: fullHeightSettings[2],
       minHeight: fullHeightSettings[3],
       maxHeight: fullHeightSettings[4]

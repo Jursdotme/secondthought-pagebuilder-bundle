@@ -2,7 +2,7 @@
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
   $base-background-color: white !default;
-  $base-spacing: 1.5em !default;
+  $base-spacing: 1.5rem !default;
   $action-color: #477DCA !default;
   $base-link-color: $action-color !default;
   $dark-gray: #333 !default;
@@ -17,7 +17,7 @@
 
   @include clearfix;
   line-height: 1.5;
-  margin-bottom: $base-spacing;
+  margin: 0 0 $base-spacing;
   padding: 0;
 
   @include media(max-width $tab-mode) {

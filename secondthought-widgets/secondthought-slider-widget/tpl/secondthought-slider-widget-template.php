@@ -58,6 +58,8 @@ $arrowIconLeft = $instance['arrows']['icon_left'];
 $arrowSize = $instance['arrows']['arrow_size'];
 $arrowIndent = $instance['arrows']['arrow_indent'];
 
+$slideHeight = $instance['layout']['slide_height'];
+
 ?>
 
 <div class="secondthought-slider"
@@ -75,6 +77,7 @@ $arrowIndent = $instance['arrows']['arrow_indent'];
 	data-arrow-size="<?php echo $arrowSize; ?>"
 	data-arrow-indent="<?php echo $arrowIndent; ?>"
 	data-showarrow="<?php echo $showArrow; ?>"
+	style="height: <?php echo $slideHeight; ?>;"
 >
 
 	<?php foreach($instance['slides'] as $slide) { ?>
@@ -83,7 +86,7 @@ $arrowIndent = $instance['arrows']['arrow_indent'];
 
 		$background_image = wp_get_attachment_image_src($slide['slide_background'], 'full');
 
-		$slideHeight = $instance['layout']['slide_height'];
+
 		$headerColor = $instance['layout']['heading_color'];
 		$captionColor = $instance['layout']['caption_color'];
 		$backgroundSize = $instance['layout']['background_size'];
@@ -100,7 +103,7 @@ $arrowIndent = $instance['arrows']['arrow_indent'];
 
 		?>
 
-		<div class="slide" style="<?php echo 'background-image: url('.$background_image[0].');' ?> height: <?php echo $slideHeight . 'px'; ?>; background-size: <?php echo  $backgroundSize; ?>; background-position: <?php echo $backgroundPosition; ?>; <?php if($bgColorType == 'slide_overlay') { echo 'background-color:' . $bgRgbaValue . ';';} ?> " >
+		<div class="slide" style="height: 100%;<?php echo 'background-image: url('.$background_image[0].');' ?> background-size: <?php echo  $backgroundSize; ?>; background-position: <?php echo $backgroundPosition; ?>; <?php if($bgColorType == 'slide_overlay') { echo 'background-color:' . $bgRgbaValue . ';';} ?> " >
 
 			<div class="slide_content" style="margin: 0 auto; max-width: <?php echo $captionWidth; ?>; text-align: <?php echo $captionAlign; ?>; background-color: <?php if($bgColorType == 'caption_bg'){ echo $bgRgbaValue;} ?>; <?php echo 'border-radius:'.$bgBorderRadius.'px;'; ?>">
 				<h1 style="color: <?php echo $headerColor; ?>;"><?php echo $slide['slide_header']; ?></h1>

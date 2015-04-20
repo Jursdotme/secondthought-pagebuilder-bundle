@@ -88,9 +88,9 @@ class Secondthought_slider_widget extends SiteOrigin_Widget {
 	        'hide' => true,
 	        'fields' => array(
 						'slide_height' => array(
-			        'type' => 'number',
+			        'type' => 'text',
 			        'label' => __( 'Slide Height', 'widget-form-fields-text-domain' ),
-			        'default' => '500'
+			        'default' => '500px'
 				    ),
 						'heading_color' => array(
 			        'type' => 'color',
