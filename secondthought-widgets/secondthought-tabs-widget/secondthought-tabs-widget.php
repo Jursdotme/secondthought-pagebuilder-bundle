@@ -1,7 +1,7 @@
 <?php
 
 /*
-Widget Name: Secondthought Tabs Widget
+Widget Name: Inzite Tabs Widget
 Description: Add slideshows to any page you want.
 Author: Me
 Author URI: http://example.com

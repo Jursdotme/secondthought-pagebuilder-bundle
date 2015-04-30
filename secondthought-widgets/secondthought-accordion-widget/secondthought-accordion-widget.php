@@ -1,7 +1,7 @@
 <?php
 
 /*
-Widget Name: Secondthought Accordion Widget
+Widget Name: Inzite Accordion Widget
 Description: Add slideshows to any page you want.
 Author: Me
 Author URI: http://example.com

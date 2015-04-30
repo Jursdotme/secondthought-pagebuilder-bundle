@@ -1,7 +1,7 @@
 <?php
 
 /*
-Widget Name: Secondthought Feature Widget
+Widget Name: Inzite Feature Widget
 Description: Add slideshows to any page you want.
 Author: Me
 Author URI: http://example.com
@@ -29,7 +29,7 @@ class secondthought_feature_widget extends SiteOrigin_Widget {
 	        'default' => ''
 		    ),
 				'link' => array(
-	        'type' => 'text',
+	        'type' => 'link',
 	        'label' => __('Link', 'widget-form-fields-text-domain'),
 	        'default' => ''
 		    ),
