@@ -110,6 +110,9 @@ $slideHeight = $instance['layout']['slide_height'];
 				<p style="color: <?php echo $captionColor; ?>;">
 					<?php echo $slide['slide_caption']; ?>
 				</p>
+				<?php if ($slide['slide_link']) { ?>
+					<a class="btn-brand btn-large" href="<?php echo $slide['link'] ?>">Læs mere</a>
+				<?php	} ?>
 			</div>
 
 		</div>

@@ -41,9 +41,13 @@ class Secondthought_slider_widget extends SiteOrigin_Widget {
 			        'allow_html_formatting' => true,
 			        'rows' => 10
 				    ),
+						'slide_link' => array(
+              'type' => 'link',
+              'label' => __( 'Link', 'widget-form-fields-text-domain' )
+            ),
 						'slide_background' => array(
 			        'type' => 'media',
-			        'label' => __( 'Choose a media thing', 'widget-form-fields-text-domain' ),
+			        'label' => __( 'Choose a background image', 'widget-form-fields-text-domain' ),
 			        'choose' => __( 'Choose image', 'widget-form-fields-text-domain' ),
 			        'update' => __( 'Set image', 'widget-form-fields-text-domain' ),
 			        'library' => 'image'
@@ -152,6 +156,11 @@ class Secondthought_slider_widget extends SiteOrigin_Widget {
 			        'label' => __( 'Autoplay', 'widget-form-fields-text-domain' ),
 			        'default' => false
 				    ),
+						'fade' => array(
+			        'type' => 'checkbox',
+			        'label' => __( 'Fade animation', 'widget-form-fields-text-domain' ),
+			        'default' => false
+				    ),
 						'autoplay_speed' => array(
 			        'type' => 'slider',
 			        'label' => __( 'Autoplay Speed (ms)', 'widget-form-fields-text-domain' ),
@@ -160,14 +169,10 @@ class Secondthought_slider_widget extends SiteOrigin_Widget {
 			        'max' => 10000,
 			        'integer' => true
 				    ),
-						'fade' => array(
-			        'type' => 'checkbox',
-			        'label' => __( 'Fade', 'widget-form-fields-text-domain' ),
-			        'default' => false
-				    ),
+
 						'animation_speed' => array(
 			        'type' => 'slider',
-			        'label' => __( 'Autoplay Speed (ms)', 'widget-form-fields-text-domain' ),
+			        'label' => __( 'Animation Speed (ms)', 'widget-form-fields-text-domain' ),
 			        'default' => 300,
 			        'min' => 0,
 			        'max' => 10000,
