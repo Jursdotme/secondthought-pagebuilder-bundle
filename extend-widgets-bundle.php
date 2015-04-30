@@ -3,7 +3,7 @@
 /*
 Plugin Name: Secondthought Widget Pack
 Description: A bundle of additional widgets and functions used with Secondthought theme framework and Sit Origin Pagebuilder.
-Version: 1.4.5
+Version: 1.4.6
 Author: Rasmus Jürs
 Author URI: http://jurs.me
 License: GPL3
@@ -23,7 +23,7 @@ function secondthought_addons_scripts() {
     wp_register_style( 'secondthought-styles',  plugin_dir_url( __FILE__ ) . 'build/stylesheets/secondthought-addons-styles.css' );
     wp_enqueue_style( 'secondthought-styles' );
 
-		wp_register_script( 'secondthought-scripts',  plugin_dir_url( __FILE__ ) . 'build/scripts/secondthought-addons-scripts.js' );
+		wp_register_script( 'secondthought-scripts',  plugin_dir_url( __FILE__ ) . 'build/scripts/secondthought-addons-scripts.js', 'jquery', '1.0.0', true );
     wp_enqueue_script( 'secondthought-scripts' );
 }
 add_action( 'wp_enqueue_scripts', 'secondthought_addons_scripts' );
