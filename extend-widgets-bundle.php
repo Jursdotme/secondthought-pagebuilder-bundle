@@ -2,12 +2,13 @@
 
 /*
 Plugin Name: Secondthought Widget Pack
-Description: An example plugin to demonstrate extending the SiteOrigin Widgets Bundle.
-Version: 1.4.0
+Description: A bundle of additional widgets and functions used with Secondthought theme framework and Sit Origin Pagebuilder.
+Version: 1.4.3
 Author: Rasmus Jürs
-Author URI: http://siteorigin.com
+Author URI: http://jurs.me
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
+GitHub Plugin URI: https://github.com/Jursdotme/secondthought-pagebuilder-bundle
 */
 
 function secondthought_widgets_collection($folders){
@@ -15,7 +16,6 @@ function secondthought_widgets_collection($folders){
 	return $folders;
 }
 add_filter('siteorigin_widgets_widget_folders', 'secondthought_widgets_collection');
-
 
 // Add Overall additions
 
