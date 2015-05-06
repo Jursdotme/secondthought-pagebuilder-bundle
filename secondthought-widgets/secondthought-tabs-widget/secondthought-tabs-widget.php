@@ -12,7 +12,7 @@ class secondthought_tabs_widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'secondthought-tabs-widget',
-			__('Secondthought Tabs Widget', 'hello-world-widget-text-domain'),
+			__('Inzite Tabs Widget', 'hello-world-widget-text-domain'),
 			array(
 				'description' => __('A simple tabs widget.', 'hello-world-widget-text-domain'),
 			),

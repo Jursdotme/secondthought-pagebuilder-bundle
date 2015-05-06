@@ -12,7 +12,7 @@ class secondthought_accordion_widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'secondthought-accordion-widget',
-			__('Secondthought Accordion Widget', 'hello-world-widget-text-domain'),
+			__('Inzite Accordion Widget', 'hello-world-widget-text-domain'),
 			array(
 				'description' => __('A simple accordion widget.', 'hello-world-widget-text-domain'),
 			),

@@ -12,7 +12,7 @@ class secondthought_feature_widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'secondthought-feature-widget',
-			__('Secondthought Feature Widget', 'hello-world-widget-text-domain'),
+			__('Inzite Feature Widget', 'hello-world-widget-text-domain'),
 			array(
 				'description' => __('A simple feature widget.', 'hello-world-widget-text-domain'),
 			),

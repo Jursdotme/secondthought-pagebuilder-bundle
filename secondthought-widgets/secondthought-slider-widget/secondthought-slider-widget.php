@@ -12,7 +12,7 @@ class Secondthought_slider_widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'secondthought-slider-widget',
-			__('Secondthought Slider Widget', 'hello-world-widget-text-domain'),
+			__('Inzite Slider Widget', 'hello-world-widget-text-domain'),
 			array(
 				'description' => __('A simple slider widget.', 'hello-world-widget-text-domain'),
 			),
