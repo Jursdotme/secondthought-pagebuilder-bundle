@@ -65,7 +65,7 @@ class secondthought_feature_widget extends SiteOrigin_Widget {
 	/**
 	 * Enqueue the feature scripts
 	 */
-	function enqueue_frontend_scripts(){
+	function enqueue_frontend_scripts($scripts){
 		wp_enqueue_script('secondthought-feature-widget');
 	}
 

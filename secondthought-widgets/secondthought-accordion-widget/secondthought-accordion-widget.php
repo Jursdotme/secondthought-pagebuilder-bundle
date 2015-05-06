@@ -58,7 +58,7 @@ class secondthought_accordion_widget extends SiteOrigin_Widget {
 	/**
 	 * Enqueue the accordion scripts
 	 */
-	function enqueue_frontend_scripts(){
+	function enqueue_frontend_scripts($scripts){
 		wp_enqueue_script('secondthought-accordion-widget');
 	}
 
