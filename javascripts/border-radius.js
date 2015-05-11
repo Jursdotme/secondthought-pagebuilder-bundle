@@ -8,8 +8,8 @@ $(document).ready(function(){
 
     var classPosition = parseInt(borderradiusclass.search("radius-"), 10);
 
-    var radius = borderradiusclass.substr(classPosition ,9).slice(-2);
-    console.log(radius)
+    var radius = borderradiusclass.substr(classPosition ,9).slice(7).trim();
+
     $(this).css('border-radius', radius+'px');
 
   });
