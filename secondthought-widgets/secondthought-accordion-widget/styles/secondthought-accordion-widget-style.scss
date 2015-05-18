@@ -12,7 +12,7 @@
   $accordion-menu-sub-background: darken($accordion-menu-background, 5%);
   $accordion-menu-sub-inset: darken($accordion-menu-sub-background, 6%);
   $accordion-menu-sub-hover: lighten($accordion-menu-sub-background, 2%);
-  $accordion-menu-list-padding: ($base-spacing / 2) $gutter;
+  $accordion-menu-list-padding: $gutter/2;
 
   background-color: $accordion-menu-background;
   margin: 0 0 $base-spacing 0;
@@ -26,6 +26,9 @@
     margin-bottom: 2px;
 
     > a {
+      font-size: rem(20);
+      font-weight: 700;
+      line-height: 1.2;
       color: #fff;
       background: $brand-color-1;
       display: block;
@@ -41,8 +44,23 @@
     padding: $accordion-menu-list-padding;
   }
 
+  .fa.fa-plus {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    font-size: 18px;
+    @include transform(rotate(0deg));
+
+    @include transition-property(transform);
+    @include transition-duration(1.0s);
+    @include transition-timing-function(ease-in-out);
+  }
+
   .is-expanded {
     display: block;
     padding-bottom: 0;
+    .fa {
+      @include transform(rotate(45deg));
+    }
   }
 }

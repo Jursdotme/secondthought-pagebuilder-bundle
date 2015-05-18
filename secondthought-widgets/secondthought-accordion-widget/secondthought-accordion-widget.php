@@ -17,7 +17,11 @@ class secondthought_accordion_widget extends SiteOrigin_Widget {
 				'description' => __('A simple accordion widget.', 'hello-world-widget-text-domain'),
 			),
 			array(),
-			apply_filters( 'st_accordion_fields', array(
+			array(
+				'accordion_header' => array(
+					'type' => 'text',
+		  		'label' => __( 'Overskrift', 'widget-form-fields-text-domain' )
+				),
 				'accordion_repeater' => array(
 	        'type' => 'repeater',
 	        'label' => __( 'Accordion Tabs' , 'widget-form-fields-text-domain' ),
@@ -27,22 +31,30 @@ class secondthought_accordion_widget extends SiteOrigin_Widget {
             'update_event' => 'change',
             'value_method' => 'val'
 	        ),
-	        'fields' => apply_filters( 'st_accordion_sub_fields', array(
-							'tab_label' => array(
-								'type' => 'text',
-								'label' => __( 'Label', 'widget-form-fields-text-domain' )
-							),
-							'tab_content' => array(
-								'type' => 'textarea',
-								'label' => __( 'Content', 'widget-form-fields-text-domain' ),
-								'default' => '',
-								'allow_html_formatting' => true,
-								'rows' => 10
-							),
+	        'fields' => array(
+						'tab_label' => array(
+							'type' => 'text',
+							'label' => __( 'Label', 'widget-form-fields-text-domain' )
+						),
+						'tab_content' => array(
+							'type' => 'textarea',
+							'label' => __( 'Content', 'widget-form-fields-text-domain' ),
+							'default' => '',
+							'allow_html_formatting' => true,
+							'rows' => 10
+						),
+						'tab_link_text' => array(
+							'type' => 'text',
+							'label' => __( 'Read more', 'widget-form-fields-text-domain' )
+						),
+						'tab_link' => array(
+							'type' => 'link',
+			        'label' => __('Some URL goes here', 'widget-form-fields-text-domain'),
+			        'default' => 'http://www.example.com'
 						)
 					),
 		    )
-			) ),
+			),
 			plugin_dir_path(__FILE__)
 		);
 	}
