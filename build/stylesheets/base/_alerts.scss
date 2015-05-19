@@ -1,0 +1,57 @@
+@mixin flash($bg-color) {
+  background: $bg-color;
+  color: tint($bg-color, 70%);
+  a {
+    color: tint($bg-color, 85%);
+    text-decoration: underline;
+
+    &:hover {
+      color: tint($bg-color, 90%);
+    }
+  }
+}
+
+%flash-base {
+  font-weight: bold;
+  margin-bottom: $gutter / 2;
+  padding: $gutter / 2;
+  border-radius: $base-border-radius;
+}
+
+%flash-alert {
+  @extend %flash-base;
+  @include flash($alert-color);
+}
+
+%flash-error {
+  @extend %flash-base;
+  @include flash($error-color);
+}
+
+%flash-notice {
+  @extend %flash-base;
+  @include flash($notice-color);
+}
+
+%flash-success {
+  @extend %flash-base;
+  @include flash($success-color);
+}
+
+// Default Alerts
+
+.success {
+  @extend %flash-success;
+}
+
+.notice {
+  @extend %flash-notice;
+}
+
+.alert {
+  @extend %flash-alert;
+}
+
+.error {
+  @extend %flash-error;
+}

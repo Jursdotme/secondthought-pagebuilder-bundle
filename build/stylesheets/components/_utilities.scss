@@ -1,0 +1,73 @@
+.utilities {
+  @include fixed-container;
+  @include pad($gutter/2 0);
+
+  .text-sizer {
+
+    @include media($sm-up) {
+      @include span-columns(4);
+      @include shift(5);
+    }
+    @include media($xs) {
+      display: none;
+    }
+    margin-top: 3px;
+
+    .help-text {
+      @include span-columns(5);
+      @include pad(0 20px 0 0);
+      text-align: right;
+      p {
+        margin: 0;
+        font-size: $base-font-size;
+        line-height: $base-font-size*1.5;
+      }
+    }
+
+    #slider {
+      @include span-columns(7);
+
+      height: 10px;
+      margin-top: 7px;
+      background: rgba(#fff, .5);
+      position: relative;
+      text-align: left;
+      border-radius: 100px;
+      .ui-slider-handle {
+        position: absolute;
+        z-index: 2;
+        width: 20px;
+        height: 20px;
+        cursor: default;
+        touch-action: none;
+        background: $brand-primary;
+        margin-top: -5px;
+        border-radius: 50%;
+        &:focus {
+          outline-style: none;
+        }
+      }
+      .ui-slider-range {
+        position: absolute;
+        z-index: 1;
+        font-size: $base-font-size*.7;
+        display: block;
+        border: 0;
+        background-position: 0 0;
+      }
+      &.ui-state-disabled {
+        .ui-slider-handle {
+          filter: inherit;
+        }
+        .ui-slider-range {
+          filter: inherit;
+        }
+      }
+    }
+
+  }
+
+  form.search {
+
+  }
+}

@@ -1,0 +1,37 @@
+.footer-wrapper {
+  background-color: $brand-tertiary;
+  margin-top: $gutter;
+  box-shadow: $shadow-lvl-2-inset;
+}
+footer.footer {
+  @include fixed-container;
+  @include pad(1em 1em 3em 1em);
+
+  color: #fff;
+
+  .bomarke {
+    float: right;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  #footer-menu {
+    margin: 0;
+    padding: 0;
+    li {
+    list-style: none;
+      a {
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        &:hover {
+          color: darken(#fff, 10%);
+        }
+      }
+    }
+  }
+}

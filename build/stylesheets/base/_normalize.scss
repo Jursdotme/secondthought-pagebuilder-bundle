@@ -1,0 +1,295 @@
+p, h1, h2, h3, h4, h5, h6, li, a {
+  margin: 0;
+}
+
+//colors
+$color-yellow-approx: #ff0;
+$black: #000;
+//var is already set
+//$black: black;
+$silver: #c0c0c0;
+//var is already set
+//$silver: silver;
+
+//fonts
+$font-0: sans-serif;
+$font-1: monospace;
+
+//@extend-elements
+//original selectors
+//sub,  sup
+%extend-1 {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+//original selectors
+//button,  input,  optgroup,  select,  textarea
+%extend-2 {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+
+html {
+  font-family: $font-0;
+
+  input[type="button"] {
+    cursor: pointer;
+  }
+
+  input[disabled] {
+    cursor: default;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+}
+
+article,
+aside,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary,
+details,
+figcaption {
+  display: block;
+}
+
+figure {
+  display: block;
+  margin: 1em 40px;
+}
+
+audio {
+  display: inline-block;
+  vertical-align: baseline;
+
+  &:not([controls]) {
+    display: none;
+    height: 0;
+  }
+}
+
+canvas {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+[hidden] {
+  display: none;
+}
+
+template {
+  display: none;
+}
+
+a {
+  background: transparent;
+
+  &:active {
+    outline: 0;
+  }
+
+  &:hover {
+    outline: 0;
+  }
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b {
+  font-weight: bold;
+}
+
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: .67em 0;
+}
+
+mark {
+  background: $color-yellow-approx;
+  color: $black;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub {
+  @extend %extend-1;
+  bottom: -.25rem;
+}
+
+sup {
+  @extend %extend-1;
+  top: -.5rem;
+}
+
+img {
+  border: 0;
+}
+
+hr {
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: content-box;
+  height: 0;
+}
+
+pre {
+  overflow: auto;
+  font-family: $font-1, $font-1;
+  font-size: 1rem;
+}
+
+code {
+  font-family: $font-1, $font-1;
+  font-size: 1rem;
+}
+
+kbd {
+  font-family: $font-1, $font-1;
+  font-size: 1rem;
+}
+
+samp {
+  font-family: $font-1, $font-1;
+  font-size: 1rem;
+}
+
+button {
+  @extend %extend-2;
+  overflow: visible;
+  text-transform: none;
+  cursor: pointer;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+input {
+  @extend %extend-2;
+  line-height: normal;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+optgroup {
+  @extend %extend-2;
+  font-weight: bold;
+}
+
+select {
+  @extend %extend-2;
+  text-transform: none;
+}
+
+textarea {
+  @extend %extend-2;
+  overflow: auto;
+}
+
+input[type="reset"] {
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+button[disabled] {
+  cursor: default;
+}
+
+input[type="checkbox"] {
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="radio"] {
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="number"] {
+  &::-webkit-inner-spin-button {
+    height: auto;
+  }
+
+  &::-webkit-outer-spin-button {
+    height: auto;
+  }
+}
+
+input[type="search"] {
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: content-box;
+}
+
+fieldset {
+  border: 1px solid $silver;
+  margin: 0 2px;
+  padding: 2rem;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td {
+  padding: 0;
+}
+
+th {
+  padding: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}

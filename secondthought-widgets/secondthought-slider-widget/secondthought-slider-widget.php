@@ -274,6 +274,6 @@ siteorigin_widget_register('secondthought-slider-widget', __FILE__, 'Secondthoug
  */
 function secondthought_slider_register_scripts(){
 
-	wp_register_script('secondthought-slider-widget', siteorigin_widget_get_plugin_dir_url('secondthought-slider-widget').'js/secondthought-slider-widget.js', array('jquery'), SOW_BUNDLE_VERSION);
+	wp_register_script('secondthought-slider-widget', siteorigin_widget_get_plugin_dir_url('secondthought-slider-widget').'js/secondthought-slider-widget.js', array('jquery'), SOW_BUNDLE_VERSION, false);
 }
 add_action('wp_enqueue_scripts', 'secondthought_slider_register_scripts', 1);

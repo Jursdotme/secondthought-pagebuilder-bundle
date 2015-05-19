@@ -1,0 +1,146 @@
+$modal_maxwidth: 630px;
+$modal_minwidth: 320px;
+$overlay_background_color: rgba(#fff, .9);
+$modal_color: #fafafa;
+$modal_header_color: $brand-primary;
+$modal_font_color: $base-font-color;
+$modal_header_font_color: #fff;
+$modal_shadow: $shadow-lvl-2;
+
+.md-modal {
+  position: absolute;
+  // top: 50%;
+  left: 50%;
+  width: 50%;
+  max-width: $modal_maxwidth;
+  min-width: $modal_minwidth;
+  height: auto;
+  z-index: 2000;
+  /*visibility: hidden;*/
+  display:none;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  box-shadow: 0 0 25px rgba(0,0,0,.2);
+}
+
+.md-show {
+  /*visibility: visible;*/
+  display: block;
+}
+
+.md-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  /*visibility: hidden;*/
+  display: none;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  background: $overlay_background_color;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.md-show ~ .md-overlay {
+  opacity: 1;
+  /*visibility: visible;*/
+  display:block;
+}
+
+/* Content styles */
+.md-header {
+  color: $modal_font_color;
+  background: $modal_header_color;
+  border-radius: 3px 3px 0 0;
+  @include span-columns(12);
+  @include pad(0 0 0 $gutter);
+  a {
+    color: #fff;
+    &:hover {
+      color: #fafafa;
+    }
+  }
+  .image {
+    @include span-columns(3);
+    @include omega();
+    img {
+      //border-radius: 50%;
+      display: block;
+      padding: $gutter/2;
+    }
+  }
+  .info {
+    @include span-columns(9);
+    p {
+      color: $modal_header_font_color;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  h3 {
+    color: $modal_header_font_color;
+    font-size: 2.4em;
+    font-weight: 300;
+  }
+}
+
+.md-content {
+  color: $modal_font_color;
+  background: $modal_color;
+  position: relative;
+  border-radius: 3px;
+  margin: 0 auto;
+  box-shadow: $modal_shadow;
+}
+
+.md-content .beskrivelse {
+  @include span-columns(12);
+  @include pad($gutter);
+  background: $modal_color;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.md-content button {
+  display: block;
+  margin: 0 auto;
+  font-size: 0.8em;
+}
+
+/* Individual modal styles with animations/transitions */
+
+
+
+/* Effect 7:  slide and stick to top */
+.md-effect-7{
+  top: $gutter;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.md-effect-7 .md-content {
+  -webkit-transform: translateY(-200%);
+  -moz-transform: translateY(-200%);
+  -ms-transform: translateY(-200%);
+  transform: translateY(-200%);
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+  opacity: 0;
+}
+
+.md-show.md-effect-7 .md-content {
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+  border-radius: 0 0 3px 3px;
+  opacity: 1;
+}

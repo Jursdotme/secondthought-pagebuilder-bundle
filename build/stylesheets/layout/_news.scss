@@ -1,0 +1,34 @@
+.news,
+.single,
+.post-type-archive,
+.archive,
+.search {
+  main {
+    @include fixed-container;
+    @include pad(1em);
+    @include pad($gutter*2 $gutter);
+
+    @extend %content_wrapper; // Edit in base/helpers
+
+    section {
+      @include media($lg) {
+        @include span-columns(8);
+        @include shift(2);
+      }
+      @include media($md) {
+        @include span-columns(10);
+        @include shift(1);
+      }
+      @include media($sm) {
+        @include span-columns(12);
+      }
+      @include media($xs) {
+        @include span-columns(12);
+      }
+    }
+    .page-header {
+      border-bottom: 1px solid #B8BCBF;
+      margin-bottom: $gutter;
+    }
+  }
+}

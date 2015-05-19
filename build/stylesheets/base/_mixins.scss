@@ -1,0 +1,51 @@
+// Section Wrapper
+
+@mixin section-wrapper($background-color, $padding) {
+  background: $background-color;
+  padding: $padding 0;
+}
+
+
+// Button
+@mixin button($bg) {
+  display: inline-block;
+  background: $bg;
+  @include transition(background .3s $curve);
+  $color: #000;
+  font: {
+    weight: 500;
+    size: .8rem;
+  }
+  line-height: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: $gutter/3 $gutter/2;
+  border-radius: $base-border-radius;
+  position: relative;
+  border: 0;
+
+  @if lightness($bg) > 68% {
+    $color: desaturate(shade($bg, 35%), 70);
+
+    &:hover,
+    &:focus {
+      background: darken($bg, 5);
+      color: darken($color, 5);
+    }
+  } @else {
+    $color: #fff;
+
+    &:hover,
+    &:focus {
+      background: darken($bg, 5);
+      color: lighten($color, 5);
+    }
+  }
+
+  color: $color;
+
+  &:hover,
+  &:focus {
+    background: shade($bg, 10%);
+  }
+}

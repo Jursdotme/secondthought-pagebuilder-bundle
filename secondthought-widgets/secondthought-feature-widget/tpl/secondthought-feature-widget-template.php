@@ -6,7 +6,7 @@
     $size = 'secondthought_feature'; // (thumbnail, medium, large, full or custom size)
     $image_attributes = wp_get_attachment_image_src( $id, $size );
   ?>
-  <a href="<?php echo $instance['link']; ?>">
+  <a href="<?php echo sow_esc_url($instance['link']); ?>">
 
     <?php if ($instance['text_placement'] == "above"): ?>
 

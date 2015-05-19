@@ -1,0 +1,40 @@
+// Authentic Motion by Google (google.com/design)
+
+// Motion with swift acceleration and gentle deceleration feels natural and delightful.
+// Curve helper: http://cubic-bezier.com/
+
+$authentic-motion-out: cubic-bezier(.35, 0, .35, 1);
+$authentic-motion-in: cubic-bezier(.35, 0, .35, 1);
+$authentic-motion: cubic-bezier(.2, 0, .7, 1);
+
+$curve-out: $authentic-motion-out;
+$curve-in: $authentic-motion-in;
+$curve: $authentic-motion;
+
+///////////////////////////////////////////////
+
+// Shadows
+
+// Shadows consist of two layers: a top shadow for depth and a bottom shadow for definition.
+
+$shadow-lvl-1: 0 1px 3px 0 rgba(0, 0, 0, .17), 0 1px 2px 0 rgba(0, 0, 0, .24);
+$shadow-lvl-2: 0 1px 3px 0 rgba(0, 0, 0, .10), 0 3px 7px 0 rgba(0, 0, 0, .11);
+$shadow-lvl-3: 0 10px 11px 0 rgba(0, 0, 0, .10), 0 5px 5px 0 rgba(0, 0, 0, .12);
+$shadow-lvl-4: 0 14px 19px 0 rgba(0, 0, 0, .20), 0 7px 6px 0 rgba(0, 0, 0, .17);
+$shadow-lvl-5: 0 20px 22px 0 rgba(0, 0, 0, .22), 0 10px 8px 0 rgba(0, 0, 0, .16);
+
+$shadow-lvl-1-inset: 0 1px 3px 0 rgba(0, 0, 0, .17) inset, 0 1px 2px 0 rgba(0, 0, 0, .24) inset;
+$shadow-lvl-2-inset: 0 11px 3px -10px rgba(0, 0, 0, .10) inset, 0 13px 7px -10px rgba(0, 0, 0, .11) inset;
+$shadow-lvl-3-inset: 0 10px 11px 0 rgba(0, 0, 0, .10) inset, 0 5px 5px 0 rgba(0, 0, 0, .12) inset;
+$shadow-lvl-4-inset: 0 14px 19px 0 rgba(0, 0, 0, .20) inset, 0 7px 6px 0 rgba(0, 0, 0, .17) inset;
+$shadow-lvl-5-inset: 0 20px 22px 0 rgba(0, 0, 0, .22) inset, 0 10px 8px 0 rgba(0, 0, 0, .16) inset;
+///////////////////////////////////////////////
+
+
+// Content Wrapper
+
+%content_wrapper {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: $shadow-lvl-2;
+}

@@ -1,0 +1,220 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
+$sans-serif: 'Droid Sans', sans-serif;
+$condensed: 'Roboto Condensed', sans-serif;
+
+@for $i from 1 through 20 {
+  html.font-size-#{$i} {
+    font-size: $base-font-size+($base-font-size / ($base-font-size*0+1))*($i/30);
+  }
+}
+
+/* remember to define focus styles! */
+:focus {
+  outline: none;
+}
+
+html {
+  // font-size: $base-font-size; // Scale typography on mobile
+  line-height: 1.5;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background-color: $base-background-color;
+  background-image: url('../img/main_background.png');
+  color: $base-font-color;
+  font-family: $sans-serif;
+}
+
+h1 {
+  font-family: $sans-serif;
+
+  font-weight: 700;
+  margin: 1rem 0 .6875rem;
+
+  @include media($sm-down) {
+    line-height: 1.25;
+    font-size: 2rem;
+  }
+
+  @include media($md) {
+    font-size: 2rem;
+    line-height: 1.125;
+  }
+
+  @include media($lg) {
+    font-size: 2rem;
+    line-height: 1.125;
+  }
+}
+
+h2 {
+  font-family: $sans-serif;
+  font-weight: 400;
+  margin: 1rem 0 .6875rem;
+
+  @include media($sm-down) {
+    font-size: 1.625rem;
+    line-height: 1.15384615;
+  }
+
+  @include media($md) {
+    font-size: 1.8rem;
+    line-height: 1.125;
+  }
+
+  @include media($lg) {
+    font-size: 1.8rem;
+    line-height: 1.125;
+  }
+}
+
+h3 {
+  font-family: $sans-serif;
+  font-weight: 400;
+  margin: 1rem 0 .6875rem;
+
+  @include media($sm-down) {
+    font-size: 1.375rem;
+    line-height: 1.13636364;
+  }
+
+  @include media($md) {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+
+  @include media($lg) {
+    font-size: 1.75rem;
+    line-height: 1.25;
+  }
+}
+
+h4 {
+  font-family: $sans-serif;
+  font-weight: 400;
+  margin: 1rem 0 .6875rem;
+
+  @include media($sm-down) {
+    font-size: 1.125rem;
+    line-height: 1.11111111;
+  }
+
+  @include media($md) {
+    font-size: 1.125rem;
+    line-height: 1.22222222;
+  }
+
+  @include media($lg) {
+    font-size: 1.125rem;
+    line-height: 1.22222222;
+  }
+}
+
+p {
+  font-family: $sans-serif;
+  line-height: 1.5rem;
+  font-size: 1rem; // same as $base-font-size
+  margin-bottom: 1.5rem;
+
+  &.date {
+    color: transparentize($base-font-color, .6);
+    font-family: $sans-serif;
+    font-style: italic;
+    font-size: .9rem;
+    margin-bottom: .3rem;
+  }
+
+  &.author {
+    font-family: $sans-serif;
+  }
+
+  &.lead {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+}
+
+hr {
+  border-bottom: 1px solid $base-border-color;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-line-height 0;
+}
+
+a {
+  @include transition(color .1s linear);
+  color: $base-link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $hover-link-color;
+  }
+
+  &:active,
+  &:focus {
+    color: $hover-link-color;
+    outline: none;
+  }
+
+  a.read-more {
+    display: inline-block;
+    font-family: $sans-serif;
+    font-weight: 700;
+    font-size: .8rem;
+    text-transform: uppercase;
+    margin-left: .2rem;
+    position: relative;
+
+    span {
+      font-family: $sans-serif;
+      font-style: normal;
+      position: absolute;
+      font-size: 1.5rem;
+      top: -1px;
+      right: -12px;
+    }
+  }
+}
+
+img {
+  margin: 0;
+  max-width: 100%;
+}
+
+blockquote {
+  border-left: 2px solid $base-border-color;
+  color: tint($base-font-color, 15%);
+  margin: $base-line-height 0;
+  padding-left: ($base-font-size * $base-line-height) / 2;
+}
+
+cite {
+  color: lighten($base-font-color, 25);
+  font-style: italic;
+
+  &:before {
+    content: '\2014 \00A0';
+  }
+}
+
+// Description Lists
+dl {
+  margin-top: 0; // Remove browser default
+  margin-bottom: floor($computed-line-height * .75);
+}
+
+dt,
+dd {
+  line-height: $base-line-height;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0; // Undo browser default
+}

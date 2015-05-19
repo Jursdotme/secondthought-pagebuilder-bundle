@@ -1,0 +1,52 @@
+.header-wrapper {
+  background-color: #fff;
+  box-shadow: $shadow-lvl-2;
+}
+
+header.header {
+  @include fixed-container;
+
+  @include media($xs) {
+    @include pad($gutter/2 $gutter/2 0 $gutter/2);
+  }
+  @include media($sm-up) {
+    @include pad(0);
+  }
+
+
+
+  .logo {
+    @include media($xs) {
+      @include span-columns(12);
+    }
+    @include media($sm-up) {
+      @include span-columns(3);
+    }
+
+    img {
+      @include media($xs) {
+        width: 57%;
+      }
+
+      @include media($sm-up) {
+        float: left;
+      }
+    }
+
+    &.fd {
+      @include media($xs) {
+        display: none;
+      }
+    }
+
+    &.right {
+      float: right;
+      @include omega();
+      img {
+        @include media($sm-up) {
+          float: right;
+        }
+      }
+    }
+  }
+}

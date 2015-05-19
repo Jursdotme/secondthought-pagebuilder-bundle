@@ -1,4 +1,4 @@
 $(function() {
-  var $elements = $('.matchheight .panel-grid-cell .so-panel');
+  var $elements = $('.matchheight > .panel-grid-cell > .so-panel');
   $elements.children().matchHeight();
 });
