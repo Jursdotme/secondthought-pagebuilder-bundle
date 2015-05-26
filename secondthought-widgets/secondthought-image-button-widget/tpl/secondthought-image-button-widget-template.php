@@ -9,7 +9,7 @@
 	$overlayTransparency = $instance['image_button_overlay_transparency'];
  ?>
 
-<figure class="effect-chico">
+<figure class="effect-chico" style="height: <?php echo $buttonHeight; ?>px;">
 	<img src="<?php echo $image_attributes[0]; ?>" alt="img01"/>
 	<figcaption>
 

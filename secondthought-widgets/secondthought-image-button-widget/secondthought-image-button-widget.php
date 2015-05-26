@@ -62,7 +62,9 @@ class secondthought_image_button_widget extends SiteOrigin_Widget {
 	 * Enqueue the device scripts
 	 */
 	function enqueue_frontend_scripts($scripts){
+		wp_enqueue_script('image-loaded', '//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/2.1.0/jquery.imagesloaded.min.js');
 		wp_enqueue_script('secondthought_image_button_widget_script');
+
 	}
 
 }
