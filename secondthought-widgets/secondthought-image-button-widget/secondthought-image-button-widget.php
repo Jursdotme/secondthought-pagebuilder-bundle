@@ -2,7 +2,7 @@
 
 /*
 Widget Name: Inzite Image Button
-Description: Add morphing device screenshots.
+Description: Image with hovereffect and link.
 Author: Me
 Author URI: http://example.com
 */
