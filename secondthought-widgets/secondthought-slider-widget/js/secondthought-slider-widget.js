@@ -42,5 +42,7 @@ $(function() {
       $('[class*=full-height-]').find('.slick-slider').parent().parent().css('height', 'inherit');
       $('[class*=full-height-]').find('.slick-slider').parent().parent().parent().css('height', 'inherit');
 
-    })
+    });
+
+    $('.slick-dots button').empty();
 });
