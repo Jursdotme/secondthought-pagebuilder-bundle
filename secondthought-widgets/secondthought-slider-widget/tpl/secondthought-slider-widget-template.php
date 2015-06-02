@@ -1,41 +1,43 @@
 <?php if( empty($instance['slides']) ) return;
 
-function secondthought_hex2rgba($color, $opacity = false) {
+if (!function_exists('secondthought_hex2rgba')) {
+	function secondthought_hex2rgba($color, $opacity = false) {
 
-	$default = 'rgb(0,0,0)';
+		$default = 'rgb(0,0,0)';
 
-	//Return default if no color provided
-	if(empty($color))
-    return $default;
+		//Return default if no color provided
+		if(empty($color))
+	    return $default;
 
-	//Sanitize $color if "#" is provided
-  if ($color[0] == '#' ) {
-  	$color = substr( $color, 1 );
-  }
+		//Sanitize $color if "#" is provided
+	  if ($color[0] == '#' ) {
+	  	$color = substr( $color, 1 );
+	  }
 
-  //Check if color has 6 or 3 characters and get values
-  if (strlen($color) == 6) {
-    $hex = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
-  } elseif ( strlen( $color ) == 3 ) {
-    $hex = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
-  } else {
-    return $default;
-  }
+	  //Check if color has 6 or 3 characters and get values
+	  if (strlen($color) == 6) {
+	    $hex = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
+	  } elseif ( strlen( $color ) == 3 ) {
+	    $hex = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
+	  } else {
+	    return $default;
+	  }
 
-  //Convert hexadec to rgb
-  $rgb =  array_map('hexdec', $hex);
+	  //Convert hexadec to rgb
+	  $rgb =  array_map('hexdec', $hex);
 
-  //Check if opacity is set(rgba or rgb)
-  if($opacity){
-  	if(abs($opacity) > 1)
-  		$opacity = 1.0;
-  	$output = 'rgba('.implode(",",$rgb).','.$opacity.')';
-  } else {
-  	$output = 'rgb('.implode(",",$rgb).')';
-  }
+	  //Check if opacity is set(rgba or rgb)
+	  if($opacity){
+	  	if(abs($opacity) > 1)
+	  		$opacity = 1.0;
+	  	$output = 'rgba('.implode(",",$rgb).','.$opacity.')';
+	  } else {
+	  	$output = 'rgb('.implode(",",$rgb).')';
+	  }
 
-  //Return rgb(a) color string
-  return $output;
+	  //Return rgb(a) color string
+	  return $output;
+	}
 }
 
 // Animation Settings
@@ -104,17 +106,17 @@ $slideHeight = $instance['layout']['slide_height'];
 		?>
 
 		<div class="slide" style="height: 100%;<?php echo 'background-image: url('.$background_image[0].');' ?> background-size: <?php echo  $backgroundSize; ?>; background-position: <?php echo $backgroundPosition; ?>; <?php if($bgColorType == 'slide_overlay') { echo 'background-color:' . $bgRgbaValue . ';';} ?> " >
-
-			<div class="slide_content" style="margin: 0 auto; max-width: <?php echo $captionWidth; ?>; text-align: <?php echo $captionAlign; ?>; background-color: <?php if($bgColorType == 'caption_bg'){ echo $bgRgbaValue;} ?>; <?php echo 'border-radius:'.$bgBorderRadius.'px;'; ?>">
-				<h1 style="color: <?php echo $headerColor; ?>;"><?php echo $slide['slide_header']; ?></h1>
-				<p style="color: <?php echo $captionColor; ?>;">
-					<?php echo $slide['slide_caption']; ?>
-				</p>
-				<?php if ($slide['slide_link']) { ?>
-					<a class="btn-brand btn-large" href="<?php echo sow_esc_url( $slide['slide_link'] ); ?>">Læs mere</a>
-				<?php	} ?>
+			<div class="slide_inner">
+				<div class="slide_content" style="margin: 0 auto; max-width: <?php echo $captionWidth; ?>; text-align: <?php echo $captionAlign; ?>; background-color: <?php if($bgColorType == 'caption_bg'){ echo $bgRgbaValue;} ?>; <?php echo 'border-radius:'.$bgBorderRadius.'px;'; ?>">
+					<h1 style="color: <?php echo $headerColor; ?>;"><?php echo $slide['slide_header']; ?></h1>
+					<p style="color: <?php echo $captionColor; ?>;">
+						<?php echo $slide['slide_caption']; ?>
+					</p>
+					<?php if ($slide['slide_link']) { ?>
+						<a class="btn-brand btn-large" href="<?php echo sow_esc_url( $slide['slide_link'] ); ?>">Læs mere</a>
+					<?php	} ?>
+				</div>
 			</div>
-
 		</div>
 
 	<?php } ?>
