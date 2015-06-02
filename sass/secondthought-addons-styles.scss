@@ -1,4 +1,26 @@
 
+// Center content
+
+%center-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.center-content > div {
+
+  @include media($sm-up) {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @include media($xs) {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
 @import '../../../themes/secondthought/sass/../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import '../../../themes/secondthought/sass/base/grid-settings';
 
@@ -10,6 +32,7 @@
 @import '../secondthought-widgets/secondthought-accordion-widget/styles/secondthought-accordion-widget-style.scss';
 @import '../secondthought-widgets/secondthought-device-widget/styles/secondthought-device-widget-style.scss';
 @import '../secondthought-widgets/secondthought-image-button-widget/styles/secondthought-image-button-widget-style.scss';
+
 .limit-width {
   padding: 0;
 
