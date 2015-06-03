@@ -113,7 +113,7 @@ $slideHeight = $instance['layout']['slide_height'];
 						<?php echo $slide['slide_caption']; ?>
 					</p>
 					<?php if ($slide['slide_link']) { ?>
-						<a class="btn-brand btn-large" href="<?php echo sow_esc_url( $slide['slide_link'] ); ?>">Læs mere</a>
+						<a class="btn-brand btn-large" href="<?php echo sow_esc_url( $slide['slide_link'] ); ?>"><?php _e('Read more', 'siteorigin-widgets'); ?></a>
 					<?php	} ?>
 				</div>
 			</div>
