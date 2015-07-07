@@ -20,9 +20,6 @@
     <div class="accordion-content">
       <?php
         echo $tab['tab_content'];
-        if ($tab['tab_link']) {
-          echo '<p><a href="'. sow_esc_url($tab['tab_link']). '" class="btn-brand btn btn-default">' . $tab['tab_link_text'] . '</a></p>';
-        }
       ?>
     </div>
 

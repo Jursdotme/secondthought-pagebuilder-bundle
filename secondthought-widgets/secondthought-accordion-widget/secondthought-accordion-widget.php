@@ -7,7 +7,7 @@ Author: Me
 Author URI: http://example.com
 */
 
-class secondthought_accordion_widget extends SiteOrigin_Widget {
+class Secondthought_accordion_widget extends SiteOrigin_Widget {
 	function __construct() {
 
 		parent::__construct(
@@ -37,21 +37,19 @@ class secondthought_accordion_widget extends SiteOrigin_Widget {
 							'label' => __( 'Label', 'widget-form-fields-text-domain' )
 						),
 						'tab_content' => array(
-							'type' => 'textarea',
+							'type' => 'tinymce',
 							'label' => __( 'Content', 'widget-form-fields-text-domain' ),
 							'default' => '',
-							'allow_html_formatting' => true,
-							'rows' => 10
+							'rows' => 10,
+							'default_editor' => 'tinymce',
+			        'button_filters' => array(
+			            'mce_buttons' => array( $this, 'filter_mce_buttons' ),
+			            'mce_buttons_2' => array( $this, 'filter_mce_buttons_2' ),
+			            'mce_buttons_3' => array( $this, 'filter_mce_buttons_3' ),
+			            'mce_buttons_4' => array( $this, 'filter_mce_buttons_5' ),
+			            'quicktags_settings' => array( $this, 'filter_quicktags_settings' ),
+			        ),
 						),
-						'tab_link_text' => array(
-							'type' => 'text',
-							'label' => __( 'Read more', 'widget-form-fields-text-domain' )
-						),
-						'tab_link' => array(
-							'type' => 'link',
-			        'label' => __('Some URL goes here', 'widget-form-fields-text-domain'),
-			        'default' => 'http://www.example.com'
-						)
 					),
 		    )
 			),
