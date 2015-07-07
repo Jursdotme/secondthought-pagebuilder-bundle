@@ -1,5 +1,9 @@
-$('.js-accordion-trigger').bind('click', function(e){
-  jQuery(this).parent().find('.accordion-content').slideToggle('fast');  // apply the toggle to the ul
-  jQuery(this).parent().toggleClass('is-expanded');
-  e.preventDefault();
+
+
+$(function() {
+  $('.js-accordion-trigger').bind('click', function(e){
+    jQuery(this).parent().find('.accordion-content').slideToggle('fast');  // apply the toggle to the ul
+    jQuery(this).parent().toggleClass('is-expanded');
+    e.preventDefault();
+  });
 });
