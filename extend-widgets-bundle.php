@@ -3,13 +3,17 @@
 /*
 Plugin Name: Secondthought Widget Pack
 Description: A bundle of additional widgets and functions used with Secondthought theme framework and Sit Origin Pagebuilder.
-Version: 1.5.1
+Version: 1.5.2
 Author: Rasmus Jürs
 Author URI: http://jurs.me
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 GitHub Plugin URI: https://github.com/Jursdotme/secondthought-pagebuilder-bundle
 */
+
+// All the custom fields
+require_once plugin_dir_path(__FILE__) . 'inc/custom-fields-row.php';
+require_once plugin_dir_path(__FILE__) . 'inc/custom-fields-widget.php';
 
 function secondthought_widgets_collection($folders){
 	$folders[] = plugin_dir_path(__FILE__).'secondthought-widgets/';

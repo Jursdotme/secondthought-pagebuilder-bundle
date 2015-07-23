@@ -33,32 +33,6 @@
 @import '../secondthought-widgets/secondthought-device-widget/styles/secondthought-device-widget-style.scss';
 @import '../secondthought-widgets/secondthought-image-button-widget/styles/secondthought-image-button-widget-style.scss';
 
-.limit-width {
-  padding: 0;
-
-  @include secondthought-container;
-
-  &.wrapper-shadow-1 {
-    box-shadow: $shadow-lvl-1;
-  }
-
-  &.wrapper-shadow-2 {
-    box-shadow: $shadow-lvl-2;
-  }
-
-  &.wrapper-shadow-3 {
-    box-shadow: $shadow-lvl-3;
-  }
-
-  &.wrapper-shadow-4 {
-    box-shadow: $shadow-lvl-4;
-  }
-
-  &.wrapper-shadow-5 {
-    box-shadow: $shadow-lvl-5;
-  }
-}
-
 body:after {
   position: absolute;
   top: 0;
@@ -133,30 +107,6 @@ body:after {
   background-attachment: fixed;
 }
 
-.shadow {
-  box-shadow: $shadow-lvl-2;
-}
-
-.shadow-1 {
-  box-shadow: $shadow-lvl-1;
-}
-
-.shadow-2 {
-  box-shadow: $shadow-lvl-2;
-}
-
-.shadow-3 {
-  box-shadow: $shadow-lvl-3;
-}
-
-.shadow-4 {
-  box-shadow: $shadow-lvl-4;
-}
-
-.shadow-5 {
-  box-shadow: $shadow-lvl-5;
-}
-
 .border-radius {
   border-radius: $base-border-radius;
 }
@@ -185,7 +135,8 @@ body:after {
   }
 }
 
-.panel-row-style[class*=" background-"] {
+.panel-row-style[class*=" background-"],
+.panel-row-style.color-overlay {
   position: relative;
   z-index: 1;
   &::before {
@@ -245,4 +196,94 @@ body:after {
 
 .panel-last-child p:last-child {
   margin-bottom: 0;
+}
+
+// Focus shadow mixin.
+$shadow-key-umbra-opacity: 0.2;
+$shadow-key-penumbra-opacity: 0.14;
+$shadow-ambient-shadow-opacity: 0.12;
+
+@mixin focus-shadow() {
+  box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36);
+}
+
+@mixin shadow-2dp() {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+              0 3px 1px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity),
+              0 1px 5px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+}
+@mixin shadow-3dp() {
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+              0 3px 3px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity),
+              0 1px 8px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+}
+@mixin shadow-4dp() {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+              0 1px 10px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity),
+              0 2px 4px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+}
+@mixin shadow-6dp() {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+              0 1px 18px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity),
+              0 3px 5px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+}
+@mixin shadow-8dp() {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+              0 3px 14px 2px rgba(0, 0, 0, $shadow-ambient-shadow-opacity),
+              0 5px 5px -3px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+}
+
+@mixin shadow-16dp() {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, $shadow-key-penumbra-opacity),
+              0  6px 30px 5px rgba(0, 0, 0, $shadow-ambient-shadow-opacity),
+              0  8px 10px -5px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+}
+
+.mdl-shadow--2dp {
+  @include shadow-2dp();
+}
+
+.mdl-shadow--3dp {
+  @include shadow-3dp();
+}
+
+.mdl-shadow--4dp {
+  @include shadow-4dp();
+}
+
+.mdl-shadow--6dp {
+  @include shadow-6dp();
+}
+
+.mdl-shadow--8dp {
+  @include shadow-8dp();
+}
+
+.mdl-shadow--16dp {
+  @include shadow-16dp();
+}
+
+// alternatives
+.shadow-1 {
+  @include shadow-2dp();
+}
+
+.shadow-2 {
+  @include shadow-3dp();
+}
+
+.shadow-3 {
+  @include shadow-4dp();
+}
+
+.shadow-4 {
+  @include shadow-6dp();
+}
+
+.shadow-5 {
+  @include shadow-8dp();
+}
+
+.shadow-6 {
+  @include shadow-16dp();
 }

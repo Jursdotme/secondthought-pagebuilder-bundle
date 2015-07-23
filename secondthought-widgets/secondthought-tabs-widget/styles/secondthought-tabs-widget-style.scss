@@ -9,9 +9,9 @@
   $light-gray: #DDD !default;
   $medium-screen: em(640) !default;
   $tab-border: 1px solid $base-border-color;
-  $tab-content-background: lighten($light-gray, 10);
-  $tab-active-background: $tab-content-background;
-  $tab-inactive-color: $base-background-color;
+  $tab-content-background: #fafafa;
+  $tab-active-background: #fafafa;
+  $tab-inactive-color: shade(#fafafa, 2%);
   $tab-inactive-hover-color: darken($light-gray, 5);
   $tab-mode: $medium-screen;
 
@@ -57,6 +57,9 @@
     font-weight: bold;
     padding: $base-spacing/2 $gutter/2;
     text-decoration: none;
+    z-index: 1;
+    position: relative;
+    @include shadow-2dp();
 
     @include media($tab-mode) {
       @include inline-block;
@@ -75,6 +78,16 @@
 
     &.is-active {
       background-color: $tab-active-background;
+      @include shadow-3dp();
+      &:after {
+        content: "";
+        background-color: $tab-active-background;
+        position: absolute;
+        height: 10px;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+      }
 
       @include media($tab-mode) {
         background-color: $tab-active-background;
@@ -90,6 +103,12 @@
     display: none;
     padding: $base-spacing $gutter;
     width: 100%;
+    z-index: 2;
+    position: relative;
+
+    &.is-open {
+      @include shadow-3dp();
+    }
 
     @include media($tab-mode) {
       border-bottom-left-radius: $base-border-radius;
@@ -98,5 +117,15 @@
       border: $tab-border;
       float: left;
     }
+  }
+
+  .shadow-hider {
+    position: absolute;
+    background-color: #fafafa;
+    width: 50px;
+    height: 10px;
+    top: -7px;
+    z-index: 2;
+    left: 0;
   }
 }

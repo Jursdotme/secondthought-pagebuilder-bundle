@@ -1,4 +1,25 @@
-// Column background opacity
+// Row backgroud opacity
+$(document).ready(function(){
+  var transparentElement = $('[data-bg-opacity]');
+
+  console.log(transparentElement);
+
+  transparentElement.each(function(){
+
+    $this = $(this)
+
+    var bgColor = $this.css('background-color');
+
+    var transparentAmount = $this.data('bg-opacity');
+
+    var result = bgColor.replace(')', ', '+(transparentAmount/100)+')').replace('rgb', 'rgba');
+
+    $this.css('background-color', result);
+
+  });
+});
+
+// Column background opacity OLD AND DEPRICATED
 $(document).ready(function(){
   var transparentElement = $('[class*=transparency-]');
 
@@ -18,7 +39,7 @@ $(document).ready(function(){
   });
 });
 
-// Row backgroud opacity
+// Row backgroud opacity OLD AND DEPRICATED
 $(document).ready(function(){
   var transparentElement = $('[class*=background-]');
 

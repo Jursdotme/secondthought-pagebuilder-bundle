@@ -24,7 +24,7 @@
     "parallax.js": "https://github.com/pixelcog/parallax.js.git#50c1ad822764d829d10eb9a3f8bc159003e17240",
     "stellar.js": "~0.6.2",
     "modernizr": "~2.8.3",
-    "fillerup": "~1.1.0",
+    "fillerup": "~1.3.0",
     "throttle": "~0.1.3"
   }
 }

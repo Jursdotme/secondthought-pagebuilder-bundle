@@ -1,4 +1,27 @@
-// .full-height-100-500-900
+$(document).ready(function(){
+
+  // Find fillerup targets
+  var fillerup = $('.fillerup');
+
+  fillerup.each(function(){
+
+    $this = $(this);
+
+    var instanceSubtract = $this.data('subtract');
+    var instanceMinHeight = $this.data('minheight');
+    var instanceMaxHeight = $this.data('maxheight');
+
+    console.log(instanceSubtract);
+    $this.Fillerup({
+      subtract: parseInt(instanceSubtract),
+      minHeight: parseInt(instanceMinHeight),
+      maxHeight: parseInt(instanceMaxHeight)
+    });
+
+  });
+});
+
+// .full-height-100-500-900 (DEPRICATED)
 $(document).ready(function(){
   var fullHeighElement = $('[class*=full-height-]');
 
