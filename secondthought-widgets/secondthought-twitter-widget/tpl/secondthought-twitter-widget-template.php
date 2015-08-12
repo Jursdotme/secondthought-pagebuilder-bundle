@@ -52,46 +52,46 @@ function tweet_time( $time ) {
 
         // If less than 3 seconds.
         if ( $difference < 3 ) {
-            return __( 'right now', 'twitter_tweets_widget' );
+            return __( 'right now', 'secondthought_pagebuilder_bundle' );
         }
 
         // If less than minute.
         if ( $difference < $minute ) {
-            return floor( $difference ) . ' ' . __( 'seconds ago', 'twitter_tweets_widget' );;
+            return floor( $difference ) . ' ' . __( 'seconds ago', 'secondthought_pagebuilder_bundle' );;
         }
 
         // If less than 2 minutes.
         if ( $difference < $minute * 2 ) {
-            return __( 'about 1 minute ago', 'twitter_tweets_widget' );
+            return __( 'about 1 minute ago', 'secondthought_pagebuilder_bundle' );
         }
 
         // If less than hour.
         if ( $difference < $hour ) {
-            return floor( $difference / $minute ) . ' ' . __( 'minutes ago', 'twitter_tweets_widget' );
+            return floor( $difference / $minute ) . ' ' . __( 'minutes ago', 'secondthought_pagebuilder_bundle' );
         }
 
         // If less than 2 hours.
         if ( $difference < $hour * 2 ) {
-            return __( 'about 1 hour ago', 'twitter_tweets_widget' );
+            return __( 'about 1 hour ago', 'secondthought_pagebuilder_bundle' );
         }
 
         // If less than day.
         if ( $difference < $day ) {
-            return floor( $difference / $hour ) . ' ' . __( 'hours ago', 'twitter_tweets_widget' );
+            return floor( $difference / $hour ) . ' ' . __( 'hours ago', 'secondthought_pagebuilder_bundle' );
         }
 
         // If more than day, but less than 2 days.
         if ( $difference > $day && $difference < $day * 2 ) {
-            return __( 'yesterday', 'twitter_tweets_widget' );;
+            return __( 'yesterday', 'secondthought_pagebuilder_bundle' );;
         }
 
         // If less than year.
         if ( $difference < $day * 365 ) {
-            return floor( $difference / $day ) . ' ' . __( 'days ago', 'twitter_tweets_widget' );
+            return floor( $difference / $day ) . ' ' . __( 'days ago', 'secondthought_pagebuilder_bundle' );
         }
 
         // Else return more than a year.
-        return __( 'over a year ago', 'twitter_tweets_widget' );
+        return __( 'over a year ago', 'secondthought_pagebuilder_bundle' );
     }
 }
 
@@ -125,7 +125,7 @@ if ( $timelines ) {
     }
 
 } else {
-    _e( 'Error fetching feeds. Please verify the Twitter settings in the widget.', 'twitter_tweets_widget' );
+    _e( 'Error fetching feeds. Please verify the Twitter settings in the widget.', 'secondthought_pagebuilder_bundle' );
 }
 
 echo $args['after_widget'];

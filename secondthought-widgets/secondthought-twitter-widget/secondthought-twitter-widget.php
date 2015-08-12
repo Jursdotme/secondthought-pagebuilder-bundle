@@ -12,45 +12,45 @@ class secondthought_twitter_widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'secondthought-twitter-widget',
-			__('Inzite Twitter Widget', 'hello-world-widget-text-domain'),
+			__('Inzite Twitter Widget', 'secondthought_pagebuilder_bundle'),
 			array(
-				'description' => __('A simple twitter widget.', 'hello-world-widget-text-domain'),
+				'description' => __('A simple twitter widget.', 'secondthought_pagebuilder_bundle'),
 			),
 			array(),
 			array(
 				'title' => array(
 	        'type' => 'text',
-	        'label' => __('Title', 'widget-form-fields-text-domain'),
+	        'label' => __('Title', 'secondthought_pagebuilder_bundle'),
 	        'default' => ''
 		    ),
 				'twitter_username' => array(
 	        'type' => 'text',
-	        'label' => __('Twitter username (Without @)', 'widget-form-fields-text-domain'),
+	        'label' => __('Twitter username (Without @)', 'secondthought_pagebuilder_bundle'),
 	        'default' => ''
 		    ),
 				'update_count' => array(
 	        'type' => 'number',
-	        'label' => __('Number of tweets to display', 'widget-form-fields-text-domain'),
+	        'label' => __('Number of tweets to display', 'secondthought_pagebuilder_bundle'),
 	        'default' => ''
 		    ),
 				'oauth_accesstoken' => array(
 	        'type' => 'text',
-	        'label' => __('OAuth Access Token', 'widget-form-fields-text-domain'),
+	        'label' => __('OAuth Access Token', 'secondthought_pagebuilder_bundle'),
 	        'default' => ''
 		    ),
 				'oauth_access_token_secret' => array(
 	        'type' => 'text',
-	        'label' => __('OAuth Access Token Secret', 'widget-form-fields-text-domain'),
+	        'label' => __('OAuth Access Token Secret', 'secondthought_pagebuilder_bundle'),
 	        'default' => ''
 		    ),
 				'consumer_key' => array(
 	        'type' => 'text',
-	        'label' => __('Consumer Key', 'widget-form-fields-text-domain'),
+	        'label' => __('Consumer Key', 'secondthought_pagebuilder_bundle'),
 	        'default' => ''
 		    ),
 				'consumer_secret' => array(
 	        'type' => 'text',
-	        'label' => __('Consumer Secret', 'widget-form-fields-text-domain'),
+	        'label' => __('Consumer Secret', 'secondthought_pagebuilder_bundle'),
 	        'default' => ''
 		    ),
 			),

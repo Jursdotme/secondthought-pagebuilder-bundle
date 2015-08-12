@@ -12,37 +12,37 @@ class secondthought_image_button_widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'secondthought-image-button-widget',
-			__('Inzite Image Button', 'hello-world-widget-text-domain'),
+			__('Inzite Image Button', 'secondthought_pagebuilder_bundle'),
 			array(
-				'description' => __('A simple device widget.', 'hello-world-widget-text-domain'),
+				'description' => __('A simple device widget.', 'secondthought_pagebuilder_bundle'),
 			),
 			array(),
 			array(
 				'image_button_image' => array(
 	        'type' => 'media',
-	        'label' => __( 'Image', 'widget-form-fields-text-domain' ),
-	        'choose' => __( 'Choose image', 'widget-form-fields-text-domain' ),
-	        'update' => __( 'Set image', 'widget-form-fields-text-domain' ),
+	        'label' => __( 'Image', 'secondthought_pagebuilder_bundle' ),
+	        'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
+	        'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
 	        'library' => 'image'
 		    ),
 				'image_button_text' => array(
 	        'type' => 'text',
-	        'label' => __('Label', 'widget-form-fields-text-domain'),
+	        'label' => __('Label', 'secondthought_pagebuilder_bundle'),
 	        'default' => 'Some default text.'
 		    ),
 				'image_button_link' => array(
 	        'type' => 'link',
-	        'label' => __('Link', 'widget-form-fields-text-domain'),
+	        'label' => __('Link', 'secondthought_pagebuilder_bundle'),
 	        'default' => 'http://www.example.com'
 		    ),
 				'image_button_overlay_transparency' => array(
 	        'type' => 'number',
-	        'label' => __( 'Overlay transparency', 'widget-form-fields-text-domain' ),
+	        'label' => __( 'Overlay transparency', 'secondthought_pagebuilder_bundle' ),
 	        'default' => '70'
 		    ),
 				'image_button_height' => array(
 	        'type' => 'number',
-	        'label' => __( 'Button Height (In pixels)', 'widget-form-fields-text-domain' ),
+	        'label' => __( 'Button Height (In pixels)', 'secondthought_pagebuilder_bundle' ),
 	        'default' => '300'
 		    )
 			),

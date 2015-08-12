@@ -12,19 +12,19 @@ class Secondthought_accordion_widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'secondthought-accordion-widget',
-			__('Inzite Accordion Widget', 'hello-world-widget-text-domain'),
+			__('Inzite Accordion Widget', 'secondthought_pagebuilder_bundle'),
 			array(
-				'description' => __('A simple accordion widget.', 'hello-world-widget-text-domain'),
+				'description' => __('A simple accordion widget.', 'secondthought_pagebuilder_bundle'),
 			),
 			array(),
 			array(
 				'accordion_header' => array(
 					'type' => 'text',
-		  		'label' => __( 'Overskrift', 'widget-form-fields-text-domain' )
+		  		'label' => __( 'Overskrift', 'secondthought_pagebuilder_bundle' )
 				),
 				'accordion_repeater' => array(
 	        'type' => 'repeater',
-	        'label' => __( 'Accordion Tabs' , 'widget-form-fields-text-domain' ),
+	        'label' => __( 'Accordion Tabs' , 'secondthought_pagebuilder_bundle' ),
 	        'item_name'  => __( 'Accordion Tab', 'siteorigin-widgets' ),
 	        'item_label' => array(
             'selector'     => "[id*='repeat_text']",
@@ -34,11 +34,11 @@ class Secondthought_accordion_widget extends SiteOrigin_Widget {
 	        'fields' => array(
 						'tab_label' => array(
 							'type' => 'text',
-							'label' => __( 'Label', 'widget-form-fields-text-domain' )
+							'label' => __( 'Label', 'secondthought_pagebuilder_bundle' )
 						),
 						'tab_content' => array(
 							'type' => 'tinymce',
-							'label' => __( 'Content', 'widget-form-fields-text-domain' ),
+							'label' => __( 'Content', 'secondthought_pagebuilder_bundle' ),
 							'default' => '',
 							'rows' => 10,
 							'default_editor' => 'tinymce',

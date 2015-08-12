@@ -5,49 +5,60 @@
 
   function widget_style_fields($fields) {
     $fields['parallax'] = array(
-        'name'        => __('Parallax', 'siteorigin-panels'),
+        'name'        => __('Parallax', 'secondthought_pagebuilder_bundle'),
         'type'        => 'checkbox',
         'group'       => 'design',
-        'description' => __('If enabled, the background image will have a parallax effect.', 'siteorigin-panels'),
+        'description' => __('If enabled, the background image will have a parallax effect.', 'secondthought_pagebuilder_bundle'),
         'priority'    => 11,
     );
 
     $fields['center-content'] = array(
-        'name'        => __('Center content', 'siteorigin-panels'),
+        'name'        => __('Center content', 'secondthought_pagebuilder_bundle'),
         'type'        => 'checkbox',
         'group'       => 'design',
-        'description' => __('If enabled, the content of this widget will be centered horizontally.', 'siteorigin-panels'),
+        'description' => __('If enabled, the content of this widget will be centered horizontally.', 'secondthought_pagebuilder_bundle'),
         'priority'    => 11,
     );
 
     $fields['border-radius'] = array(
-        'name'        => __('Border radius', 'siteorigin-panels'),
+        'name'        => __('Border radius', 'secondthought_pagebuilder_bundle'),
         'type'        => 'measurement',
         'group'       => 'design',
-        'description' => __('Add rounded corners to this widgets background.', 'siteorigin-panels'),
-        'priority'    => 5,
-    );
-
-    $fields['border-radius'] = array(
-        'name'        => __('Border radius', 'siteorigin-panels'),
-        'type'        => 'measurement',
-        'group'       => 'design',
-        'description' => __('Add rounded corners to this widgets background.', 'siteorigin-panels'),
+        'description' => __('Add rounded corners to this widgets background.', 'secondthought_pagebuilder_bundle'),
         'priority'    => 5,
     );
 
     $fields['remove-outer-margin'] = array(
-        'name'        => __('Remove outer margin', 'siteorigin-panels'),
+        'name'        => __('Remove outer margin', 'secondthought_pagebuilder_bundle'),
         'type'        => 'checkbox',
         'group'       => 'design',
-        'description' => __('Remove margin for the side facing the window border.', 'siteorigin-panels'),
+        'description' => __('Remove margin for the side facing the window border.', 'secondthought_pagebuilder_bundle'),
         'priority'    => 11,
     );
+
+    $fields['box-shadow'] = array(
+			'name' => __('Background drop shadow', 'secondthought_pagebuilder_bundle'),
+			'type' => 'select',
+			'group' => 'design',
+			'options' => array(
+				'' => __('none', 'secondthought_pagebuilder_bundle'),
+				'2dp' => __('2dp', 'secondthought_pagebuilder_bundle'),
+        '3dp' => __('3dp', 'secondthought_pagebuilder_bundle'),
+        '4dp' => __('4dp', 'secondthought_pagebuilder_bundle'),
+        '6dp' => __('6dp', 'secondthought_pagebuilder_bundle'),
+        '8dp' => __('8dp', 'secondthought_pagebuilder_bundle'),
+        '16dp' => __('16dp', 'secondthought_pagebuilder_bundle'),
+			),
+			'description' => __('Add a drop shadow to this widget', 'secondthought_pagebuilder_bundle'),
+			'priority' => 7,
+		);
+
+    unset($fields['border_color']);
 
     return $fields;
   }
 
-  add_filter( 'siteorigin_panels_widget_style_fields', 'widget_style_fields' );
+  add_filter( 'siteorigin_panels_widget_style_fields', 'widget_style_fields', 20);
 
 // END Widget fields
 
@@ -71,6 +82,12 @@
       if( !empty( $args['remove-outer-margin'] ) ) {
           array_push($attributes['class'], 'remove-outer-margin');
       }
+
+      if( !empty( $args['box-shadow'] ) ) {
+          array_push($attributes['class'], 'mdl-shadow--'.esc_attr($args['box-shadow']));
+      }
+
+
 
 
       return $attributes;

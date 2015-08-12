@@ -12,15 +12,15 @@ class secondthought_tabs_widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'secondthought-tabs-widget',
-			__('Inzite Tabs Widget', 'hello-world-widget-text-domain'),
+			__('Inzite Tabs Widget', 'secondthought_pagebuilder_bundle'),
 			array(
-				'description' => __('A simple tabs widget.', 'hello-world-widget-text-domain'),
+				'description' => __('A simple tabs widget.', 'secondthought_pagebuilder_bundle'),
 			),
 			array(),
 			array(
 				'tab_repeater' => array(
 	        'type' => 'repeater',
-	        'label' => __( 'Tabs' , 'widget-form-fields-text-domain' ),
+	        'label' => __( 'Tabs' , 'secondthought_pagebuilder_bundle' ),
 	        'item_name'  => __( 'Tab', 'siteorigin-widgets' ),
 	        'item_label' => array(
             'selector'     => "[id*='repeat_text']",
@@ -30,11 +30,11 @@ class secondthought_tabs_widget extends SiteOrigin_Widget {
 	        'fields' => array(
             'tab_label' => array(
               'type' => 'text',
-              'label' => __( 'Label', 'widget-form-fields-text-domain' )
+              'label' => __( 'Label', 'secondthought_pagebuilder_bundle' )
             ),
 						'tab_content' => array(
 			        'type' => 'tinymce',
-							'label' => __( 'Content', 'widget-form-fields-text-domain' ),
+							'label' => __( 'Content', 'secondthought_pagebuilder_bundle' ),
 							'default' => '',
 							'rows' => 10,
 							'default_editor' => 'tinymce',

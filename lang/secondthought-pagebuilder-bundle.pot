@@ -1,0 +1,652 @@
+# Loco Gettext template
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Secondthought Widget Pack\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Wed Aug 12 2015 10:20:24 GMT+0200 (CEST)\n"
+"POT-Revision-Date: Wed Aug 12 2015 10:20:34 GMT+0200 (CEST)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: ../inc/custom-fields-row.php:8
+msgid "Background"
+msgstr ""
+
+#: ../inc/custom-fields-row.php:13
+msgid "Height"
+msgstr ""
+
+#: ../inc/custom-fields-row.php:32 ../inc/custom-fields-widget.php:8
+msgid "Parallax"
+msgstr ""
+
+#: ../inc/custom-fields-row.php:35 ../inc/custom-fields-widget.php:11
+msgid "If enabled, the background image will have a parallax effect."
+msgstr ""
+
+#: ../inc/custom-fields-row.php:41 ../inc/custom-fields-widget.php:16
+msgid "Center content"
+msgstr ""
+
+#: ../inc/custom-fields-row.php:44
+msgid ""
+"If enabled, the content of this row will be centered horizontally (only "
+"works with a single cell)."
+msgstr ""
+
+#: ../inc/custom-fields-row.php:50
+msgid "Match height on cells"
+msgstr ""
+
+#: ../inc/custom-fields-row.php:53
+msgid "If enabled, the cells in this row will get matching heights automatically"
+msgstr ""
+
+#: ../inc/custom-fields-row.php:59
+msgid "Fixed height"
+msgstr ""
+
+#: ../inc/custom-fields-row.php:62
+msgid ""
+"If enabled, the height of this row will match the window height. Use the "
+"settings below for further control."
+msgstr ""
+
+#: ../inc/custom-fields-row.php:66
+msgid "Minimum height (Fixed height)"
+msgstr ""
+
+#: ../inc/custom-fields-row.php:69
+msgid "Minimum height of the row when using fixed height."
+msgstr ""
+
+#: ../inc/custom-fields-row.php:74
+msgid "Maximum height (Fixed height)"
+msgstr ""
+
+#: ../inc/custom-fields-row.php:77
+msgid "Maximum height of the row when using fixed height."
+msgstr ""
+
+#: ../inc/custom-fields-row.php:82
+msgid "Subtract height (Fixed height)"
+msgstr ""
+
+#: ../inc/custom-fields-row.php:85
+msgid "Subtract a fixed amount when using minimum height."
+msgstr ""
+
+#: ../inc/custom-fields-row.php:92
+msgid "Background color opacity"
+msgstr ""
+
+#: ../inc/custom-fields-row.php:95
+msgid ""
+"Sets opacity on background color. Use this to give background images an "
+"overlay."
+msgstr ""
+
+#: ../inc/custom-fields-row.php:101
+msgid "Scroll Button"
+msgstr ""
+
+#: ../inc/custom-fields-row.php:104
+msgid ""
+"If enabled, this row will display a button that scrolls down to the "
+"following row."
+msgstr ""
+
+#: ../inc/custom-fields-row.php:115
+msgid "Fill"
+msgstr ""
+
+#: ../inc/custom-fields-widget.php:19
+msgid "If enabled, the content of this widget will be centered horizontally."
+msgstr ""
+
+#: ../inc/custom-fields-widget.php:24 ../inc/custom-fields-widget.php:32
+msgid "Border radius"
+msgstr ""
+
+#: ../inc/custom-fields-widget.php:27 ../inc/custom-fields-widget.php:35
+msgid "Add rounded corners to this widgets background."
+msgstr ""
+
+#: ../inc/custom-fields-widget.php:40
+msgid "Remove outer margin"
+msgstr ""
+
+#: ../inc/custom-fields-widget.php:43
+msgid "Remove margin for the side facing the window border."
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-accordion-widget/secondthought-
+#: accordion-widget.php:15
+msgid "Inzite Accordion Widget"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-accordion-widget/secondthought-
+#: accordion-widget.php:17
+msgid "A simple accordion widget."
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-accordion-widget/secondthought-
+#: accordion-widget.php:23
+msgid "Overskrift"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-accordion-widget/secondthought-
+#: accordion-widget.php:27
+msgid "Accordion Tabs"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-accordion-widget/secondthought-
+#: accordion-widget.php:28
+msgid "Accordion Tab"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-accordion-widget/secondthought-
+#: accordion-widget.php:37 ../secondthought-widgets/secondthought-image-button-
+#: widget/secondthought-image-button-widget.php:30 ../secondthought-
+#: widgets/secondthought-tabs-widget/secondthought-tabs-widget.php:33
+msgid "Label"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-accordion-widget/secondthought-
+#: accordion-widget.php:41 ../secondthought-widgets/secondthought-tabs-
+#: widget/secondthought-tabs-widget.php:37
+msgid "Content"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-device-widget/secondthought-device-
+#: widget.php:15
+msgid "Inzite Device Widget"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-device-widget/secondthought-device-
+#: widget.php:17 ../secondthought-widgets/secondthought-image-button-
+#: widget/secondthought-image-button-widget.php:17
+msgid "A simple device widget."
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-device-widget/secondthought-device-
+#: widget.php:23
+msgid "Large Desktop"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-device-widget/secondthought-device-
+#: widget.php:24 ../secondthought-widgets/secondthought-device-
+#: widget/secondthought-device-widget.php:31 ../secondthought-
+#: widgets/secondthought-device-widget/secondthought-device-widget.php:38 ..
+#: /secondthought-widgets/secondthought-device-widget/secondthought-device-widget.
+#: php:45 ../secondthought-widgets/secondthought-device-widget/secondthought-
+#: device-widget.php:52 ../secondthought-widgets/secondthought-device-
+#: widget/secondthought-device-widget.php:59 ../secondthought-
+#: widgets/secondthought-feature-widget/secondthought-feature-widget.php:48 ..
+#: /secondthought-widgets/secondthought-image-button-widget/secondthought-image-
+#: button-widget.php:24 ../secondthought-widgets/secondthought-slider-
+#: widget/secondthought-slider-widget.php:54
+msgid "Choose image"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-device-widget/secondthought-device-
+#: widget.php:25 ../secondthought-widgets/secondthought-device-
+#: widget/secondthought-device-widget.php:32 ../secondthought-
+#: widgets/secondthought-device-widget/secondthought-device-widget.php:39 ..
+#: /secondthought-widgets/secondthought-device-widget/secondthought-device-widget.
+#: php:46 ../secondthought-widgets/secondthought-device-widget/secondthought-
+#: device-widget.php:53 ../secondthought-widgets/secondthought-device-
+#: widget/secondthought-device-widget.php:60 ../secondthought-
+#: widgets/secondthought-feature-widget/secondthought-feature-widget.php:49 ..
+#: /secondthought-widgets/secondthought-image-button-widget/secondthought-image-
+#: button-widget.php:25 ../secondthought-widgets/secondthought-slider-
+#: widget/secondthought-slider-widget.php:55
+msgid "Set image"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-device-widget/secondthought-device-
+#: widget.php:30
+msgid "Small Desktop"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-device-widget/secondthought-device-
+#: widget.php:37
+msgid "Tablet (Portrait)"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-device-widget/secondthought-device-
+#: widget.php:44
+msgid "Tablet (Landscape)"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-device-widget/secondthought-device-
+#: widget.php:51
+msgid "Mobile (Portrait)"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-device-widget/secondthought-device-
+#: widget.php:58
+msgid "Mobile (Landscape)"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-feature-widget/secondthought-feature-
+#: widget.php:15
+msgid "Inzite Feature Widget"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-feature-widget/secondthought-feature-
+#: widget.php:17
+msgid "A simple feature widget."
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-feature-widget/secondthought-feature-
+#: widget.php:23
+msgid "Header Text"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-feature-widget/secondthought-feature-
+#: widget.php:28
+msgid "Caption Text"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-feature-widget/secondthought-feature-
+#: widget.php:33 ../secondthought-widgets/secondthought-image-button-
+#: widget/secondthought-image-button-widget.php:35
+msgid "Link"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-feature-widget/secondthought-feature-
+#: widget.php:38
+msgid "Text placement"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-feature-widget/secondthought-feature-
+#: widget.php:41
+msgid "Above image"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-feature-widget/secondthought-feature-
+#: widget.php:42
+msgid "Below image"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-feature-widget/secondthought-feature-
+#: widget.php:47 ../secondthought-widgets/secondthought-image-button-
+#: widget/secondthought-image-button-widget.php:23
+msgid "Image"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-image-button-widget/secondthought-image-
+#: button-widget.php:15
+msgid "Inzite Image Button"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-image-button-widget/secondthought-image-
+#: button-widget.php:40
+msgid "Overlay transparency"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-image-button-widget/secondthought-image-
+#: button-widget.php:45
+msgid "Button Height (In pixels)"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:15
+msgid "Inzite Slider Widget"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:17
+msgid "A simple slider widget."
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:25
+msgid "Slides."
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:26
+msgid "Slide"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:35
+msgid "Slide header"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:39
+msgid "Caption"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:53
+msgid "Choose a background image"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:60
+msgid "Background Color Settings"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:65
+msgid "Background Color Type"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:68
+msgid "Caption Background"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:69
+msgid "Slide Overlay"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:70
+msgid "No Background Color"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:75
+msgid "Background Color"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:80
+msgid "Background Color Opacity (%)"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:85
+msgid "Background border radius (px)"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:94
+msgid "Slide Layout Settings"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:99
+msgid "Slide Height"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:104
+msgid "Header Color"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:109
+msgid "Caption Color"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:114
+msgid "Background Size"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:117
+msgid "Cover"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:118 ../secondthought-widgets/secondthought-slider-
+#: widget/secondthought-slider-widget.php:128 ../secondthought-
+#: widgets/secondthought-slider-widget/secondthought-slider-widget.php:146
+msgid "Center"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:119
+msgid "Contain"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:124
+msgid "Background Position"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:127 ../secondthought-widgets/secondthought-slider-
+#: widget/secondthought-slider-widget.php:145
+msgid "Top"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:129 ../secondthought-widgets/secondthought-slider-
+#: widget/secondthought-slider-widget.php:147
+msgid "Bottom"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:134
+msgid "Caption Width"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:142
+msgid "Caption Alignment"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:154
+msgid "Slide Animation Settings"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:159
+msgid "Autoplay"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:164
+msgid "Fade animation"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:169
+msgid "Autoplay Speed (ms)"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:178
+msgid "Animation Speed (ms)"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:188
+msgid "Dots"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:193
+msgid "Active Color"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:198
+msgid "Passive Color"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:203
+msgid "Dot Spacing"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:208
+msgid "Dot Size"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:213
+msgid "Dot vertical position"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:220
+msgid "Arrows"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:225
+msgid "Show Arrows"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:230
+msgid "Right Arrow Appearence"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:235
+msgid "Left Arrow Appearence"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:240
+msgid "Arrow Size"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-slider-widget/secondthought-slider-
+#: widget.php:245
+msgid "Arrow Indentation"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-tabs-widget/secondthought-tabs-widget.
+#: php:15
+msgid "Inzite Tabs Widget"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-tabs-widget/secondthought-tabs-widget.
+#: php:17
+msgid "A simple tabs widget."
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-tabs-widget/secondthought-tabs-widget.
+#: php:23
+msgid "Tabs"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-tabs-widget/secondthought-tabs-widget.
+#: php:24
+msgid "Tab"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/secondthought-twitter-
+#: widget.php:15
+msgid "Inzite Twitter Widget"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/secondthought-twitter-
+#: widget.php:17
+msgid "A simple twitter widget."
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/secondthought-twitter-
+#: widget.php:23
+msgid "Title"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/secondthought-twitter-
+#: widget.php:28
+msgid "Twitter username (Without @)"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/secondthought-twitter-
+#: widget.php:33
+msgid "Number of tweets to display"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/secondthought-twitter-
+#: widget.php:38
+msgid "OAuth Access Token"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/secondthought-twitter-
+#: widget.php:43
+msgid "OAuth Access Token Secret"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/secondthought-twitter-
+#: widget.php:48
+msgid "Consumer Key"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/secondthought-twitter-
+#: widget.php:53
+msgid "Consumer Secret"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/tpl/secondthought-
+#: twitter-widget-template.php:55
+msgid "right now"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/tpl/secondthought-
+#: twitter-widget-template.php:60
+msgid "seconds ago"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/tpl/secondthought-
+#: twitter-widget-template.php:65
+msgid "about 1 minute ago"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/tpl/secondthought-
+#: twitter-widget-template.php:70
+msgid "minutes ago"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/tpl/secondthought-
+#: twitter-widget-template.php:75
+msgid "about 1 hour ago"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/tpl/secondthought-
+#: twitter-widget-template.php:80
+msgid "hours ago"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/tpl/secondthought-
+#: twitter-widget-template.php:85
+msgid "yesterday"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/tpl/secondthought-
+#: twitter-widget-template.php:90
+msgid "days ago"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/tpl/secondthought-
+#: twitter-widget-template.php:94
+msgid "over a year ago"
+msgstr ""
+
+#: ../secondthought-widgets/secondthought-twitter-widget/tpl/secondthought-
+#: twitter-widget-template.php:128
+msgid "Error fetching feeds. Please verify the Twitter settings in the widget."
+msgstr ""

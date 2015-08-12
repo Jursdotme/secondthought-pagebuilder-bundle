@@ -12,41 +12,41 @@ class secondthought_feature_widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'secondthought-feature-widget',
-			__('Inzite Feature Widget', 'hello-world-widget-text-domain'),
+			__('Inzite Feature Widget', 'secondthought_pagebuilder_bundle'),
 			array(
-				'description' => __('A simple feature widget.', 'hello-world-widget-text-domain'),
+				'description' => __('A simple feature widget.', 'secondthought_pagebuilder_bundle'),
 			),
 			array(),
 			array(
 				'header_text' => array(
 	        'type' => 'text',
-	        'label' => __('Header Text', 'widget-form-fields-text-domain'),
+	        'label' => __('Header Text', 'secondthought_pagebuilder_bundle'),
 	        'default' => ''
 		    ),
 				'label_text' => array(
 	        'type' => 'text',
-	        'label' => __('Caption Text', 'widget-form-fields-text-domain'),
+	        'label' => __('Caption Text', 'secondthought_pagebuilder_bundle'),
 	        'default' => ''
 		    ),
 				'link' => array(
 	        'type' => 'link',
-	        'label' => __('Link', 'widget-form-fields-text-domain'),
+	        'label' => __('Link', 'secondthought_pagebuilder_bundle'),
 	        'default' => ''
 		    ),
 				'text_placement' => array(
 	        'type' => 'radio',
-	        'label' => __( 'Text placement', 'widget-form-fields-text-domain' ),
+	        'label' => __( 'Text placement', 'secondthought_pagebuilder_bundle' ),
 	        'default' => 'below',
 	        'options' => array(
-            'above' => __( 'Above image', 'widget-form-fields-text-domain' ),
-            'below' => __( 'Below image', 'widget-form-fields-text-domain' ),
+            'above' => __( 'Above image', 'secondthought_pagebuilder_bundle' ),
+            'below' => __( 'Below image', 'secondthought_pagebuilder_bundle' ),
 	        )
 		    ),
 				'image' => array(
 		        'type' => 'media',
-		        'label' => __( 'Image', 'widget-form-fields-text-domain' ),
-		        'choose' => __( 'Choose image', 'widget-form-fields-text-domain' ),
-		        'update' => __( 'Set image', 'widget-form-fields-text-domain' ),
+		        'label' => __( 'Image', 'secondthought_pagebuilder_bundle' ),
+		        'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
+		        'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
 		        'library' => 'image'
 		    )
 			),

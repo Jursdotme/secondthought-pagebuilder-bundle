@@ -12,52 +12,52 @@ class secondthought_device_widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'secondthought-device-widget',
-			__('Inzite Device Widget', 'hello-world-widget-text-domain'),
+			__('Inzite Device Widget', 'secondthought_pagebuilder_bundle'),
 			array(
-				'description' => __('A simple device widget.', 'hello-world-widget-text-domain'),
+				'description' => __('A simple device widget.', 'secondthought_pagebuilder_bundle'),
 			),
 			array(),
 			array(
 				'image_lg_desktop' => array(
 		        'type' => 'media',
-		        'label' => __( 'Large Desktop', 'widget-form-fields-text-domain' ),
-		        'choose' => __( 'Choose image', 'widget-form-fields-text-domain' ),
-		        'update' => __( 'Set image', 'widget-form-fields-text-domain' ),
+		        'label' => __( 'Large Desktop', 'secondthought_pagebuilder_bundle' ),
+		        'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
+		        'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
 		        'library' => 'image'
 		    ),
 				'image_sm_desktop' => array(
 		        'type' => 'media',
-		        'label' => __( 'Small Desktop', 'widget-form-fields-text-domain' ),
-		        'choose' => __( 'Choose image', 'widget-form-fields-text-domain' ),
-		        'update' => __( 'Set image', 'widget-form-fields-text-domain' ),
+		        'label' => __( 'Small Desktop', 'secondthought_pagebuilder_bundle' ),
+		        'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
+		        'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
 		        'library' => 'image'
 		    ),
 				'image_tablet_portrait' => array(
 		        'type' => 'media',
-		        'label' => __( 'Tablet (Portrait)', 'widget-form-fields-text-domain' ),
-		        'choose' => __( 'Choose image', 'widget-form-fields-text-domain' ),
-		        'update' => __( 'Set image', 'widget-form-fields-text-domain' ),
+		        'label' => __( 'Tablet (Portrait)', 'secondthought_pagebuilder_bundle' ),
+		        'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
+		        'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
 		        'library' => 'image'
 		    ),
 				'image_tablet_landscape' => array(
 		        'type' => 'media',
-		        'label' => __( 'Tablet (Landscape)', 'widget-form-fields-text-domain' ),
-		        'choose' => __( 'Choose image', 'widget-form-fields-text-domain' ),
-		        'update' => __( 'Set image', 'widget-form-fields-text-domain' ),
+		        'label' => __( 'Tablet (Landscape)', 'secondthought_pagebuilder_bundle' ),
+		        'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
+		        'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
 		        'library' => 'image'
 		    ),
 				'image_mobile_portrait' => array(
 		        'type' => 'media',
-		        'label' => __( 'Mobile (Portrait)', 'widget-form-fields-text-domain' ),
-		        'choose' => __( 'Choose image', 'widget-form-fields-text-domain' ),
-		        'update' => __( 'Set image', 'widget-form-fields-text-domain' ),
+		        'label' => __( 'Mobile (Portrait)', 'secondthought_pagebuilder_bundle' ),
+		        'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
+		        'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
 		        'library' => 'image'
 		    ),
 				'image_mobile_landscape' => array(
 		        'type' => 'media',
-		        'label' => __( 'Mobile (Landscape)', 'widget-form-fields-text-domain' ),
-		        'choose' => __( 'Choose image', 'widget-form-fields-text-domain' ),
-		        'update' => __( 'Set image', 'widget-form-fields-text-domain' ),
+		        'label' => __( 'Mobile (Landscape)', 'secondthought_pagebuilder_bundle' ),
+		        'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
+		        'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
 		        'library' => 'image'
 		    )
 			),

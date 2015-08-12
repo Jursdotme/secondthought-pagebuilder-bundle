@@ -5,12 +5,12 @@
 
 function row_style_groups($groups) {
   $groups['background'] = array(
-			'name' => __('Background', 'siteorigin-panels'),
+			'name' => __('Background', 'secondthought_pagebuilder_bundle'),
 			'priority' => 20
   );
 
   $groups['height'] = array(
-			'name' => __('Height', 'siteorigin-panels'),
+			'name' => __('Height', 'secondthought_pagebuilder_bundle'),
 			'priority' => 20
   );
 
@@ -29,79 +29,79 @@ add_filter( 'siteorigin_panels_row_style_groups', 'row_style_groups' );
 
     // PARALLAX
     $fields['parallax'] = array(
-        'name'        => __('Parallax', 'siteorigin-panels'),
+        'name'        => __('Parallax', 'secondthought_pagebuilder_bundle'),
         'type'        => 'checkbox',
         'group'       => 'background',
-        'description' => __('If enabled, the background image will have a parallax effect.', 'siteorigin-panels'),
+        'description' => __('If enabled, the background image will have a parallax effect.', 'secondthought_pagebuilder_bundle'),
         'priority'    => 11,
     );
 
     // CENTER CONTENT
     $fields['center-content'] = array(
-        'name'        => __('Center content', 'siteorigin-panels'),
+        'name'        => __('Center content', 'secondthought_pagebuilder_bundle'),
         'type'        => 'checkbox',
         'group'       => 'layout',
-        'description' => __('If enabled, the content of this row will be centered horizontally (only works with a single cell).', 'siteorigin-panels'),
+        'description' => __('If enabled, the content of this row will be centered horizontally (only works with a single cell).', 'secondthought_pagebuilder_bundle'),
         'priority'    => 11,
     );
 
     // MATCH HEIGHT
     $fields['matchheight'] = array(
-        'name'        => __('Match height on cells', 'siteorigin-panels'),
+        'name'        => __('Match height on cells', 'secondthought_pagebuilder_bundle'),
         'type'        => 'checkbox',
         'group'       => 'height',
-        'description' => __('If enabled, the cells in this row will get matching heights automatically', 'siteorigin-panels'),
+        'description' => __('If enabled, the cells in this row will get matching heights automatically', 'secondthought_pagebuilder_bundle'),
         'priority'    => 11,
     );
 
     // FILL HEIGHT
     $fields['fillheight'] = array(
-        'name'        => __('Fixed height', 'siteorigin-panels'),
+        'name'        => __('Fixed height', 'secondthought_pagebuilder_bundle'),
         'type'        => 'checkbox',
         'group'       => 'height',
-        'description' => __('If enabled, the height of this row will match the window height. Use the settings below for further control.', 'siteorigin-panels'),
+        'description' => __('If enabled, the height of this row will match the window height. Use the settings below for further control.', 'secondthought_pagebuilder_bundle'),
         'priority'    => 12,
     );
     $fields['heightMin'] = array(
-			'name' => __('Minimum height (Fixed height)', 'siteorigin-panels'),
+			'name' => __('Minimum height (Fixed height)', 'secondthought_pagebuilder_bundle'),
 			'type' => 'measurement',
 			'group' => 'height',
-			'description' => __('Minimum height of the row when using fixed height.', 'siteorigin-panels'),
+			'description' => __('Minimum height of the row when using fixed height.', 'secondthought_pagebuilder_bundle'),
 			'priority' => 13,
 			'multiple' => false
 		);
     $fields['heightMax'] = array(
-			'name' => __('Maximum height (Fixed height)', 'siteorigin-panels'),
+			'name' => __('Maximum height (Fixed height)', 'secondthought_pagebuilder_bundle'),
 			'type' => 'measurement',
 			'group' => 'height',
-			'description' => __('Maximum height of the row when using fixed height.', 'siteorigin-panels'),
+			'description' => __('Maximum height of the row when using fixed height.', 'secondthought_pagebuilder_bundle'),
 			'priority' => 13,
 			'multiple' => false
 		);
     $fields['subtractheight'] = array(
-			'name' => __('Subtract height (Fixed height)', 'siteorigin-panels'),
+			'name' => __('Subtract height (Fixed height)', 'secondthought_pagebuilder_bundle'),
 			'type' => 'measurement',
 			'group' => 'height',
-			'description' => __('Subtract a fixed amount when using minimum height.', 'siteorigin-panels'),
+			'description' => __('Subtract a fixed amount when using minimum height.', 'secondthought_pagebuilder_bundle'),
 			'priority' => 13,
 			'multiple' => false
 		);
 
     // BACKGROUND OPACITY
     $fields['backgroundOpacity'] = array(
-			'name' => __('Background color opacity', 'siteorigin-panels'),
+			'name' => __('Background color opacity', 'secondthought_pagebuilder_bundle'),
 			'type' => 'text',
 			'group' => 'background',
-			'description' => __('Sets opacity on background color. Use this to give background images an overlay.', 'siteorigin-panels'),
+			'description' => __('Sets opacity on background color. Use this to give background images an overlay.', 'secondthought_pagebuilder_bundle'),
 			'priority' => 11,
 		);
 
     // "SCROLL TO NEXT ROW" BUTTON
     $fields['scrollToRowButton'] = array(
-        'name'        => __('Scroll Button', 'siteorigin-panels'),
+        'name'        => __('Scroll Button', 'secondthought_pagebuilder_bundle'),
         'type'        => 'checkbox',
         'group'       => 'layout',
-        'description' => __('If enabled, this row will display a button that scrolls down to the following row.', 'siteorigin-panels'),
+        'description' => __('If enabled, this row will display a button that scrolls down to the following row.', 'secondthought_pagebuilder_bundle'),
         'priority'    => 12,
     );
 
@@ -112,7 +112,7 @@ add_filter( 'siteorigin_panels_row_style_groups', 'row_style_groups' );
     $fields['background_image_attachment']['group'] = 'background';
 
     $fields['background_display']['group'] = 'background';
-    $fields['background_display']['options']['contain'] = __('Fill', 'siteorigin-panels');
+    $fields['background_display']['options']['contain'] = __('Fill', 'secondthought_pagebuilder_bundle');
 
 
 

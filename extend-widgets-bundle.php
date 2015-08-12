@@ -3,13 +3,22 @@
 /*
 Plugin Name: Secondthought Widget Pack
 Description: A bundle of additional widgets and functions used with Secondthought theme framework and Sit Origin Pagebuilder.
-Version: 1.5.2
+Version: 1.6.0
 Author: Rasmus Jürs
 Author URI: http://jurs.me
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
-GitHub Plugin URI: https://github.com/Jursdotme/secondthought-pagebuilder-bundle
+GitHub Plugin URI: https://github.com/Jursdotme/secondthought_pagebuilder_bundle
 */
+
+/**
+ * Initialize the language files
+ */
+function secondthought_widget_bundle_init_lang(){
+	load_plugin_textdomain('secondthought_pagebuilder_bundle', false, dirname( plugin_basename( __FILE__ ) ). '/lang/');
+}
+add_action('plugins_loaded', 'secondthought_widget_bundle_init_lang');
+
 
 // All the custom fields
 require_once plugin_dir_path(__FILE__) . 'inc/custom-fields-row.php';
