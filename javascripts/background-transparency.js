@@ -2,7 +2,7 @@
 $(document).ready(function(){
   var transparentElement = $('[data-bg-opacity]');
 
-  console.log(transparentElement);
+  // console.log(transparentElement);
 
   transparentElement.each(function(){
 

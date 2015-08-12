@@ -11,7 +11,7 @@ $(document).ready(function(){
     var instanceMinHeight = $this.data('minheight');
     var instanceMaxHeight = $this.data('maxheight');
 
-    console.log(instanceSubtract);
+    // console.log(instanceSubtract);
     $this.Fillerup({
       subtract: parseInt(instanceSubtract),
       minHeight: parseInt(instanceMinHeight),

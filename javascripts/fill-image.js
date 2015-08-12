@@ -55,8 +55,8 @@ $(document).ready(function() {
 
         var leftSpace = $$.closest('.so-panel').offset().left - fullContainer.offset().left;
         var rightSpace = fullContainer.outerWidth() - leftSpace - $$.parent().outerWidth();
-        console.log(fullContainer.offset().left);
-        console.log(leftSpace);
+        // console.log(fullContainer.offset().left);
+        // console.log(leftSpace);
 
         if ($$.closest('.panel-grid-cell').is(':first-child')) {
           $$.css({
