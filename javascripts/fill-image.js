@@ -44,7 +44,7 @@ $(document).ready(function() {
   });
 
 
-  var fullContainer = $( panelsStyles.fullContainer );
+  var fullContainer = $('body');
     if( fullContainer.length === 0 ) {
         fullContainer = $('body');
     }
