@@ -108,10 +108,24 @@ $slideHeight = $instance['layout']['slide_height'];
 		<div class="slide" style="height: 100%;<?php echo 'background-image: url('.$background_image[0].');' ?> background-size: <?php echo  $backgroundSize; ?>; background-position: <?php echo $backgroundPosition; ?>; <?php if($bgColorType == 'slide_overlay') { echo 'background-color:' . $bgRgbaValue . ';';} ?> " >
 			<div class="slide_inner">
 				<div class="slide_content" style="margin: 0 auto; max-width: <?php echo $captionWidth; ?>; text-align: <?php echo $captionAlign; ?>; background-color: <?php if($bgColorType == 'caption_bg'){ echo $bgRgbaValue;} ?>; <?php echo 'border-radius:'.$bgBorderRadius.'px;'; ?>">
-					<h1 style="color: <?php echo $headerColor; ?>;"><?php echo $slide['slide_header']; ?></h1>
-					<p style="color: <?php echo $captionColor; ?>;">
-						<?php echo $slide['slide_caption']; ?>
-					</p>
+					<?php if ($slide['slide_wysiwyg']) { ?>
+						<?php echo $slide['slide_wysiwyg']; ?>
+					<?php } ?>
+
+					<?php // DEPRICATED ?>
+					
+					<?php if ($slide['slide_header']) { ?>
+						<h1 style="color: <?php echo $headerColor; ?>;"><?php echo $slide['slide_header']; ?></h1>
+					<?php } ?>
+
+					<?php if ($slide['slide_caption']) { ?>
+						<p style="color: <?php echo $captionColor; ?>;">
+							<?php echo $slide['slide_caption']; ?>
+						</p>
+					<?php } ?>
+
+					<?php // END DEPRICATED ?>
+
 				</div>
 			</div>
 		</div>

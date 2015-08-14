@@ -34,7 +34,7 @@ class Secondthought_slider_widget extends SiteOrigin_Widget {
               'type' => 'text',
               'label' => __( 'Slide header', 'secondthought_pagebuilder_bundle' )
             ),
-						'slide_caption' => array(
+						'slide_wysiwyg' => array(
 							'type' => 'tinymce',
 							'label' => __( 'Caption', 'secondthought_pagebuilder_bundle' ),
 							'default' => '',
