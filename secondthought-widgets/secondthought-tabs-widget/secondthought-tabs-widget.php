@@ -15,6 +15,8 @@ class secondthought_tabs_widget extends SiteOrigin_Widget {
 			__('Inzite Tabs Widget', 'secondthought_pagebuilder_bundle'),
 			array(
 				'description' => __('A simple tabs widget.', 'secondthought_pagebuilder_bundle'),
+				'panels_icon' => 'dashicons dashicons-heart',
+				'panels_groups' => array('inzite')
 			),
 			array(),
 			array(

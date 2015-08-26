@@ -3,7 +3,7 @@
 /*
 Plugin Name: Secondthought Widget Pack
 Description: A bundle of additional widgets and functions used with Secondthought theme framework and Sit Origin Pagebuilder.
-Version: 1.8.0
+Version: 1.8.1
 Author: Rasmus Jürs
 Author URI: http://jurs.me
 License: GPL3
@@ -57,3 +57,17 @@ function secondthought_addons_header_scripts()
 }
 
 add_action('init', 'secondthought_addons_header_scripts'); // Add Custom Scripts to wp_head
+
+//pannel Group
+
+function inzite_group($tabs) {
+    $tabs[] = array(
+        'title' => __('Inzite Widgets', 'inzite'),
+        'filter' => array(
+            'groups' => array('inzite')
+        )
+    );
+
+    return $tabs;
+}
+add_filter('siteorigin_panels_widget_dialog_tabs', 'inzite_group', 20);

@@ -15,6 +15,8 @@ class Secondthought_slider_widget_2 extends SiteOrigin_Widget {
 			__('Inzite Slider Widget v2', 'secondthought_pagebuilder_bundle'),
 			array(
 				'description' => __('A simple slider widget.', 'secondthought_pagebuilder_bundle'),
+				'panels_icon' => 'dashicons dashicons-heart',
+				'panels_groups' => array('inzite')
 			),
 			array(
 

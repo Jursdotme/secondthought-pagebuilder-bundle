@@ -15,6 +15,8 @@ class secondthought_feature_widget extends SiteOrigin_Widget {
 			__('Inzite Feature Widget', 'secondthought_pagebuilder_bundle'),
 			array(
 				'description' => __('A simple feature widget.', 'secondthought_pagebuilder_bundle'),
+				'panels_icon' => 'dashicons dashicons-heart',
+				'panels_groups' => array('inzite')
 			),
 			array(),
 			array(
