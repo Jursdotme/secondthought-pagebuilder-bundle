@@ -1,0 +1,54 @@
+.so-widget-inzite-slider-2-widget,
+.widget_inzite-slider-2-widget {
+  height: 100%;
+}
+
+.secondthought-slider-2 {
+  height: 100%;
+  .slick-track,
+  .slick-list {
+    height: 100%;
+  }
+  .slide {
+    position: relative;
+    z-index: -1;
+
+    background-size: cover;
+    background-position: center;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: inherit;
+      z-index: -1;
+    }
+
+    .caption {
+      max-width: 1088px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &.middle .caption-inner {
+      margin: 0 auto;
+    }
+
+    &.center .caption {
+      @extend %center-content;
+    }
+
+
+
+    &.bottom .caption {
+      position: absolute;
+      bottom: 0;
+
+    }
+  }
+}
