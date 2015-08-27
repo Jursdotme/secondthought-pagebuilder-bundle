@@ -38,10 +38,10 @@ class secondthought_feature_widget extends SiteOrigin_Widget {
 				'text_placement' => array(
 	        'type' => 'radio',
 	        'label' => __( 'Text placement', 'secondthought_pagebuilder_bundle' ),
-	        'default' => 'below',
+	        'default' => 'text-below-image',
 	        'options' => array(
-            'above' => __( 'Above image', 'secondthought_pagebuilder_bundle' ),
-            'below' => __( 'Below image', 'secondthought_pagebuilder_bundle' ),
+            'text-on-image' => __( 'On image', 'secondthought_pagebuilder_bundle' ),
+            'text-below-image' => __( 'Below image', 'secondthought_pagebuilder_bundle' ),
 	        )
 		    ),
 				'image' => array(

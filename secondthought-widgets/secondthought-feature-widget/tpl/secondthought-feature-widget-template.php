@@ -1,4 +1,4 @@
-<div class="secondthought-feature-item">
+<div class="secondthought-feature-item <?php echo $instance['text_placement']; ?>">
 
   <?php
     // Setup Image data
@@ -8,26 +8,8 @@
   ?>
   <a href="<?php echo sow_esc_url($instance['link']); ?>">
 
-    <?php if ($instance['text_placement'] == "above"): ?>
-
-      <div class="secondthought-feature-caption">
-
-        <?php if ($instance['header_text']): ?>
-          <h4><?php echo $instance['header_text']; ?></h4>
-        <?php endif; ?>
-
-        <?php if ($instance['label_text']): ?>
-          <p><?php echo $instance['label_text']; ?></p>
-        <?php endif; ?>
-
-      </div>
-
-    <?php endif; ?>
-
     <img src="<?php echo $image_attributes[0]; ?>" width="<?php echo $image_attributes[1]; ?>" height="<?php echo $image_attributes[2]; ?>">
 
-    <?php if ($instance['text_placement'] == "below"): ?>
-
       <div class="secondthought-feature-caption">
 
         <?php if ($instance['header_text']): ?>
@@ -39,8 +21,6 @@
         <?php endif; ?>
 
       </div>
-
-    <?php endif; ?>
 
   </a>
 </div>
