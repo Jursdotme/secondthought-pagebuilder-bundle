@@ -14,6 +14,7 @@ $(document).ready(function(){
     var windowsize = $(window).width();
     var containerWidth = $('.caption').closest('.panel-grid').width();
     var initializedSlider = $this.find('.secondthought-slider-2');
+    var sliderHeight = initializedSlider.data('sliderheight');
 
     if (initializedSlider.data('fullwidth')) {
       caption.css('max-width', windowsize);
@@ -45,6 +46,12 @@ $(document).ready(function(){
 
     $this.parent().css('height', '100%');
     $this.find('.panel-widget-style').css('height', '100%');
+
+    if (sliderHeight) {
+      $this.find('.so-widget-secondthought-slider-widget-2').css('height', sliderHeight);
+    } else {
+      $this.find('.so-widget-secondthought-slider-widget-2').css('height', '100%');
+    }
 
 
   });

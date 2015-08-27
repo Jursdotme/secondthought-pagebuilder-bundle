@@ -48,7 +48,7 @@ if (!$instance['background_color'] || $instance['background_transparency'] == '0
 
 ?>
 
-<div class="secondthought-slider-2" data-padding="<?php echo $instance['caption_padding']; ?>" <?php if ($instance['fill_screen']) {	echo 'data-fullwidth="true"'; } if ($instance['full_height']) {	echo 'data-fullheight="true"'; } ?> style="height: <?php echo $instance['minimum_height']; ?>px;">
+<div class="secondthought-slider-2" data-padding="<?php echo $instance['caption_padding']; ?>" <?php if ($instance['fill_screen']) {	echo 'data-fullwidth="true"'; } if ($instance['full_height']) {	echo 'data-fullheight="true"'; } ?> data-sliderheight="<?php echo $instance["minimum_height"]; ?>">
 
 <?php foreach($instance['slider_2_repeater'] as $slide) { ?>
 
