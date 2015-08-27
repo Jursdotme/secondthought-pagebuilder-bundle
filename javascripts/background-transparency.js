@@ -6,7 +6,7 @@ $(document).ready(function(){
 
   transparentElement.each(function(){
 
-    $this = $(this)
+    $this = $(this);
 
     var bgColor = $this.css('background-color');
 

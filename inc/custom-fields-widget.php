@@ -53,6 +53,15 @@
 			'priority' => 7,
 		);
 
+    // BACKGROUND OPACITY
+    $fields['backgroundOpacity'] = array(
+			'name' => __('Background color opacity', 'secondthought_pagebuilder_bundle'),
+			'type' => 'text',
+			'group' => 'design',
+			'description' => __('Sets opacity on background color. Use this to give background images an overlay.', 'secondthought_pagebuilder_bundle'),
+			'priority' => 11,
+		);
+
     unset($fields['border_color']);
 
     return $fields;
@@ -85,6 +94,11 @@
 
       if( !empty( $args['box-shadow'] ) ) {
           array_push($attributes['class'], 'mdl-shadow--'.esc_attr($args['box-shadow']));
+      }
+
+      if( !empty( $args['backgroundOpacity'] ) ) {
+          $attributes['data-bg-opacity'] = $args['backgroundOpacity'];
+          array_push($attributes['class'], 'color-overlay');
       }
 
 
