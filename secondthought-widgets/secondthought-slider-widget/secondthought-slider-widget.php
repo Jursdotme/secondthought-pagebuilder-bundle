@@ -151,7 +151,7 @@ class Secondthought_slider_widget extends SiteOrigin_Widget {
 				    ),
 	        )
 		    ),
-				'animation' => array(
+			'animation' => array(
 	        'type' => 'section',
 	        'label' => __( 'Slide Animation Settings' , 'secondthought_pagebuilder_bundle' ),
 	        'hide' => true,

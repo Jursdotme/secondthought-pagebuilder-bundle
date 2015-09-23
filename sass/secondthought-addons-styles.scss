@@ -1,7 +1,7 @@
 
 
-@import '../../../themes/secondthought/sass/../bower_components/bourbon/app/assets/stylesheets/bourbon';
-@import '../../../themes/secondthought/sass/base/grid-settings';
+@import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import '../../../themes/danskehavne/sass/base/grid-settings';
 
 
 // Center content
@@ -24,8 +24,8 @@
   }
 }
 
-@import '../../../themes/secondthought/sass/base/variables';
-@import '../../../themes/secondthought/sass/base/mixins';
+@import '../../../themes/danskehavne/sass/base/variables';
+@import '../../../themes/danskehavne/sass/base/mixins';
 
 @import '../secondthought-widgets/secondthought-feature-widget/styles/secondthought-feature-widget-style';
 @import '../secondthought-widgets/secondthought-slider-widget/styles/secondthought-slider-widget-style';
