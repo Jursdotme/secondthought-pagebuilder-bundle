@@ -101,8 +101,8 @@ $arrowIndent = $instance['arrows']['arrow_indent'];
 
 	<div class="slide <?php echo $instance['horizontal_align_radio']; ?> <?php echo $instance['vertical_align_radio']; ?>" style="height: 100%; background-image: url('<?php echo $background_image[0]?>');<?php// if ($instance['full_height']) { echo $backgroundColor; } ?> ">
 		<?php if ($slide['tinymce_editor']) { ?>
-			<div class="caption" style="<?php if ($instance['fill_screen'] && !$instance['full_height']) { echo $backgroundColor; } ?>">
-				<div class="caption-inner" style="<?php if (!$instance['fill_screen'] && $instance['full_height']) { echo $backgroundColor; } ?> padding: <?php echo $instance['caption_padding']; ?>px; <?php if ($instance['full_height']) { echo 'height:100%;'; } ?> width: <?php echo $instance['content_width']; ?>%; float: <?php echo $instance['horizontal_align_radio']; ?>;">
+			<div class="caption" style="<?php if ($instance['fill_screen']) { echo $backgroundColor; } ?>">
+				<div class="caption-inner" style="<?php if (!$instance['fill_screen']) { echo $backgroundColor; } ?> padding: <?php echo $instance['caption_padding']; ?>px; <?php if ($instance['full_height']) { echo 'height:100%;'; } ?> width: <?php echo $instance['content_width']; ?>%; float: <?php echo $instance['horizontal_align_radio']; ?>;">
 					<?php echo $slide['tinymce_editor']; ?>
 				</div>
 			</div>
