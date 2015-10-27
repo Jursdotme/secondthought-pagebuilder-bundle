@@ -3,7 +3,7 @@
 /*
 Plugin Name: Secondthought Widget Pack
 Description: A bundle of additional widgets and functions used with Secondthought theme framework and Sit Origin Pagebuilder.
-Version: 1.9.1
+Version: 1.9.2
 Author: Rasmus Jürs / Johnnie Bertelsen
 Author URI: http://jurs.me
 License: GPL3

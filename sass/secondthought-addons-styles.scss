@@ -1,7 +1,10 @@
 
-
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
-@import '../../../themes/danskehavne/sass/base/grid-settings';
+@import '../../../themes/secondthought/sass/base/helpers';
+@import '../../../themes/secondthought/sass/base/variables';
+@import '../bower_components/neat/app/assets/stylesheets/neat';
+@import '../bower_components/neat/app/assets/stylesheets/neat-helpers';
+@import '../../../themes/secondthought/sass/base/grid-settings';
 
 
 // Center content
@@ -13,7 +16,6 @@
 }
 
 .center-content > div {
-
   @include media($sm-up) {
     position: relative;
     top: 50%;
@@ -24,8 +26,7 @@
   }
 }
 
-@import '../../../themes/danskehavne/sass/base/variables';
-@import '../../../themes/danskehavne/sass/base/mixins';
+@import '../../../themes/secondthought/sass/base/mixins';
 
 @import '../secondthought-widgets/secondthought-feature-widget/styles/secondthought-feature-widget-style';
 @import '../secondthought-widgets/secondthought-slider-widget/styles/secondthought-slider-widget-style';
@@ -33,7 +34,6 @@
 @import '../secondthought-widgets/secondthought-tabs-widget/styles/secondthought-tabs-widget-style';
 @import '../secondthought-widgets/secondthought-accordion-widget/styles/secondthought-accordion-widget-style.scss';
 @import '../secondthought-widgets/secondthought-device-widget/styles/secondthought-device-widget-style.scss';
-@import '../secondthought-widgets/secondthought-image-button-widget/styles/secondthought-image-button-widget-style.scss';
 
 body:after {
   position: absolute;

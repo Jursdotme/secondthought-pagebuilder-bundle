@@ -1,5 +1,5 @@
 var calculateImageHeight = function(imageDiv){
-    imageDiv.css('height', 0)
+    imageDiv.css('height', 0);
     parentHeight = imageDiv.closest('.panel-row-style').outerHeight();
     parentWidth = imageDiv.closest('.so-panel').outerWidth();
 
@@ -12,17 +12,17 @@ var calculateImageHeight = function(imageDiv){
       imageDiv
         .css('height', parentHeight+"px")
         .css('width', calculatedWidth+"px")
-        .css('margin-left', addedMargin*-1)
+        .css('margin-left', addedMargin*-1);
     } else {
       imageDiv
         .css('height', parentHeight+"px")
-        .css('width', calculatedWidth+"px")
+        .css('width', calculatedWidth+"px");
     }
     if ($(window).width() < 767) {
       imageDiv.css('width', (imageDiv.parent().outerWidth())+30);
     }
 
-}
+};
 
 var resizeId;
 $(window).resize(function() {
@@ -61,10 +61,12 @@ $(document).ready(function() {
         if ($$.closest('.panel-grid-cell').is(':first-child')) {
           $$.css({
               'margin-left' :-leftSpace,
+              'padding-left' : leftSpace
           });
         } if ($$.closest('.panel-grid-cell').is(':last-child')) {
           $$.css({
               'margin-right' :-rightSpace,
+              'padding-right' : rightSpace
           });
         }
 
