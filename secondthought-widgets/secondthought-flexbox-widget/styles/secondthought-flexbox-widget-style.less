@@ -1,0 +1,68 @@
+// @import "mixins";
+// @import "lesshat";
+
+@st_flex_direction: row;
+@st_flex_wrap: nowrap;
+@st_justify_content: flex-start;
+@st_align_items: flex-start;
+@st_align_content: flex-start;
+
+@st_flex_grow: 0;
+@st_flex_shrink: 1;
+@st_flex_basis: auto;
+@st_align_self: auto;
+@st_max_width: none;
+@st_min_width: none;
+
+// .flexbox-widget {
+//     display: flex;
+//     flex-direction: @st_flex_direction;
+//     flex-wrap: @st_flex_wrap;
+//     justify-content: @st_justify_content;
+//     align-items: @st_align_items;
+//     align-content: @st_align_content;
+// }
+//
+// .flexbox-widget-item {
+//     max-width: none;
+//     flex(@st_flex_grow @st_flex_shrink @st_flex_basis);
+//     align-self: @st_align_self;
+// }
+
+.flexbox-widget {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: @st_flex_direction;
+        -ms-flex-direction: @st_flex_direction;
+            flex-direction: @st_flex_direction;
+    -webkit-flex-wrap: @st_flex_wrap;
+        -ms-flex-wrap: @st_flex_wrap;
+            flex-wrap: @st_flex_wrap;
+    -webkit-box-pack: @st_justify_content;
+    -webkit-justify-content: @st_justify_content;
+        -ms-flex-pack: @st_justify_content;
+            justify-content: @st_justify_content;
+    -webkit-box-align: @st_align_items;
+    -webkit-align-items: @st_align_items;
+        -ms-flex-align: @st_align_items;
+            align-items: @st_align_items;
+    -webkit-align-content: @st_align_content;
+        -ms-flex-line-pack: @st_align_content;
+            align-content: @st_align_content;
+}
+
+.flexbox-widget-item {
+    max-width: @st_max_width;
+    min-width: @st_min_width;
+    -webkit-box-flex: @st_flex_grow;
+    -webkit-flex: @st_flex_grow @st_flex_shrink @st_flex_basis;
+        -ms-flex: @st_flex_grow @st_flex_shrink @st_flex_basis;
+            flex: @st_flex_grow @st_flex_shrink @st_flex_basis;
+    -webkit-align-self: @st_align_self;
+        -ms-flex-item-align: @st_align_self;
+            align-self: @st_align_self;
+}
