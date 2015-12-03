@@ -95,9 +95,11 @@ $arrowIndent = $instance['arrows']['arrow_indent'];
 	data-slider-height="<?php echo $instance["minimum_height"]; ?>"
 >
 
-<?php foreach($instance['slider_2_repeater'] as $slide) { ?>
-
-<?php	$background_image = wp_get_attachment_image_src($slide['background_image'], 'full'); ?>
+<?php
+foreach($instance['slider_2_repeater'] as $slide) {
+	if (!$slide['hide_slide']) {
+	$background_image = wp_get_attachment_image_src($slide['background_image'], 'full');
+	?>
 
 	<div class="slide <?php echo $instance['horizontal_align_radio']; ?> <?php echo $instance['vertical_align_radio']; ?>" style="height: 100%; background-image: url('<?php echo $background_image[0]?>');<?php// if ($instance['full_height']) { echo $backgroundColor; } ?> ">
 		<?php if ($slide['tinymce_editor']) { ?>
@@ -109,6 +111,9 @@ $arrowIndent = $instance['arrows']['arrow_indent'];
 		<?php } ?>
 	</div>
 
-	<?php } ?>
+	<?php
+	}
+}
+?>
 
 </div>

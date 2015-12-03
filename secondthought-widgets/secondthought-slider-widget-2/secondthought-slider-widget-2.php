@@ -54,7 +54,13 @@ class Secondthought_slider_widget_2 extends SiteOrigin_Widget {
 						    'update' => __( 'Set image', 'widget-form-fields-text-domain' ),
 						    'library' => 'image',
 						    'fallback' => true
-						)
+						),
+
+						'hide_slide' => array(
+					        'type' => 'checkbox',
+					        'label' => __( 'Skjul dette slide', 'widget-form-fields-text-domain' ),
+					        'default' => false
+					    )
 			        )
 			    ),
 
