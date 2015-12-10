@@ -105,6 +105,31 @@ add_filter( 'siteorigin_panels_row_style_groups', 'row_style_groups' );
         'priority'    => 12,
     );
 
+    // "SCROLL TO NEXT ROW" TEXT
+    $fields['scrollToRowText'] = array(
+        'name'        => __('Scroll text', 'secondthought_pagebuilder_bundle'),
+        'type'        => 'text',
+        'group'       => 'layout',
+        'description' => __('Scroll text for scroll button', 'secondthought_pagebuilder_bundle'),
+        'priority'    => 13,
+    );
+    // "SCROLL TO NEXT ROW" COLOR
+    $fields['scrollToRowColor'] = array(
+        'name'        => __('Scroll color', 'secondthought_pagebuilder_bundle'),
+        'type'        => 'color',
+        'group'       => 'layout',
+        'description' => __('Color for scroll text and button', 'secondthought_pagebuilder_bundle'),
+        'priority'    => 14,
+    );
+    // "SCROLL TO NEXT ROW" TEXT
+    $fields['scrollToRowIcon'] = array(
+        'name'        => __('Scroll icon', 'secondthought_pagebuilder_bundle'),
+        'type'        => 'text',
+        'group'       => 'layout',
+        'description' => __('Scroll icon for scroll button', 'secondthought_pagebuilder_bundle'),
+        'priority'    => 15,
+    );
+
     /* ========== Change default fields ========== */
 
     $fields['background']['group'] = 'background';
@@ -175,6 +200,9 @@ add_filter( 'siteorigin_panels_row_style_groups', 'row_style_groups' );
 
       if( !empty( $args['scrollToRowButton'] ) ) {
           array_push($attributes['class'], 'scroll-button');
+          $attributes['data-scroll-text'] = $args['scrollToRowText'];
+          $attributes['data-scroll-color'] = $args['scrollToRowColor'];
+          $attributes['data-scroll-icon'] = $args['scrollToRowIcon'];
       }
 
       return $attributes;

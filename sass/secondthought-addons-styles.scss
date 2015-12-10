@@ -1,10 +1,10 @@
 
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
-@import '../../../themes/secondthought/sass/base/helpers';
-@import '../../../themes/secondthought/sass/base/variables';
+@import '../../../themes/henrymarine/sass/base/helpers';
+@import '../../../themes/henrymarine/sass/base/variables';
 @import '../bower_components/neat/app/assets/stylesheets/neat';
 @import '../bower_components/neat/app/assets/stylesheets/neat-helpers';
-@import '../../../themes/secondthought/sass/base/grid-settings';
+@import '../../../themes/henrymarine/sass/base/grid-settings';
 
 
 // Center content
@@ -26,7 +26,7 @@
   }
 }
 
-@import '../../../themes/secondthought/sass/base/mixins';
+@import '../../../themes/henrymarine/sass/base/mixins';
 
 @import '../secondthought-widgets/secondthought-feature-widget/styles/secondthought-feature-widget-style';
 @import '../secondthought-widgets/secondthought-slider-widget/styles/secondthought-slider-widget-style';
@@ -174,17 +174,20 @@ body:after {
 
 .scroll-arrow {
   position: absolute;
-  bottom: 0;
+  bottom: 25px;
   //background: #fff;
-  left: 50%;
-  width: 80px;
-  margin-left: -40px;
-  height: 80px;
+  left: 0;
+  right:0;
+  width: 250px;
+  margin: 0 auto;
   display: block;
   text-align: center;
+  h4 {
+  	margin-bottom:10px;
+  }
   .fa {
-    font-size: 50px;
-    color: #fff;
+    font-size: 40px;
+    color: inherit;
   }
 }
 

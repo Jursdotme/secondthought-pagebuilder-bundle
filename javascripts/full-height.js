@@ -62,7 +62,29 @@ $(document).ready(function(){
   });
 });
 
-$('.scroll-button').append( "<a href='#' class='scroll-arrow'><i class='fa fa-angle-down'></i></a>" );
+$('.scroll-button').each(function() {
+  
+  var scrolltext = $(this).data('scroll-text');
+  var scrollcolor = $(this).data('scroll-color');
+  var scrollicon = $(this).data('scroll-icon');
+
+  if (scrollcolor != undefined && scrollcolor != "") {
+    scrollcolor = 'style="color: ' + scrollcolor + '"';
+  } else {
+    scrollcolor = '';
+  }
+  if (scrolltext != undefined && scrolltext != "") {
+    scrolltext = '<h4 '+scrollcolor+'>' + scrolltext + '</h4>';
+  } else {
+    scrolltext = '';
+  }
+  if (scrollicon != undefined && scrollicon != "") {
+    scrollicon = scrollicon;
+  } else {
+    scrollicon = 'fa-angle-down';
+  }  
+  $(this).append( "<a href='#' class='scroll-arrow' "+scrollcolor+">" + scrolltext + "<i class='fa "+scrollicon+"'></i></a>" );
+});
 
 $('.scroll-arrow').on('click', function() {
 
