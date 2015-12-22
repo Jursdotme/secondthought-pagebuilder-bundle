@@ -27,14 +27,14 @@ add_filter( 'siteorigin_panels_row_style_groups', 'row_style_groups' );
 
   function row_style_fields($fields) {
 
-    // PARALLAX
-    $fields['parallax'] = array(
-        'name'        => __('Parallax', 'secondthought_pagebuilder_bundle'),
-        'type'        => 'checkbox',
-        'group'       => 'background',
-        'description' => __('If enabled, the background image will have a parallax effect.', 'secondthought_pagebuilder_bundle'),
-        'priority'    => 11,
-    );
+    // // PARALLAX
+    // $fields['parallax'] = array(
+    //     'name'        => __('Parallax', 'secondthought_pagebuilder_bundle'),
+    //     'type'        => 'checkbox',
+    //     'group'       => 'background',
+    //     'description' => __('If enabled, the background image will have a parallax effect.', 'secondthought_pagebuilder_bundle'),
+    //     'priority'    => 11,
+    // );
 
     // CENTER CONTENT
     $fields['center-content'] = array(
@@ -155,12 +155,12 @@ add_filter( 'siteorigin_panels_row_style_groups', 'row_style_groups' );
 /*--------------------------------------------*/
 
   function row_style_attributes( $attributes, $args ) {
-      if( !empty( $args['parallax'] ) ) {
-          array_push($attributes['class'], 'parallax');
-      }
+      // if( !empty( $args['parallax'] ) ) {
+      //     array_push($attributes['class'], 'parallax');
+      // }
 
       if( !empty( $args['center-content'] ) ) {
-          array_push($attributes['class'], 'center-content');
+          array_push($attributes['class'], 'secondthought-center-content');
       }
 
       if( !empty( $args['matchheight'] ) ) {

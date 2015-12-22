@@ -10,10 +10,6 @@ $(document).ready(function () {
       $tabPosH = $(this).closest('li').find('.tab-link').position();
       $contentPosH = $(this).closest('ul').position();
 
-      console.log($contentPosH);
-
-
-
       $(this).css('width', $tabWidth);
       $(this).css('left', parseInt($tabPosH.left, 10) - parseInt($contentPosH.left, 10));
     });

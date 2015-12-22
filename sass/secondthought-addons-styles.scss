@@ -1,32 +1,38 @@
 
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
-@import '../../../themes/henrymarine/sass/base/helpers';
-@import '../../../themes/henrymarine/sass/base/variables';
+@import '../../../themes/secondthought/sass/base/helpers';
+@import '../../../themes/secondthought/sass/base/variables';
 @import '../bower_components/neat/app/assets/stylesheets/neat';
 @import '../bower_components/neat/app/assets/stylesheets/neat-helpers';
-@import '../../../themes/henrymarine/sass/base/grid-settings';
+@import '../../../themes/secondthought/sass/base/grid-settings';
 
 
 // Center content
 
 %center-content {
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  //top: 50%;
+  //transform: translateY(-50%);
 }
 
-.center-content > div {
+.secondthought-center-content {
+  // display: flex;
+}
+
+.secondthought-center-content {
+  display: flex;
+  align-items: center;
   @include media($sm-up) {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    flex-direction: row;
   }
   @include media($xs) {
-
+    flex-direction: column;
+  }
+  > div {
   }
 }
 
-@import '../../../themes/henrymarine/sass/base/mixins';
+@import '../../../themes/secondthought/sass/base/mixins';
 
 @import '../secondthought-widgets/secondthought-feature-widget/styles/secondthought-feature-widget-style';
 @import '../secondthought-widgets/secondthought-slider-widget/styles/secondthought-slider-widget-style';
