@@ -24,9 +24,13 @@
 // }
 //
 // .flexbox-widget-item {
-//     max-width: none;
-//     flex(@st_flex_grow @st_flex_shrink @st_flex_basis);
+//     max-width: @st_max_width;
+//     min-width: @st_min_width;
+//     flex: @st_flex_grow @st_flex_shrink @st_flex_basis;
 //     align-self: @st_align_self;
+//     @media (max-width: 780px) {
+//         flex-basis: auto;
+//     }
 // }
 
 .flexbox-widget {
@@ -65,4 +69,9 @@
     -webkit-align-self: @st_align_self;
         -ms-flex-item-align: @st_align_self;
             align-self: @st_align_self;
+    @media (max-width: 780px) {
+        -webkit-flex-basis: auto;
+            -ms-flex-preferred-size: auto;
+                flex-basis: auto;
+    }
 }
