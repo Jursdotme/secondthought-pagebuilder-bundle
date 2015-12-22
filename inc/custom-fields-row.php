@@ -200,9 +200,9 @@ add_filter( 'siteorigin_panels_row_style_groups', 'row_style_groups' );
 
       if( !empty( $args['scrollToRowButton'] ) ) {
           array_push($attributes['class'], 'scroll-button');
-          $attributes['data-scroll-text'] = $args['scrollToRowText'];
-          $attributes['data-scroll-color'] = $args['scrollToRowColor'];
-          $attributes['data-scroll-icon'] = $args['scrollToRowIcon'];
+          if( !empty( $args['scrollToRowText'] ) ) { $attributes['data-scroll-text'] = $args['scrollToRowText']; };
+          if( !empty( $args['scrollToRowColor'] ) ) { $attributes['data-scroll-color'] = $args['scrollToRowColor']; };
+          if( !empty( $args['scrollToRowIcon'] ) ) { $attributes['data-scroll-icon'] = $args['scrollToRowIcon']; };
       }
 
       return $attributes;
