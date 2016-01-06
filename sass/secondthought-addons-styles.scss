@@ -27,6 +27,7 @@
   }
   @include media($xs) {
     flex-direction: column;
+    justify-content: center;
   }
   > div {
   }
