@@ -63,7 +63,7 @@ $(document).ready(function(){
 });
 
 $('.scroll-button').each(function() {
-  
+
   var scrolltext = $(this).data('scroll-text');
   var scrollcolor = $(this).data('scroll-color');
   var scrollicon = $(this).data('scroll-icon');
@@ -82,8 +82,8 @@ $('.scroll-button').each(function() {
     scrollicon = scrollicon;
   } else {
     scrollicon = 'fa-angle-down';
-  }  
-  $(this).append( "<a href='#' class='scroll-arrow' "+scrollcolor+">" + scrolltext + "<i class='fa "+scrollicon+"'></i></a>" );
+  }
+  $(this).append( "<a href='javascript:void();' class='scroll-arrow' "+scrollcolor+">" + scrolltext + "<i class='fa "+scrollicon+"'></i></a>" );
 });
 
 $('.scroll-arrow').on('click', function() {
