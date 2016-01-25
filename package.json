@@ -1,6 +1,6 @@
 {
   "name": "secondthought_pagebuilder_bundle",
-  "version": "1.11.1",
+  "version": "1.11.2",
   "description": "An example plugin to demonstrate extending the SiteOrigin Widgets Bundle",
   "main": "index.js",
   "scripts": {
