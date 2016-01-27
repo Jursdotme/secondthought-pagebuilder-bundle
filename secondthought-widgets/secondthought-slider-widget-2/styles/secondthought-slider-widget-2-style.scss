@@ -13,7 +13,9 @@
   .slide {
     position: relative;
     z-index: -1;
-
+    &.slick-current {
+      z-index: 1;
+    }
     background-size: cover;
     background-position: center;
 
