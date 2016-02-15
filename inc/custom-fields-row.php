@@ -94,6 +94,7 @@ function row_style_fields($fields) {
 		'group' => 'background',
 		'description' => __('Sets opacity on background color. Use this to give background images an overlay.', 'secondthought_pagebuilder_bundle'),
 		'priority' => 11,
+
 	);
 
   $fields['backgroundGradient'] = array(
@@ -240,22 +241,24 @@ add_filter('siteorigin_panels_row_style_attributes', 'row_style_attributes', 10,
 function my_custom_row_styles($css, $panels_data, $post_id) {
   //Get the data from the $panels_data array and loop through all the panel rows(['grids']). This contains all the variables set in the admin  (BG Color etc.)
   foreach ( $panels_data['grids'] as $gi => $grid ) {
-
+    // print_r($gi);
     // Get the mobile width.
     $settings = siteorigin_panels_setting();
 	  $panels_mobile_width = $settings['mobile-width'];
 
     // Get the attributes i need. Note: many of these ar custom ones i have added myself. (See this article: https://siteorigin.com/docs/page-builder/hooks/custom-row-settings/)
-    $gradStart = $grid['style']['gradientstart'];
-    $gradEnd   = $grid['style']['gradientend'];
-    $gradOp    = $grid['style']['backgroundOpacity'];
-    $gradColor = hex2rgb( $grid['style']['background'] );
-    $gradDeg   = $grid['style']['gradientdeg'];
+    $grad_start = isset($grid['style']['gradientstart']) ? $grid['style']['gradientstart'] : '';
+    $grad_end = isset($grid['style']['gradientend']) ? $grid['style']['gradientend'] : '';
+    $background_opacity = isset($grid['style']['backgroundOpacity']) ? $grid['style']['backgroundOpacity'] : '';
+    $grad_color = isset($grid['style']['background'] ) ? $grid['style']['background'] : '';
+    $grad_deg = isset($grid['style']['gradientdeg']) ? $grid['style']['gradientdeg'] : '';
+
+
 
     // Check if the panel row has the "Use Background gradient" checked.
     if ( !empty( $grid['style']['backgroundGradient'] ) ) {
 
-    //  print_r($panels_data);
+
       // add new css to the $css array.
       $css->add_row_css($post_id, $gi, '.panel-row-style:before', array(
         'content'          => '""',
@@ -267,7 +270,7 @@ function my_custom_row_styles($css, $panels_data, $post_id) {
         'z-index'          => '-1',
         'background-color' => 'inherit',
         'background-color' => 'transparent',
-        'background-image' => 'linear-gradient(' . $gradDeg . 'deg,transparent ' . $gradStart . '%, rgba(' . $gradColor[0] . ', ' . $gradColor[1] . ', ' . $gradColor[2] . ', ' . $gradOp/100 . ') ' . $gradEnd . '%)',
+        'background-image' => 'linear-gradient(' . $grad_deg . 'deg,transparent ' . $grad_start . '%, rgba(' . hex2rgb($grad_color)[0] . ', ' . hex2rgb($grad_color)[1] . ', ' . hex2rgb($grad_color)[2] . ', ' . $background_opacity/100 . ') ' . $grad_end . '%)',
       ) );
     }
 
@@ -298,7 +301,7 @@ function my_custom_row_styles($css, $panels_data, $post_id) {
     }
 
     // Transparent background-image
-    if ( !empty( $grid['style']['backgroundOpacity'] ) ) {
+    if ( !empty( $background_opacity ) ) {
       // add new css to the $css array.
       $css->add_row_css($post_id, $gi, '.panel-row-style', array(
         'position' => 'relative',
@@ -312,7 +315,7 @@ function my_custom_row_styles($css, $panels_data, $post_id) {
         'width'            => '100%',
         'height'           => '100%',
         'z-index'          => '-1',
-        'background-color' => 'rgba(' . $gradColor[0] . ', ' . $gradColor[1] . ', ' . $gradColor[2] . ', ' . $gradOp/100 . ')',
+        'background-color' => 'rgba(' . $grad_color[0] . ', ' . $grad_color[1] . ', ' . $grad_color[2] . ', ' . $background_opacity/100 . ')',
       ));
     }
     $typography_tags = array('p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li');
@@ -323,8 +326,8 @@ function my_custom_row_styles($css, $panels_data, $post_id) {
       ));
     }
 
-    return $css;
   }
+  return $css;
 }
 // Add the above function with this hook.
 add_filter( 'siteorigin_panels_css_object', 'my_custom_row_styles', 1, 3);
