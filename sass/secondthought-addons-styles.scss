@@ -9,29 +9,29 @@
 
 // Center content
 
-%center-content {
-  position: relative;
-  //top: 50%;
-  //transform: translateY(-50%);
-}
+//%center-content {
+//  position: relative;
+//  //top: 50%;
+//  //transform: translateY(-50%);
+//}
 
-.secondthought-center-content {
-  // display: flex;
-}
-
-.secondthought-center-content {
-  display: flex;
-  align-items: center;
-  @include media($sm-up) {
-    flex-direction: row;
-  }
-  @include media($xs) {
-    flex-direction: column;
-    justify-content: center;
-  }
-  > div {
-  }
-}
+//.secondthought-center-content {
+//  // display: flex;
+//}
+//
+//.secondthought-center-content {
+//  display: flex;
+//  align-items: center;
+//  @include media($sm-up) {
+//    flex-direction: row;
+//  }
+//  @include media($xs) {
+//    flex-direction: column;
+//    justify-content: center;
+//  }
+//  > div {
+//  }
+//}
 
 @import '../../../themes/secondthought/sass/base/mixins';
 
@@ -42,23 +42,23 @@
 @import '../secondthought-widgets/secondthought-accordion-widget/styles/secondthought-accordion-widget-style.scss';
 @import '../secondthought-widgets/secondthought-device-widget/styles/secondthought-device-widget-style.scss';
 
-body:after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background-color: inherit;
-  content: '';
-}
+//body:after {
+//  position: absolute;
+//  top: 0;
+//  right: 0;
+//  bottom: 0;
+//  left: 0;
+//  z-index: -1;
+//  width: 100%;
+//  height: 100%;
+//  background-color: inherit;
+//  content: '';
+//}
 
 
-.wrapper {
-  overflow: hidden;
-}
+//.wrapper {
+//  overflow: hidden;
+//}
 
 .fill-left {
   position: relative;
@@ -104,76 +104,76 @@ body:after {
   }
 }
 
-.parallax {
-  // height: 450px;
-  position: relative;
-  background-position: 50% 0;
-  background-repeat: no-repeat;
-  // background-attachment: fixed;
-}
+//.parallax {
+//  // height: 450px;
+//  position: relative;
+//  background-position: 50% 0;
+//  background-repeat: no-repeat;
+//  // background-attachment: fixed;
+//}
 
-.no-touch .parallax {
-  background-attachment: fixed;
-}
+//.no-touch .parallax {
+//  background-attachment: fixed;
+//}
 
 .border-radius {
   border-radius: $base-border-radius;
 }
 
-.no-text-margin {
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0;
-  }
-}
+//.no-text-margin {
+//  p,
+//  h1,
+//  h2,
+//  h3,
+//  h4,
+//  h5,
+//  h6 {
+//    margin: 0;
+//  }
+//}
+//
+//.panel-widget-style {
+//  p,
+//  h1,
+//  h2,
+//  h3,
+//  h4,
+//  h5,
+//  h6 {
+//    color: inherit;
+//  }
+//}
 
-.panel-widget-style {
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: inherit;
-  }
-}
-
-.panel-row-style[class*=" background-"],
-.panel-row-style.color-overlay {
-  position: relative;
-  z-index: 1;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: inherit;
-  }
-}
-
-.panel-widget-style[class*=" transparency-"] {
-  position: relative;
-  z-index: 1;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: inherit;
-  }
-}
+//.panel-row-style[class*=" background-"],
+//.panel-row-style.color-overlay {
+//  position: relative;
+//  z-index: 1;
+//  &::before {
+//    content: '';
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    width: 100%;
+//    height: 100%;
+//    z-index: -1;
+//    background-color: inherit;
+//  }
+//}
+//
+//.panel-widget-style[class*=" transparency-"] {
+//  position: relative;
+//  z-index: 1;
+//  &::before {
+//    content: '';
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    width: 100%;
+//    height: 100%;
+//    z-index: -1;
+//    background-color: inherit;
+//  }
+//}
 
 .scroll-button {
   position: relative;

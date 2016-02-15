@@ -4,14 +4,6 @@
 /*--------------------------------------------*/
 
   function widget_style_fields($fields) {
-    $fields['parallax'] = array(
-        'name'        => __('Parallax', 'secondthought_pagebuilder_bundle'),
-        'type'        => 'checkbox',
-        'group'       => 'design',
-        'description' => __('If enabled, the background image will have a parallax effect.', 'secondthought_pagebuilder_bundle'),
-        'priority'    => 11,
-    );
-
     $fields['center-content'] = array(
         'name'        => __('Center content', 'secondthought_pagebuilder_bundle'),
         'type'        => 'checkbox',
@@ -100,9 +92,6 @@
           $attributes['data-bg-opacity'] = $args['backgroundOpacity'];
           array_push($attributes['class'], 'color-overlay');
       }
-
-
-
 
       return $attributes;
   }
