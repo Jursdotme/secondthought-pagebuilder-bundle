@@ -1,0 +1,74 @@
+.affix {
+  position: fixed;
+  top: 0;
+  @media (max-width: 780px) {
+    position: relative;
+  }
+}
+
+.affix-bottom {
+  position: absolute;
+  @media (max-width: 780px) {
+    position: relative;
+  }
+}
+
+.affix-top {
+  transition: all .4s $curve;
+  margin-top: 0;
+}
+.affix {
+  transition: all .4s $curve;
+  margin-top: $gutter;
+}
+
+.so-widget-secondthought-menu-widget {
+
+  .parent-page {
+    position: relative;
+    padding-left: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li, a {
+    display: block;
+    width: 100%;
+  }
+
+  li a {
+    font-size: .8em;
+    color: #767676;
+    line-height: 1rem;
+    //height: 1rem;
+    //margin: .5rem 0;
+    position: relative;
+    padding: 4px 20px;
+    font-weight: 500;
+    &:hover {
+      color: mix(#ADADAD ,$brand-color-1, 50);
+      &:before {
+        background-color: mix(#ADADAD ,$brand-color-1, 50);
+      }
+    }
+  }
+  .sub-menu li a {
+    font-size: .75em;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-weight: 400; 
+  }
+
+  .current_page_item a {
+    color: $brand-color-1;
+    &:before {
+      background-color: $brand-color-1;
+    }
+  }
+
+}
