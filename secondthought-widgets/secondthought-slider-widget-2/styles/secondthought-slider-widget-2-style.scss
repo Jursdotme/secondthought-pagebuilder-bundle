@@ -44,8 +44,9 @@
       margin: 0 auto;
     }
 
-    &.center .caption {
-      @extend %center-content;
+    &.center {
+      display: flex;
+      align-items: center;
     }
 
 
