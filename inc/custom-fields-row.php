@@ -272,6 +272,19 @@ function my_custom_row_styles($css, $panels_data, $post_id) {
         'background-color' => 'transparent',
         'background-image' => 'linear-gradient(' . $grad_deg . 'deg,transparent ' . $grad_start . '%, rgba(' . hex2rgb($grad_color)[0] . ', ' . hex2rgb($grad_color)[1] . ', ' . hex2rgb($grad_color)[2] . ', ' . $background_opacity/100 . ') ' . $grad_end . '%)',
       ) );
+    } else {
+      // add new css to the $css array.
+      $css->add_row_css($post_id, $gi, '.panel-row-style:before', array(
+        'content'          => '""',
+        'position'         => 'absolute',
+        'top'              => '0',
+        'left'             => '0',
+        'width'            => '100%',
+        'height'           => '100%',
+        'z-index'          => '-1',
+        'background-color' => 'inherit',
+        'background-color' => 'rgba(' . hex2rgb($grad_color)[0] . ', ' . hex2rgb($grad_color)[1] . ', ' . hex2rgb($grad_color)[2] . ', ' . $background_opacity/100 . ')',
+      ) );
     }
 
     // Center content
