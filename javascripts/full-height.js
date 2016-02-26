@@ -96,3 +96,7 @@ $('.scroll-arrow').on('click', function() {
   }, 600);
 
 });
+
+if ( $('.fillerup .widget_secondthought-hero').length ) {
+  $('.secondthought-slider-image-wrapper').parentsUntil('.fillerup').css('height', '100%');
+}
