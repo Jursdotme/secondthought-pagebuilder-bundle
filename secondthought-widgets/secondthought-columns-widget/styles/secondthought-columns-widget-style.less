@@ -1,0 +1,17 @@
+@max_column_count: 4;
+@max_column_width: 15em;
+@column_gap: 30px;
+
+.columns-widget-wrapper {
+   -webkit-columns: @max_column_count @max_column_width;
+      -moz-columns: @max_column_count @max_column_width;
+           columns: @max_column_count @max_column_width;
+-webkit-column-gap: @column_gap;
+   -moz-column-gap: @column_gap;
+        column-gap: @column_gap;
+        h1, h2, h3, h4, h5, h6 {
+          -webkit-column-span: none;
+             -moz-column-span: none;
+                  column-span: none;
+        }
+}
