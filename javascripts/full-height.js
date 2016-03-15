@@ -83,7 +83,7 @@ $('.scroll-button').each(function() {
   } else {
     scrollicon = 'fa-angle-down';
   }
-  $(this).append( "<a href='javascript:void();' class='scroll-arrow' "+scrollcolor+">" + scrolltext + "<i class='fa "+scrollicon+"'></i></a>" );
+  $(this).prepend( "<a href='javascript:void(0);' class='scroll-arrow' "+scrollcolor+">" + scrolltext + "<i class='fa "+scrollicon+"'></i></a>" );
 });
 
 $('.scroll-arrow').on('click', function() {
