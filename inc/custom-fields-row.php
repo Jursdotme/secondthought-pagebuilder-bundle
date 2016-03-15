@@ -319,6 +319,7 @@ function my_custom_row_styles($css, $panels_data, $post_id) {
       $css->add_row_css($post_id, $gi, '.panel-row-style', array(
         'position' => 'relative',
         'z-index'  => '1',
+        'background-color' => 'transparent !important',
       ));
       $css->add_row_css($post_id, $gi, '.panel-row-style:before', array(
         'content'          => '""',

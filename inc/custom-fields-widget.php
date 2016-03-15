@@ -89,13 +89,12 @@
       }
 
       if( !empty( $args['backgroundOpacity'] ) ) {
-          $attributes['data-bg-opacity'] = $args['backgroundOpacity'];
-          array_push($attributes['class'], 'color-overlay');
+          $attributes['style'] .= 'background-color: ' . 'rgba(' . hex2rgb($args['background'])[0] . ', ' . hex2rgb($args['background'])[1] . ', ' . hex2rgb($args['background'])[2] . ', ' . $args['backgroundOpacity']/100 . ')';
       }
 
       return $attributes;
   }
 
-  add_filter('siteorigin_panels_widget_style_attributes', 'widget_style_attributes', 10, 2);
+  add_filter('siteorigin_panels_widget_style_attributes', 'widget_style_attributes', 100, 2);
 
 // END widget classes
