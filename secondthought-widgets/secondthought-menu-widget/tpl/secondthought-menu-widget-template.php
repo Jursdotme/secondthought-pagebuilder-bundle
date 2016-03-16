@@ -8,5 +8,5 @@
   wp_nav_menu( array(
     'menu' => $instance['another_selection']
   ) );
-  "</div>";
+  echo "</div>";
 ?>
