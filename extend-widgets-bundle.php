@@ -3,7 +3,7 @@
 /*
 Plugin Name: Secondthought Widget Pack
 Description: A bundle of additional widgets and functions used with Secondthought theme framework and Site Origin Pagebuilder.
-Version: 1.14.6
+Version: 1.14.7
 Author: Rasmus Jürs / Johnnie Bertelsen
 Author URI: http://jurs.me
 License: GPL3
@@ -11,14 +11,6 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 GitHub Plugin URI: https://github.com/Jursdotme/secondthought-pagebuilder-bundle
 GitHub Branch: master
 */
-
-require 'plugin_update_check.php';
-$MyUpdateChecker = new PluginUpdateChecker_2_0 (
-   'https://kernl.us/api/v1/updates/56e821387ee350a620ecdeac/',
-   __FILE__,
-   'secondthought-widget-pack',
-   1
-);
 
 /**
  * Initialize the language files
