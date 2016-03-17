@@ -8,7 +8,8 @@ Author: Rasmus Jürs / Johnnie Bertelsen
 Author URI: http://jurs.me
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
-GitHub Plugin URI: https://github.com/Jursdotme/secondthought_pagebuilder_bundle
+GitHub Plugin URI: https://github.com/Jursdotme/secondthought-pagebuilder-bundle
+GitHub Branch: master
 */
 
 require 'plugin_update_check.php';
