@@ -89,7 +89,8 @@
       }
 
       if( !empty( $args['backgroundOpacity'] ) ) {
-          $attributes['style'] .= 'background-color: ' . 'rgba(' . hex2rgb($args['background'])[0] . ', ' . hex2rgb($args['background'])[1] . ', ' . hex2rgb($args['background'])[2] . ', ' . $args['backgroundOpacity']/100 . ')';
+        $gradColor = hex2rgb($args['background']);
+          $attributes['style'] .= 'background-color: ' . 'rgba(' . $gradColor[0] . ', ' . $gradColor[1] . ', ' . $gradColor[2] . ', ' . $args['backgroundOpacity']/100 . ')';
       }
 
       return $attributes;

@@ -252,7 +252,7 @@ function my_custom_row_styles($css, $panels_data, $post_id) {
     $background_opacity = isset($grid['style']['backgroundOpacity']) ? $grid['style']['backgroundOpacity'] : '';
     $grad_color = isset($grid['style']['background'] ) ? $grid['style']['background'] : '';
     $grad_deg = isset($grid['style']['gradientdeg']) ? $grid['style']['gradientdeg'] : '';
-
+    $gradColor = hex2rgb($grad_color);
 
 
     // Check if the panel row has the "Use Background gradient" checked.
@@ -270,7 +270,7 @@ function my_custom_row_styles($css, $panels_data, $post_id) {
         'z-index'          => '-1',
         'background-color' => 'inherit',
         'background-color' => 'transparent',
-        'background-image' => 'linear-gradient(' . $grad_deg . 'deg,transparent ' . $grad_start . '%, rgba(' . hex2rgb($grad_color)[0] . ', ' . hex2rgb($grad_color)[1] . ', ' . hex2rgb($grad_color)[2] . ', ' . $background_opacity/100 . ') ' . $grad_end . '%)',
+        'background-image' => 'linear-gradient(' . $grad_deg . 'deg,transparent ' . $grad_start . '%, rgba(' . $gradColor[0] . ', ' . $gradColor[1] . ', ' . $gradColor[2] . ', ' . $background_opacity/100 . ') ' . $grad_end . '%)',
       ) );
     } else {
       // add new css to the $css array.
@@ -283,7 +283,7 @@ function my_custom_row_styles($css, $panels_data, $post_id) {
         'height'           => '100%',
         'z-index'          => '-1',
         'background-color' => 'inherit',
-        'background-color' => 'rgba(' . hex2rgb($grad_color)[0] . ', ' . hex2rgb($grad_color)[1] . ', ' . hex2rgb($grad_color)[2] . ', ' . $background_opacity/100 . ')',
+        'background-color' => 'rgba(' . $gradColor[0] . ', ' . $gradColor[1] . ', ' . $gradColor[2] . ', ' . $background_opacity/100 . ')',
       ) );
     }
 
