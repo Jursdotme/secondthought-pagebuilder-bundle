@@ -64,27 +64,27 @@ function row_style_fields($fields) {
   );
   $fields['heightMin'] = array(
 		'name' => __('Minimum height (Fixed height)', 'secondthought_pagebuilder_bundle'),
-		'type' => 'measurement',
+		'type' => 'text',
 		'group' => 'height',
 		'description' => __('Minimum height of the row when using fixed height.', 'secondthought_pagebuilder_bundle'),
 		'priority' => 13,
-		'multiple' => false
+		'multiple' => false,
 	);
   $fields['heightMax'] = array(
 		'name' => __('Maximum height (Fixed height)', 'secondthought_pagebuilder_bundle'),
-		'type' => 'measurement',
+		'type' => 'text',
 		'group' => 'height',
 		'description' => __('Maximum height of the row when using fixed height.', 'secondthought_pagebuilder_bundle'),
 		'priority' => 13,
-		'multiple' => false
+		'multiple' => false,
 	);
   $fields['subtractheight'] = array(
 		'name' => __('Subtract height (Fixed height)', 'secondthought_pagebuilder_bundle'),
-		'type' => 'measurement',
+		'type' => 'text',
 		'group' => 'height',
 		'description' => __('Subtract a fixed amount when using minimum height.', 'secondthought_pagebuilder_bundle'),
 		'priority' => 13,
-		'multiple' => false
+		'multiple' => false,
 	);
 
   // BACKGROUND OPACITY
@@ -94,7 +94,6 @@ function row_style_fields($fields) {
 		'group' => 'background',
 		'description' => __('Sets opacity on background color. Use this to give background images an overlay.', 'secondthought_pagebuilder_bundle'),
 		'priority' => 11,
-
 	);
 
   $fields['backgroundGradient'] = array(
