@@ -18,7 +18,7 @@ $(document).ready(function () {
 
   });
 
-  $('.accordion-tabs').on('click', 'li > a', function(event) {
+  $('.accordion-tabs').on('click', '> li > a', function(event) {
     if (!$(this).hasClass('is-active')) {
       event.preventDefault();
       var accordionTabs = $(this).closest('.accordion-tabs');
