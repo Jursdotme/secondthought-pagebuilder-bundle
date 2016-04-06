@@ -86,6 +86,14 @@ function row_style_fields($fields) {
 		'priority' => 13,
 		'multiple' => false,
 	);
+  $fields['subtractheaderheight'] = array(
+		'name' => __('Subtract header height', 'secondthought_pagebuilder_bundle'),
+		'type' => 'checkbox',
+		'group' => 'height',
+    'default' => false,
+		'description' => __('Subtract the height of the header.', 'secondthought_pagebuilder_bundle'),
+		'priority' => 13,
+	);
 
   // BACKGROUND OPACITY
   $fields['backgroundOpacity'] = array(
@@ -216,6 +224,9 @@ function row_style_attributes( $attributes, $args ) {
         }
         if (!empty( $args['subtractheight'] )) {
           $attributes['data-subtract'] = $args['subtractheight'];
+        }
+        if ($args['subtractheaderheight'] == true ) {
+          $attributes['data-subtractheader'] = '1';
         }
     }
 
