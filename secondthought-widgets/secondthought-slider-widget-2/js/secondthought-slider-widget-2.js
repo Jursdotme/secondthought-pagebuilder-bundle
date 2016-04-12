@@ -57,7 +57,7 @@ $(document).ready(function(){
 
     if (full_width) {
       caption.css('max-width', window_size);
-    } if ($slider.find('.left')) {
+    } else if ($slider.find('.left')) {
       caption.css('max-width', container_width);
     } else {
       caption.css('max-width', container_width);
