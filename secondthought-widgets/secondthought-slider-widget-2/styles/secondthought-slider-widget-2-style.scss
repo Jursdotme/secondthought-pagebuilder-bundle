@@ -12,9 +12,9 @@
   }
   .slide {
     position: relative;
-    z-index: -1;
+    z-index: 1;
     &.slick-current {
-      z-index: 1;
+      z-index: 2;
     }
     background-size: cover;
     background-position: center;
@@ -29,7 +29,7 @@
       bottom: 0;
       left: 0;
       background-color: inherit;
-      z-index: -1;
+      z-index: 1;
     }
 
     .caption {
