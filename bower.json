@@ -1,10 +1,10 @@
 {
-  "name": "Seconthought PageBuilder Bundle",
-  "version": "1.14.11",
+  "name": "Secondthought PageBuilder Bundle",
+  "version": "1.15.0",
   "authors": [
     "Rasmus Jürs <rasmus@jurs.me>"
   ],
-  "description": "An example plugin to demonstrate extending the SiteOrigin Widgets Bundle",
+  "description": "Extending the SiteOrigin Widgets Bundle",
   "license": "MIT",
   "homepage": "Jurs.me",
   "private": true,
