@@ -1,0 +1,24 @@
+.post-type-inz_pin_widget .acf-image-uploader img {
+  cursor: crosshair;
+}
+.post-type-inz_pin_widget .acf-image-uploader .pin {
+  width:20px; height:20px;
+  position:absolute;
+  margin:-10px 0 0 -10px;
+  text-align:center;
+  background:#ce2922;
+  color:#fff;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50%;
+  border: 1px solid #222;
+  box-shadow: 2px 5px 8px rgba(0,0,0,.75), inset 0 15px 15px -15px rgba(255,255,255,.25);
+  cursor: pointer;
+}
+.post-type-inz_pin_widget .acf-image-uploader .pin:hover {
+  background:#ce2922;
+  color:#fff;
+  border: 1px solid #222;
+  box-shadow: 2px 5px 15px rgba(0,0,0,1), inset 0 15px 15px -15px rgba(255,255,255,.5);
+}
