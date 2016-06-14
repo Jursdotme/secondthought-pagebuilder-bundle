@@ -32,37 +32,43 @@ class Secondthought_slider_widget_2 extends SiteOrigin_Widget {
 		            'value_method' => 'val'
 			        ),
 			        'fields' => array(
-						'tinymce_editor' => array(
-					        'type' => 'tinymce',
-					        'label' => __( 'Visually edit, richly.', 'widget-form-fields-text-domain' ),
-					        'default' => 'An example of a long message.</br>It is even possible to add a few html tags.</br><a href="siteorigin.com" target="_blank"">Links!</a>',
-					        'rows' => 10,
-					        'default_editor' => 'html',
-					        'button_filters' => array(
-				            'mce_buttons' => array( $this, 'filter_mce_buttons' ),
-				            'mce_buttons_2' => array( $this, 'filter_mce_buttons_2' ),
-				            'mce_buttons_3' => array( $this, 'filter_mce_buttons_3' ),
-				            'mce_buttons_4' => array( $this, 'filter_mce_buttons_5' ),
-				            'quicktags_settings' => array( $this, 'filter_quicktags_settings' ),
-					        ),
-						),
+								'tinymce_editor' => array(
+							        'type' => 'tinymce',
+							        'label' => __( 'Visually edit, richly.', 'widget-form-fields-text-domain' ),
+							        'default' => 'An example of a long message.</br>It is even possible to add a few html tags.</br><a href="siteorigin.com" target="_blank"">Links!</a>',
+							        'rows' => 10,
+							        'default_editor' => 'html',
+							        'button_filters' => array(
+						            'mce_buttons' => array( $this, 'filter_mce_buttons' ),
+						            'mce_buttons_2' => array( $this, 'filter_mce_buttons_2' ),
+						            'mce_buttons_3' => array( $this, 'filter_mce_buttons_3' ),
+						            'mce_buttons_4' => array( $this, 'filter_mce_buttons_5' ),
+						            'quicktags_settings' => array( $this, 'filter_quicktags_settings' ),
+							        ),
+								),
 
-						'background_image' => array(
-						    'type' => 'media',
-						    'label' => __( 'Choose a background image', 'widget-form-fields-text-domain' ),
-						    'choose' => __( 'Choose image', 'widget-form-fields-text-domain' ),
-						    'update' => __( 'Set image', 'widget-form-fields-text-domain' ),
-						    'library' => 'image',
-						    'fallback' => true
-						),
+								'background_image' => array(
+								    'type' => 'media',
+								    'label' => __( 'Choose a background image', 'widget-form-fields-text-domain' ),
+								    'choose' => __( 'Choose image', 'widget-form-fields-text-domain' ),
+								    'update' => __( 'Set image', 'widget-form-fields-text-domain' ),
+								    'library' => 'image',
+								    'fallback' => true
+								),
 
-						'hide_slide' => array(
-					        'type' => 'checkbox',
-					        'label' => __( 'Skjul dette slide', 'widget-form-fields-text-domain' ),
-					        'default' => false
-					    )
-			        )
-			    ),
+								'hide_slide' => array(
+							        'type' => 'checkbox',
+							        'label' => __( 'Skjul dette slide', 'widget-form-fields-text-domain' ),
+							        'default' => false
+							  ),
+
+								'thumbnail_text' => array(
+							        'type' => 'text',
+							        'label' => __( 'Thumbnail text', 'widget-form-fields-text-domain' ),
+							        'default' => ''
+							    )
+								)
+					   ),
 
 				'dots' => array(
 			        'type' => 'section',
@@ -173,8 +179,55 @@ class Secondthought_slider_widget_2 extends SiteOrigin_Widget {
 						    ),
 			        )
 		    	),
-			
-			
+
+					'thumbnails' => array(
+				        'type' => 'section',
+				        'label' => __( 'Thumbnails' , 'secondthought_pagebuilder_bundle' ),
+				        'hide' => true,
+				        'fields' => array(
+									'thumbnail_display' => array(
+								        'type' => 'checkbox',
+								        'label' => __( 'Show thumbnails', 'widget-form-fields-text-domain' ),
+								        'default' => false
+								  ),
+									'thumbnail_count_desktop' => array(
+								        'type' => 'slider',
+								        'label' => __( 'Thumbnails per row (desktop)', 'secondthought_pagebuilder_bundle' ),
+												'min' => 3,
+        								'max' => 8,
+								        'default' => '6'
+								  ),
+									'thumbnail_count_tablet' => array(
+								        'type' => 'slider',
+								        'label' => __( 'Thumbnails per row (tablet)', 'secondthought_pagebuilder_bundle' ),
+												'min' => 2,
+        								'max' => 5,
+								        'default' => '3'
+								  ),
+									'thumbnail_count_mobile' => array(
+								        'type' => 'slider',
+								        'label' => __( 'Thumbnails per row (mobile)', 'secondthought_pagebuilder_bundle' ),
+												'min' => 0,
+        								'max' => 3,
+								        'default' => '0'
+								  ),
+									'thumbnail_margin' => array(
+								        'type' => 'text',
+								        'label' => __( 'Margin around thumbnails', 'secondthought_pagebuilder_bundle' ),
+								        'default' => '6px 3px'
+								  ),
+									'thumbnail_arrows' => array(
+								        'type' => 'checkbox',
+								        'label' => __( 'Show arrows on thumbnail bar', 'widget-form-fields-text-domain' ),
+								        'default' => false
+								  ),
+									'thumbnail_centered' => array(
+								        'type' => 'checkbox',
+								        'label' => __( 'Center align thumbnails', 'widget-form-fields-text-domain' ),
+								        'default' => false
+								  ),
+				    )
+					),
 				'minimum_height' => array(
 			        'type' => 'number',
 			        'label' => __( 'Slider height', 'widget-form-fields-text-domain' ),
@@ -248,7 +301,7 @@ class Secondthought_slider_widget_2 extends SiteOrigin_Widget {
 		        /*	)
 				),*/
 
-				
+
 			),
 			plugin_dir_path(__FILE__)
 		);
@@ -272,7 +325,7 @@ class Secondthought_slider_widget_2 extends SiteOrigin_Widget {
 }
 
 siteorigin_widget_register('secondthought-slider-widget-2', __FILE__, 'Secondthought_slider_widget_2');
-
+add_image_size('secondthought_slider_thumbnails', 300, 225, true);
 /**
  * Register all the slider scripts
  */

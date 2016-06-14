@@ -9,7 +9,7 @@ $(document).ready(function(){
       autoplay_setting      = $slider.data('autoplay') != 0 ? true : false,
       autoplay_speed        = $slider.data('autoplay-speed'),
       fade_setting          = $slider.data('fade') != 0 ? true : false,
-      animation_speed       = $slider.data('animation-speed'),      
+      animation_speed       = $slider.data('animation-speed'),
       dots_show             = $slider.data('dots-show') != 0 ? true : false,
       dots_size             = $slider.data('dots-size'),
       dots_spacing          = $slider.data('dots-spacing'),
@@ -29,6 +29,48 @@ $(document).ready(function(){
       full_height           = $slider.data('full-height'),
       full_width            = $slider.data('full-width');
 
+    //thumbnails
+    var $thumbnails = $( '.slider-thumbnails' , $slider.parent() );
+    if ($thumbnails.length) {
+      var $thumbs_desktop = parseInt($thumbnails.data('thumbs-desktop'));
+      var $thumbs_tablet = parseInt($thumbnails.data('thumbs-tablet'));
+      var $thumbs_mobile = parseInt($thumbnails.data('thumbs-mobile'));
+      var $thumbs_count = $( '.thumbnail' , $thumbnails ).length;
+      var $thumbs_arrows = $thumbnails.data('arrows');
+      var $thumbs_centered = $thumbnails.data('centered');
+      if ($thumbs_desktop > $thumbs_count) { $thumbs_desktop = $thumbs_count; }
+      if ($thumbs_tablet > $thumbs_count) { $thumbs_tablet = $thumbs_count; }
+      if ($thumbs_mobile > $thumbs_count) { $thumbs_mobile = $thumbs_count; }
+      $thumbnails.slick({
+        slidesToShow: $thumbs_desktop,
+        slidesToScroll: 1,
+        asNavFor: $slider,
+        dots: false,
+        centerMode: $thumbs_centered,
+        focusOnSelect: true,
+        arrows: $thumbs_arrows,
+        infinite: true,
+        responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: $thumbs_tablet,
+            slidesToScroll: 1,
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: $thumbs_mobile,
+            slidesToScroll: 1,
+          }
+        }],
+        nextArrow: '<button type="button" data-role="none" class="fa fa-'+arrow_icon_right+' slick-next" aria-label="next" style="margin-top: -'+arrow_size/2+'px;right:'+arrow_indent+'px;font-size: '+arrow_size+'px; display: block; color: '+arrow_color+';"></button>',
+        prevArrow: '<button type="button" data-role="none" class="fa fa-'+arrow_icon_left+' slick-prev" aria-label="previous" style="margin-top: -'+arrow_size/2+'px;left:'+arrow_indent+'px;font-size: '+arrow_size+'px; display: block; color: '+arrow_color+';"></button>'
+      });
+
+    }
+
       $slider.slick({
         autoplay: autoplay_setting,
         autoplaySpeed: autoplay_speed,
@@ -38,6 +80,7 @@ $(document).ready(function(){
         pauseOnDotsHover: false,
         dots: dots_show,
         arrows: arrow_show,
+        asNavFor: $thumbnails,
         nextArrow: '<button type="button" data-role="none" class="fa fa-'+arrow_icon_right+' slick-next" aria-label="next" style="margin-top: -'+arrow_size/2+'px;right:'+arrow_indent+'px;font-size: '+arrow_size+'px; display: block; color: '+arrow_color+';"></button>',
         prevArrow: '<button type="button" data-role="none" class="fa fa-'+arrow_icon_left+' slick-prev" aria-label="previous" style="margin-top: -'+arrow_size/2+'px;left:'+arrow_indent+'px;font-size: '+arrow_size+'px; display: block; color: '+arrow_color+';"></button>'
       });
@@ -53,7 +96,7 @@ $(document).ready(function(){
       $slider.find('.slick-dots li.slick-active button').css('color', dots_color_active);
     });
 
-    
+
 
     if (full_width) {
       caption.css('max-width', window_size);
@@ -88,11 +131,24 @@ $(document).ready(function(){
     $this.parent().css('height', '100%');
     $this.find('.panel-widget-style').css('height', '100%');
 
-    if (slider_height) {
-      $this.find('.so-widget-secondthought-slider-widget-2').css('height', slider_height);
-    } else {
-      $this.find('.so-widget-secondthought-slider-widget-2').css('height', '100%');
-    }
+
+
+    // if ($thumbnails.length) {
+
+      // var i = 0;
+      // $( '.thumbnail' , $thumbnails ).each( function() {
+      //   $(this).click( function() {
+      //     $slider.slick('slickGoTo',i);
+      //   });
+      //   i++;
+      // });
+    // }
+
+    // if (slider_height) {
+    //   $this.find('.so-widget-secondthought-slider-widget-2').css('height', slider_height);
+    // } else {
+    //   $this.find('.so-widget-secondthought-slider-widget-2').css('height', '100%');
+    // }
 
 
   });

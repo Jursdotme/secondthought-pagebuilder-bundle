@@ -63,7 +63,7 @@
   .slick-next {
     position: absolute;
     top: 50%;
-    margin-top: -10px;
+    margin-top: -5px;
     padding: 0;
     // width: 20px;
     // height: 20px;
@@ -164,6 +164,101 @@
       &.slick-active button:before {
         color: inherit;
       }
+    }
+
+  }
+}
+.so-widget-secondthought-slider-widget-2 .slider-thumbnails {
+  position: relative;
+  .thumbnail {
+    // float: left;
+    display: block;
+    position: relative;
+    z-index: 1;
+    cursor:default;
+    img {
+      vertical-align: top;
+      margin:0;
+      padding:0;
+      width: 100%;
+      height: auto;
+    }
+    .thumbnail_text {
+      position: absolute;
+      background: rgba(0,0,0,.5);
+      text-align: center;
+      display: block;
+      bottom:0;
+      left:0;
+      right:0;
+      z-index: 2;
+      padding:5px;
+      font-size: .8rem;
+    }
+    &:focus {
+      outline: none;
+    }
+    &.slick-current {
+      .thumbnail_text {
+        background: rgba(0,0,0,.8);
+      }
+    }
+  }
+
+  @include media($xs) {
+    &.thumbmobile_0 {
+      display:none;
+      .thumbnail {
+        display:none;
+      }
+    }
+  }
+
+  // Arrows
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    padding: 0;
+    outline: none;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    font-size: 0;
+    line-height: 0;
+    cursor: pointer;
+    display: block;
+    z-index: 1000;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background: transparent;
+      color: transparent;
+    }
+
+    &.slick-disabled:before {
+      opacity: $slick-opacity-not-active;
+    }
+  }
+
+  .slick-prev {
+    left: 0px;
+
+    [dir='rtl'] & {
+      right: 0px;
+      left: auto;
+    }
+
+  }
+
+  .slick-next {
+    right: 0px;
+
+    [dir='rtl'] & {
+      right: auto;
+      left: 0px;
     }
 
   }

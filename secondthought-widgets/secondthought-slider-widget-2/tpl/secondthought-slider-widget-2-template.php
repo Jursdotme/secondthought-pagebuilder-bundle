@@ -68,52 +68,77 @@ $arrowSize = $instance['arrows']['arrow_size'];
 $arrowColor = $instance['arrows']['arrow_color'];
 $arrowIndent = $instance['arrows']['arrow_indent'];
 
-?>
+//thumbnails
+$thumbDisplay = ($instance['thumbnails']['thumbnail_display'] ? 'true' : 'false');
+$thumbDesktopSize = $instance['thumbnails']['thumbnail_count_desktop'];
+$thumbTabletSize = $instance['thumbnails']['thumbnail_count_tablet'];
+$thumbMobileSize = $instance['thumbnails']['thumbnail_count_mobile'];
+$thumbnailMargin = $instance['thumbnails']['thumbnail_margin'];
+$thumbnailArrows = ($instance['thumbnails']['thumbnail_arrows'] ? 'true' : 'false');
+$thumbnailCentered = ($instance['thumbnails']['thumbnail_centered'] ? 'true' : 'false');
 
-<div class="secondthought-slider-2"
-	data-autoplay="<?php echo $autoplay; ?>"
-	data-animation-speed="<?php echo $animationSpeed; ?>"
-	data-fade="<?php echo $fade; ?>"
-	data-autoplay-speed="<?php echo $autoplaySpeed; ?>"
-	data-dots-color-active="<?php echo $dotActiveColor; ?>"
-	data-dots-color-passive="<?php echo $dotPassiveColor; ?>"
-	data-dots-size="<?php echo $dotSize; ?>"
-	data-dots-spacing="<?php echo $dotSpacing; ?>"
-	data-dots-position="<?php echo $dotPosition; ?>"
-	data-dots-show="<?php echo $showDot; ?>"
-	data-arrow-icon-right="<?php echo $arrowIconRight; ?>"
-	data-arrow-icon-left="<?php echo $arrowIconLeft; ?>"
-	data-arrow-size="<?php echo $arrowSize; ?>"
-	data-arrow-color="<?php echo $arrowColor; ?>"
-	data-arrow-indent="<?php echo $arrowIndent; ?>"
-	data-arrow-show="<?php echo $showArrow; ?>"
-	data-padding="<?php echo $instance['caption_padding']; ?>"
-	<?php
-	if ($instance['fill_screen']) {	echo 'data-full-width="true"'; }
-	if ($instance['full_height']) {	echo 'data-full-height="true"'; }
-	?>
-	data-slider-height="<?php echo $instance["minimum_height"]; ?>"
->
+echo '<div class="secondthought-slider-2"
+ data-autoplay="' . $autoplay . '"
+ data-animation-speed="' . $animationSpeed . '"
+ data-fade="' . $fade . '"
+ data-autoplay-speed="' . $autoplaySpeed . '"
+ data-dots-color-active="' . $dotActiveColor . '"
+ data-dots-color-passive="' . $dotPassiveColor . '"
+ data-dots-size="' . $dotSize . '"
+ data-dots-spacing="' . $dotSpacing . '"
+ data-dots-position="' . $dotPosition . '"
+ data-dots-show="' . $showDot . '"
+ data-arrow-icon-right="' . $arrowIconRight . '"
+ data-arrow-icon-left="' . $arrowIconLeft . '"
+ data-arrow-size="' . $arrowSize . '"
+ data-arrow-color="' . $arrowColor . '"
+ data-arrow-indent="' . $arrowIndent . '"
+ data-arrow-show="' . $showArrow . '"
+ data-padding="' . $instance['caption_padding'] . '"';
+ if ($instance['fill_screen']) {	echo ' data-full-width="true"'; }
+ if ($instance['full_height']) {	echo ' data-full-height="true"'; }
+ echo 'data-slider-height="' . $instance["minimum_height"] . '"';
+ echo ' style="height:' . $instance["minimum_height"] . 'px;">';
 
-<?php
 foreach($instance['slider_2_repeater'] as $slide) {
 	if (!$slide['hide_slide']) {
-	$background_image = wp_get_attachment_image_src($slide['background_image'], 'full');
-	?>
-
-	<div class="slide <?php echo $instance['horizontal_align_radio']; ?> <?php echo $instance['vertical_align_radio']; ?>" style="height: 100%; background-image: url('<?php echo $background_image[0]?>');<?php// if ($instance['full_height']) { echo $backgroundColor; } ?> ">
-		<?php if ($slide['tinymce_editor']) { ?>
-			<div class="caption" style="<?php if ($instance['fill_screen']) { echo $backgroundColor; } ?>">
-				<div class="caption-inner" style="<?php if (!$instance['fill_screen']) { echo $backgroundColor; } ?> padding: <?php echo $instance['caption_padding']; ?>px; <?php if ($instance['full_height']) { echo 'height:100%;'; } ?> width: <?php echo $instance['content_width']; ?>%; float: <?php echo $instance['horizontal_align_radio']; ?>;">
-					<?php echo $slide['tinymce_editor']; ?>
-				</div>
-			</div>
-		<?php } ?>
-	</div>
-
-	<?php
+		$background_image = wp_get_attachment_image_src($slide['background_image'], 'full');
+		echo '<div class="slide '.$instance['horizontal_align_radio'].' ' . $instance['vertical_align_radio'] . '" style="height: 100%; background-image: url(\'' . $background_image[0] . '\');">';
+		if ($slide['tinymce_editor']) {
+			echo '<div class="caption"';
+			 if ($instance['fill_screen']) { echo ' style="'.$backgroundColor.'"'; }
+			 echo '>';
+				echo '<div class="caption-inner" style="';
+				if (!$instance['fill_screen']) { echo ' ' . $backgroundColor; }
+				if ( $instance['full_height']) { echo ' height:100%;'; }
+				echo ' padding: ' . $instance['caption_padding'] . 'px;';
+				echo ' width: '. $instance['content_width'] . '%;';
+				echo ' float: ' .$instance['horizontal_align_radio'] . ';">';
+					echo $slide['tinymce_editor'];
+				echo '</div>';
+			echo '</div>';
+		}
+	echo '</div>';
 	}
 }
-?>
+echo '</div>';
 
-</div>
+if ($thumbDisplay) {
+	echo '<div class="slider-thumbnails thumbdesktop_'.$thumbDesktopSize.' thumbtablet_'.$thumbTabletSize.' thumbmobile_'.$thumbMobileSize.'" data-thumbs-desktop="'.$thumbDesktopSize.'" data-thumbs-tablet="'.$thumbTabletSize.'" data-thumbs-mobile="'.$thumbMobileSize.'" data-arrows="'.$thumbnailArrows.'" data-centered="'.$thumbnailCentered.'">';
+	foreach($instance['slider_2_repeater'] as $thumbnail) {
+		if (!$thumbnail['hide_slide']) {
+			$background_image = wp_get_attachment_image_src($thumbnail['background_image'], 'secondthought_slider_thumbnails');
+			echo '<div class="thumbnail" style="margin: '.$thumbnailMargin.'">';
+				echo '<img src="'. $background_image[0] . '" />';
+				if ($thumbnail['thumbnail_text']) {
+					echo '<div class="thumbnail_text">' . $thumbnail['thumbnail_text'] . '</div>';
+				}
+			echo '</div>';
+
+		}
+	}
+	echo '</div>';
+}
+
+
+?>
