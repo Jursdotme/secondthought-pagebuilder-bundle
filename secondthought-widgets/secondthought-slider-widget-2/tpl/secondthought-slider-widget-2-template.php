@@ -69,7 +69,7 @@ $arrowColor = $instance['arrows']['arrow_color'];
 $arrowIndent = $instance['arrows']['arrow_indent'];
 
 //thumbnails
-$thumbDisplay = ($instance['thumbnails']['thumbnail_display'] ? 'true' : 'false');
+$thumbDisplay = ($instance['thumbnails']['thumbnail_display'] ? 1 : 0);
 $thumbDesktopSize = $instance['thumbnails']['thumbnail_count_desktop'];
 $thumbTabletSize = $instance['thumbnails']['thumbnail_count_tablet'];
 $thumbMobileSize = $instance['thumbnails']['thumbnail_count_mobile'];
