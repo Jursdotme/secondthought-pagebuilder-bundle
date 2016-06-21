@@ -3,7 +3,7 @@
 /*
 Plugin Name: Secondthought Widget Pack
 Description: A bundle of additional widgets and functions used with Secondthought theme framework and Site Origin Pagebuilder.
-Version: 1.15.1
+Version: 1.15.2
 Author: Rasmus Jürs / Johnnie Bertelsen
 Author URI: http://jurs.me
 License: GPL3
@@ -37,7 +37,7 @@ function secondthought_addons_scripts() {
     wp_register_style( 'secondthought-styles',  plugin_dir_url( __FILE__ ) . 'build/stylesheets/secondthought-addons-styles.css' );
     wp_enqueue_style( 'secondthought-styles' );
 
-		wp_register_style('awesomefonts', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', array(), '1.0', 'all');
+		wp_register_style('awesomefonts', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', array(), '1.0', 'all');
   	wp_enqueue_style('awesomefonts'); // Enqueue it!
 }
 add_action( 'wp_enqueue_scripts', 'secondthought_addons_scripts' );
@@ -46,10 +46,10 @@ function secondthought_addons_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-      wp_deregister_script( 'jquery' ); // Deregister WordPress jQuery
+      // wp_deregister_script( 'jquery' ); // Deregister WordPress jQuery
 
-      wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", array(), '1.11.0', true); // jQuery
-      wp_enqueue_script('jquery'); // Enqueue it!
+      // wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", array(), '1.11.0', true); // jQuery
+      // wp_enqueue_script('jquery'); // Enqueue it!
 
 			wp_register_script( 'secondthought-addons-scripts',  plugin_dir_url( __FILE__ ) . 'build/scripts/secondthought-addons-scripts.js', 'jquery', '1.0.0', true );
 	    wp_enqueue_script( 'secondthought-addons-scripts' );

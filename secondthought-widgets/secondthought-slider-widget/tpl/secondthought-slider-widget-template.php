@@ -82,7 +82,16 @@ $slideHeight = $instance['layout']['slide_height'];
 	style="height: <?php echo $slideHeight; ?>;"
 >
 
-	<?php foreach($instance['slides'] as $slide) { ?>
+	<?php
+
+	$slides = $instance['slides'];
+
+	if ($instance['random_order'] == "") {
+		shuffle($slides);
+	}
+
+
+	foreach($slides as $slide) { ?>
 
 		<?php
 
@@ -113,7 +122,7 @@ $slideHeight = $instance['layout']['slide_height'];
 					<?php } ?>
 
 					<?php // DEPRICATED ?>
-					
+
 					<?php if ($slide['slide_header']) { ?>
 						<h1 style="color: <?php echo $headerColor; ?>;"><?php echo $slide['slide_header']; ?></h1>
 					<?php } ?>

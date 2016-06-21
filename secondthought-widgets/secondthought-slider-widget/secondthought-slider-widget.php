@@ -131,6 +131,11 @@ class Secondthought_slider_widget extends SiteOrigin_Widget {
 		            'bottom' => __( 'Bottom', 'secondthought_pagebuilder_bundle' ),
 			        )
 				    ),
+						'random_order' => array(
+				        'type' => 'checkbox',
+				        'label' => __( 'Random order', 'secondthought_pagebuilder_bundle' ),
+				        'default' => false
+				    ),
 						'caption_width' => array(
 			        'type' => 'slider',
 			        'label' => __( 'Caption Width', 'secondthought_pagebuilder_bundle' ),
