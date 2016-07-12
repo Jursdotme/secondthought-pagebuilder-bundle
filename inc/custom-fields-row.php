@@ -273,8 +273,8 @@ function my_custom_row_styles($css, $panels_data, $post_id) {
       $css->add_row_css($post_id, $gi, '.panel-row-style:before', array(
         'content'          => '""',
         'position'         => 'absolute',
-        'top'              => '0',
-        'left'             => '0',
+        'top'              => '0 !important',
+        'left'             => '0 !important',
         'width'            => '100%',
         'height'           => '100%',
         'z-index'          => '-1',
@@ -287,8 +287,8 @@ function my_custom_row_styles($css, $panels_data, $post_id) {
       $css->add_row_css($post_id, $gi, '.panel-row-style:before', array(
         'content'          => '""',
         'position'         => 'absolute',
-        'top'              => '0',
-        'left'             => '0',
+        'top'              => '0 !important',
+        'left'             => '0 !important',
         'width'            => '100%',
         'height'           => '100%',
         'z-index'          => '-1',
