@@ -51,7 +51,7 @@ function secondthought_addons_header_scripts()
       // wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", array(), '1.11.0', true); // jQuery
       // wp_enqueue_script('jquery'); // Enqueue it!
 
-			wp_register_script( 'secondthought-addons-scripts',  plugin_dir_url( __FILE__ ) . 'build/scripts/secondthought-addons-scripts.js', 'jquery', '1.0.0', true );
+			wp_register_script( 'secondthought-addons-scripts',  plugin_dir_url( __FILE__ ) . 'build/scripts/secondthought-addons-scripts.js', array('jquery'), '1.0.0', true );
 	    wp_enqueue_script( 'secondthought-addons-scripts' );
 
     }
