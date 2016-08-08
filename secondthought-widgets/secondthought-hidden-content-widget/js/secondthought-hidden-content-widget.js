@@ -1,10 +1,11 @@
 $(function() {
   $( ".appender" ).each(function( index ) {
-    $this = $( this );
+    var appender = $( this );
 
-    $this.find('.read-more, .close').click( function(){
-      $this.find('.appended-content').slideToggle(500);
-      $this.toggleClass('inactive active');
+    $('.read-more, .close', appender).click( function(){
+      console.log(appender)
+      $('.appended-content', appender).slideToggle(500);
+      appender.toggleClass('inactive active');
     });
 
   });
