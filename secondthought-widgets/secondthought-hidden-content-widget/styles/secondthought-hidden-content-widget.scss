@@ -6,6 +6,9 @@ $transition-time: .5s;
   border-radius: 2px;
   padding: 0;
   transition: all $transition-time ease-in-out;
+  overflow: auto;
+  zoom: 1;
+  
   .read-more {
     margin-bottom: 30px;
     transition: all $transition-time ease-in-out;
