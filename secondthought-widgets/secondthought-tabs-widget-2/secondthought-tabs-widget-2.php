@@ -1,17 +1,17 @@
 <?php
 
 /*
-Widget Name: Inzite Tabs Widget
+Widget Name: Inzite Tabs Widget 2
 Description: Add slideshows to any page you want.
 Author: Me
 Author URI: http://example.com
 */
 
-class secondthought_tabs_widget extends SiteOrigin_Widget {
+class secondthought_tabs_widget_2 extends SiteOrigin_Widget {
 	function __construct() {
 
 		parent::__construct(
-			'secondthought-tabs-widget',
+			'secondthought-tabs-widget-2',
 			__('Inzite Tabs Widget', 'secondthought_pagebuilder_bundle'),
 			array(
 				'description' => __('A simple tabs widget.', 'secondthought_pagebuilder_bundle'),
@@ -56,29 +56,29 @@ class secondthought_tabs_widget extends SiteOrigin_Widget {
 	}
 
 	function get_template_name($instance) {
-		return 'secondthought-tabs-widget-template';
+		return 'secondthought-tabs-widget-2-template';
 	}
 
 	function get_style_name($instance) {
-		return 'secondthought-tabs-widget-style';
+		return 'secondthought-tabs-widget-2-style';
 	}
 
 	/**
 	 * Enqueue the tabs scripts
 	 */
 	function enqueue_frontend_scripts($scripts){
-		wp_enqueue_script('secondthought-tabs-widget');
+		wp_enqueue_script('secondthought-tabs-widget-2');
 	}
 
 }
 
-// siteorigin_widget_register('secondthought-tabs-widget', __FILE__, 'Secondthought_tabs_widget');
+// siteorigin_widget_register('secondthought-tabs-widget-2', __FILE__, 'Secondthought_tabs_widget_2');
 
 /**
  * Register all the tabs scripts
  */
 function secondthought_tabs_register_scripts(){
 
-	wp_register_script('secondthought-tabs-widget', siteorigin_widget_get_plugin_dir_url('secondthought-tabs-widget').'js/secondthought-tabs-widget.js', array('jquery'), SOW_BUNDLE_VERSION);
+	wp_register_script('secondthought-tabs-widget-2', siteorigin_widget_get_plugin_dir_url('secondthought-tabs-widget-2').'js/secondthought-tabs-widget-2.js', array('jquery'), SOW_BUNDLE_VERSION);
 }
 add_action('wp_enqueue_scripts', 'secondthought_tabs_register_scripts', 1);
