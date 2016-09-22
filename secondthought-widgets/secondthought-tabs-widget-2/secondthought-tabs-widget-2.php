@@ -77,8 +77,8 @@ class secondthought_tabs_widget_2 extends SiteOrigin_Widget {
 /**
  * Register all the tabs scripts
  */
-function secondthought_tabs_register_scripts(){
+function secondthought_tabs_register_scripts_2(){
 
 	wp_register_script('secondthought-tabs-widget-2', siteorigin_widget_get_plugin_dir_url('secondthought-tabs-widget-2').'js/secondthought-tabs-widget-2.js', array('jquery'), SOW_BUNDLE_VERSION);
 }
-add_action('wp_enqueue_scripts', 'secondthought_tabs_register_scripts', 1);
+add_action('wp_enqueue_scripts', 'secondthought_tabs_register_scripts_2', 1);
