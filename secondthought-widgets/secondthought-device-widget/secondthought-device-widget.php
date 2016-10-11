@@ -19,51 +19,55 @@ class secondthought_device_widget extends SiteOrigin_Widget {
 				'panels_groups' => array('inzite')
 			),
 			array(),
-			array(
-				'image_lg_desktop' => array(
-		        'type' => 'media',
-		        'label' => __( 'Large Desktop', 'secondthought_pagebuilder_bundle' ),
-		        'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
-		        'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
-		        'library' => 'image'
-		    ),
-				'image_sm_desktop' => array(
-		        'type' => 'media',
-		        'label' => __( 'Small Desktop', 'secondthought_pagebuilder_bundle' ),
-		        'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
-		        'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
-		        'library' => 'image'
-		    ),
-				'image_tablet_portrait' => array(
-		        'type' => 'media',
-		        'label' => __( 'Tablet (Portrait)', 'secondthought_pagebuilder_bundle' ),
-		        'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
-		        'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
-		        'library' => 'image'
-		    ),
-				'image_tablet_landscape' => array(
-		        'type' => 'media',
-		        'label' => __( 'Tablet (Landscape)', 'secondthought_pagebuilder_bundle' ),
-		        'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
-		        'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
-		        'library' => 'image'
-		    ),
-				'image_mobile_portrait' => array(
-		        'type' => 'media',
-		        'label' => __( 'Mobile (Portrait)', 'secondthought_pagebuilder_bundle' ),
-		        'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
-		        'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
-		        'library' => 'image'
-		    ),
-				'image_mobile_landscape' => array(
-		        'type' => 'media',
-		        'label' => __( 'Mobile (Landscape)', 'secondthought_pagebuilder_bundle' ),
-		        'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
-		        'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
-		        'library' => 'image'
-		    )
-			),
+			false,
 			plugin_dir_path(__FILE__)
+		);
+	}
+
+	function get_widget_form() {
+		return array(
+			'image_lg_desktop' => array(
+					'type' => 'media',
+					'label' => __( 'Large Desktop', 'secondthought_pagebuilder_bundle' ),
+					'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
+					'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
+					'library' => 'image'
+			),
+			'image_sm_desktop' => array(
+					'type' => 'media',
+					'label' => __( 'Small Desktop', 'secondthought_pagebuilder_bundle' ),
+					'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
+					'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
+					'library' => 'image'
+			),
+			'image_tablet_portrait' => array(
+					'type' => 'media',
+					'label' => __( 'Tablet (Portrait)', 'secondthought_pagebuilder_bundle' ),
+					'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
+					'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
+					'library' => 'image'
+			),
+			'image_tablet_landscape' => array(
+					'type' => 'media',
+					'label' => __( 'Tablet (Landscape)', 'secondthought_pagebuilder_bundle' ),
+					'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
+					'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
+					'library' => 'image'
+			),
+			'image_mobile_portrait' => array(
+					'type' => 'media',
+					'label' => __( 'Mobile (Portrait)', 'secondthought_pagebuilder_bundle' ),
+					'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
+					'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
+					'library' => 'image'
+			),
+			'image_mobile_landscape' => array(
+					'type' => 'media',
+					'label' => __( 'Mobile (Landscape)', 'secondthought_pagebuilder_bundle' ),
+					'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
+					'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
+					'library' => 'image'
+			)
 		);
 	}
 

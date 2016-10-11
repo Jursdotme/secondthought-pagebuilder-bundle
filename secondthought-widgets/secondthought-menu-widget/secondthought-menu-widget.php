@@ -26,21 +26,26 @@ class Secondthought_Menu_Widget extends SiteOrigin_Widget {
 			),
 			array(
 			),
-			array(
-				'affix' => array(
-		        'type' => 'checkbox',
-		        'label' => __( 'Fix menu', 'widget-form-fields-text-domain' ),
-		        'default' => true
-		    ),
-				'another_selection' => array(
-						'type' => 'select',
-						'prompt' => __( 'Choose a thing from a long list of things', 'widget-form-fields-text-domain' ),
-						'options' => $usable_nav_menus
-				)
-			),
+			false,
 			get_template_directory_uri().'/widgets/secondthought-menu-widget/'
 		);
 	}
+
+	function get_widget_form() {
+		return array(
+			'affix' => array(
+					'type' => 'checkbox',
+					'label' => __( 'Fix menu', 'widget-form-fields-text-domain' ),
+					'default' => true
+			),
+			'another_selection' => array(
+					'type' => 'select',
+					'prompt' => __( 'Choose a thing from a long list of things', 'widget-form-fields-text-domain' ),
+					'options' => $usable_nav_menus
+			)
+		);
+	}
+
 	function get_template_name($instance) {
 		return 'secondthought-menu-widget-template';
 	}

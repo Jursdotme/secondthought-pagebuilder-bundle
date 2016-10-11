@@ -19,28 +19,32 @@ class secondthought_hidden_content_widget extends SiteOrigin_Widget {
 				'panels_groups' => array('inzite')
 			),
 			array(),
-			array(
-				'header_text' => array(
-	        'type' => 'text',
-	        'label' => __('Link tekst', 'secondthought_pagebuilder_bundle'),
-	        'default' => ''
-		    ),
-				'content' => array(
-		        'type' => 'tinymce',
-		        'label' => __( 'Indhold', 'secondthought_pagebuilder_bundle' ),
-		        'default' => '',
-		        'rows' => 10,
-		        'default_editor' => 'tinymce',
-		        'button_filters' => array(
-		            'mce_buttons' => array( $this, 'filter_mce_buttons' ),
-		            'mce_buttons_2' => array( $this, 'filter_mce_buttons_2' ),
-		            'mce_buttons_3' => array( $this, 'filter_mce_buttons_3' ),
-		            'mce_buttons_4' => array( $this, 'filter_mce_buttons_5' ),
-		            'quicktags_settings' => array( $this, 'filter_quicktags_settings' ),
-		        ),
-		    ),
-			),
+			false,
 			plugin_dir_path(__FILE__)
+		);
+	}
+
+	function get_widget_form() {
+		return array(
+			'header_text' => array(
+				'type' => 'text',
+				'label' => __('Link tekst', 'secondthought_pagebuilder_bundle'),
+				'default' => ''
+			),
+			'content' => array(
+					'type' => 'tinymce',
+					'label' => __( 'Indhold', 'secondthought_pagebuilder_bundle' ),
+					'default' => '',
+					'rows' => 10,
+					'default_editor' => 'tinymce',
+					'button_filters' => array(
+							'mce_buttons' => array( $this, 'filter_mce_buttons' ),
+							'mce_buttons_2' => array( $this, 'filter_mce_buttons_2' ),
+							'mce_buttons_3' => array( $this, 'filter_mce_buttons_3' ),
+							'mce_buttons_4' => array( $this, 'filter_mce_buttons_5' ),
+							'quicktags_settings' => array( $this, 'filter_quicktags_settings' ),
+					),
+			),
 		);
 	}
 

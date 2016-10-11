@@ -19,45 +19,49 @@ class secondthought_columns_widget extends SiteOrigin_Widget {
 				'panels_groups' => array('inzite')
 			),
 			array(),
-			array(
-				'column_tinymce_editor' => array(
-		        'type' => 'tinymce',
-		        'label' => __( 'Content.', 'widget-form-fields-text-domain' ),
-		        'default' => '',
-		        'rows' => 10,
-		        'default_editor' => 'html',
-		        'button_filters' => array(
-		            'mce_buttons' => array( $this, 'filter_mce_buttons' ),
-		            'mce_buttons_2' => array( $this, 'filter_mce_buttons_2' ),
-		            'mce_buttons_3' => array( $this, 'filter_mce_buttons_3' ),
-		            'mce_buttons_4' => array( $this, 'filter_mce_buttons_5' ),
-		            'quicktags_settings' => array( $this, 'filter_quicktags_settings' ),
-		        ),
-		    ),
-				'column_settings' => array(
-		        'type' => 'section',
-		        'label' => __( 'Settings' , 'widget-form-fields-text-domain' ),
-		        'hide' => true,
-		        'fields' => array(
-								'column_number' => array(
-									'type' => 'number',
-									'label' => __( 'Maximum column count.', 'widget-form-fields-text-domain' ),
-									'default' => '3'
-								),
-								'column_width' => array(
-									'type' => 'measurement',
-									'label' => __( 'Max column width', 'secondthought-hero' ),
-									'default' => '15em',
-								),
-								'gutter_width' => array(
-									'type' => 'measurement',
-									'label' => __( 'Gutter width', 'secondthought-hero' ),
-									'default' => '30px',
-								)
-		        )
-		    )
-			),
+			false,
 			plugin_dir_path(__FILE__)
+		);
+	}
+
+	function get_widget_form() {
+		return array(
+			'column_tinymce_editor' => array(
+					'type' => 'tinymce',
+					'label' => __( 'Content.', 'widget-form-fields-text-domain' ),
+					'default' => '',
+					'rows' => 10,
+					'default_editor' => 'html',
+					'button_filters' => array(
+							'mce_buttons' => array( $this, 'filter_mce_buttons' ),
+							'mce_buttons_2' => array( $this, 'filter_mce_buttons_2' ),
+							'mce_buttons_3' => array( $this, 'filter_mce_buttons_3' ),
+							'mce_buttons_4' => array( $this, 'filter_mce_buttons_5' ),
+							'quicktags_settings' => array( $this, 'filter_quicktags_settings' ),
+					),
+			),
+			'column_settings' => array(
+					'type' => 'section',
+					'label' => __( 'Settings' , 'widget-form-fields-text-domain' ),
+					'hide' => true,
+					'fields' => array(
+							'column_number' => array(
+								'type' => 'number',
+								'label' => __( 'Maximum column count.', 'widget-form-fields-text-domain' ),
+								'default' => '3'
+							),
+							'column_width' => array(
+								'type' => 'measurement',
+								'label' => __( 'Max column width', 'secondthought-hero' ),
+								'default' => '15em',
+							),
+							'gutter_width' => array(
+								'type' => 'measurement',
+								'label' => __( 'Gutter width', 'secondthought-hero' ),
+								'default' => '30px',
+							)
+					)
+			)
 		);
 	}
 

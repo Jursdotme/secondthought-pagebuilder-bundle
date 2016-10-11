@@ -19,40 +19,44 @@ class secondthought_feature_widget extends SiteOrigin_Widget {
 				'panels_groups' => array('inzite')
 			),
 			array(),
-			array(
-				'header_text' => array(
-	        'type' => 'text',
-	        'label' => __('Header Text', 'secondthought_pagebuilder_bundle'),
-	        'default' => ''
-		    ),
-				'label_text' => array(
-	        'type' => 'text',
-	        'label' => __('Caption Text', 'secondthought_pagebuilder_bundle'),
-	        'default' => ''
-		    ),
-				'link' => array(
-	        'type' => 'link',
-	        'label' => __('Link', 'secondthought_pagebuilder_bundle'),
-	        'default' => ''
-		    ),
-				'text_placement' => array(
-	        'type' => 'radio',
-	        'label' => __( 'Text placement', 'secondthought_pagebuilder_bundle' ),
-	        'default' => 'text-below-image',
-	        'options' => array(
-            'text-on-image' => __( 'On image', 'secondthought_pagebuilder_bundle' ),
-            'text-below-image' => __( 'Below image', 'secondthought_pagebuilder_bundle' ),
-	        )
-		    ),
-				'image' => array(
-		        'type' => 'media',
-		        'label' => __( 'Image', 'secondthought_pagebuilder_bundle' ),
-		        'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
-		        'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
-		        'library' => 'image'
-		    )
-			),
+			false,
 			plugin_dir_path(__FILE__)
+		);
+	}
+
+	function get_widget_form() {
+		return array(
+			'header_text' => array(
+				'type' => 'text',
+				'label' => __('Header Text', 'secondthought_pagebuilder_bundle'),
+				'default' => ''
+			),
+			'label_text' => array(
+				'type' => 'text',
+				'label' => __('Caption Text', 'secondthought_pagebuilder_bundle'),
+				'default' => ''
+			),
+			'link' => array(
+				'type' => 'link',
+				'label' => __('Link', 'secondthought_pagebuilder_bundle'),
+				'default' => ''
+			),
+			'text_placement' => array(
+				'type' => 'radio',
+				'label' => __( 'Text placement', 'secondthought_pagebuilder_bundle' ),
+				'default' => 'text-below-image',
+				'options' => array(
+					'text-on-image' => __( 'On image', 'secondthought_pagebuilder_bundle' ),
+					'text-below-image' => __( 'Below image', 'secondthought_pagebuilder_bundle' ),
+				)
+			),
+			'image' => array(
+					'type' => 'media',
+					'label' => __( 'Image', 'secondthought_pagebuilder_bundle' ),
+					'choose' => __( 'Choose image', 'secondthought_pagebuilder_bundle' ),
+					'update' => __( 'Set image', 'secondthought_pagebuilder_bundle' ),
+					'library' => 'image'
+			),
 		);
 	}
 

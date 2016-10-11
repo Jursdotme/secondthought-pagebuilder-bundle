@@ -21,167 +21,172 @@ class Secondthought_Hero_Widget extends SiteOrigin_Widget_Base_Slider {
 				'help' => 'https://siteorigin.com/widgets-bundle/hero-image-widget/',
 				'panels_title' => false,
 			),
-			array( ),
-			array(
-				'frames' => array(
-					'type' => 'repeater',
-					'label' => __('Hero frames', 'secondthought-hero'),
-					'item_name' => __('Frame', 'secondthought-hero'),
-					'item_label' => array(
-						'selector' => "[id*='frames-title']",
-						'update_event' => 'change',
-						'value_method' => 'val'
+			array(),
+			false,
+			plugin_dir_path(__FILE__)
+		);
+	}
+
+	function get_widget_form() {
+		return array(
+			'frames' => array(
+				'type' => 'repeater',
+				'label' => __('Hero frames', 'secondthought-hero'),
+				'item_name' => __('Frame', 'secondthought-hero'),
+				'item_label' => array(
+					'selector' => "[id*='frames-title']",
+					'update_event' => 'change',
+					'value_method' => 'val'
+				),
+
+				'fields' => array(
+
+					'content' => array(
+						'type' => 'tinymce',
+						'label' => __( 'Content', 'secondthought-hero' ),
 					),
 
-					'fields' => array(
+					'buttons' => array(
+						'type' => 'repeater',
+						'label' => __('Buttons', 'secondthought-hero'),
+						'item_name' => __('Button', 'secondthought-hero'),
+						'description' => __('Add [buttons] shortcode to the content to insert these buttons.', 'secondthought-hero'),
 
-						'content' => array(
-							'type' => 'tinymce',
-							'label' => __( 'Content', 'secondthought-hero' ),
+						'item_label' => array(
+							'selector' => "[id*='buttons-button-text']",
+							'update_event' => 'change',
+							'value_method' => 'val'
 						),
+						'fields' => array(
+							'button' => array(
+								'type' => 'widget',
+								'class' => 'SiteOrigin_Widget_Button_Widget',
+								'label' => __('Button', 'secondthought-hero'),
+								'collapsible' => false,
+							)
+						)
+					),
 
-						'buttons' => array(
-							'type' => 'repeater',
-							'label' => __('Buttons', 'secondthought-hero'),
-							'item_name' => __('Button', 'secondthought-hero'),
-							'description' => __('Add [buttons] shortcode to the content to insert these buttons.', 'secondthought-hero'),
-
-							'item_label' => array(
-								'selector' => "[id*='buttons-button-text']",
-								'update_event' => 'change',
-								'value_method' => 'val'
+					'background' => array(
+						'type' => 'section',
+						'label' => __('Background', 'secondthought-hero'),
+						'fields' => array(
+							'image' => array(
+								'type' => 'media',
+								'label' => __( 'Background image', 'secondthought-hero' ),
+								'library' => 'image',
+								'fallback' => true,
 							),
-							'fields' => array(
-								'button' => array(
-									'type' => 'widget',
-									'class' => 'SiteOrigin_Widget_Button_Widget',
-									'label' => __('Button', 'secondthought-hero'),
-									'collapsible' => false,
-								)
-							)
-						),
 
-						'background' => array(
-							'type' => 'section',
-							'label' => __('Background', 'secondthought-hero'),
-							'fields' => array(
-								'image' => array(
-									'type' => 'media',
-									'label' => __( 'Background image', 'secondthought-hero' ),
-									'library' => 'image',
-									'fallback' => true,
-								),
+							'opacity' => array(
+								'label' => __( 'Background image opacity', 'secondthought-hero' ),
+								'type' => 'slider',
+								'min' => 0,
+								'max' => 100,
+								'default' => 100,
+							),
 
-								'opacity' => array(
-									'label' => __( 'Background image opacity', 'secondthought-hero' ),
-									'type' => 'slider',
-									'min' => 0,
-									'max' => 100,
-									'default' => 100,
-								),
+							'color' => array(
+								'type' => 'color',
+								'label' => __( 'Background color', 'secondthought-hero' ),
+								'default' => '#333333',
+							),
 
-								'color' => array(
-									'type' => 'color',
-									'label' => __( 'Background color', 'secondthought-hero' ),
-									'default' => '#333333',
-								),
+							'url' => array(
+								'type' => 'link',
+								'label' => __( 'Destination URL', 'secondthought-hero' ),
+							),
 
-								'url' => array(
-									'type' => 'link',
-									'label' => __( 'Destination URL', 'secondthought-hero' ),
-								),
+							'new_window' => array(
+								'type' => 'checkbox',
+								'label' => __( 'Open URL in a new window', 'secondthought-hero' ),
+							),
 
-								'new_window' => array(
-									'type' => 'checkbox',
-									'label' => __( 'Open URL in a new window', 'secondthought-hero' ),
+							'videos' => array(
+								'type' => 'repeater',
+								'item_name' => __('Video', 'secondthought-hero'),
+								'label' => __('Background videos', 'secondthought-hero'),
+								'item_label' => array(
+									'selector' => "[id*='frames-background_videos-url']",
+									'update_event' => 'change',
+									'value_method' => 'val'
 								),
-
-								'videos' => array(
-									'type' => 'repeater',
-									'item_name' => __('Video', 'secondthought-hero'),
-									'label' => __('Background videos', 'secondthought-hero'),
-									'item_label' => array(
-										'selector' => "[id*='frames-background_videos-url']",
-										'update_event' => 'change',
-										'value_method' => 'val'
-									),
-									'fields' => $this->video_form_fields(),
-								),
-							)
-						),
+								'fields' => $this->video_form_fields(),
+							),
+						)
 					),
 				),
+			),
 
-				'controls' => array(
-					'type' => 'section',
-					'label' => __('Slider Controls', 'secondthought-hero'),
-					'fields' => $this->control_form_fields()
-				),
+			'controls' => array(
+				'type' => 'section',
+				'label' => __('Slider Controls', 'secondthought-hero'),
+				'fields' => $this->control_form_fields()
+			),
 
-				'design' => array(
-					'type' => 'section',
-					'label' => __('Design and Layout', 'secondthought-hero'),
-					'fields' => array(
+			'design' => array(
+				'type' => 'section',
+				'label' => __('Design and Layout', 'secondthought-hero'),
+				'fields' => array(
 
-						'height' => array(
-							'type' => 'measurement',
-							'label' => __( 'Height', 'secondthought-hero' ),
-							'default' => 'default',
-						),
+					'height' => array(
+						'type' => 'measurement',
+						'label' => __( 'Height', 'secondthought-hero' ),
+						'default' => 'default',
+					),
 
-						'padding' => array(
-							'type' => 'measurement',
-							'label' => __('Top and bottom padding', 'secondthought-hero'),
-							'default' => '50px',
-						),
+					'padding' => array(
+						'type' => 'measurement',
+						'label' => __('Top and bottom padding', 'secondthought-hero'),
+						'default' => '50px',
+					),
 
-						'extra_top_padding' => array(
-							'type' => 'measurement',
-							'label' => __('Extra top padding', 'secondthought-hero'),
-							'description' => __('Additional padding added to the top of the slider', 'secondthought-hero'),
-							'default' => '0px',
-						),
+					'extra_top_padding' => array(
+						'type' => 'measurement',
+						'label' => __('Extra top padding', 'secondthought-hero'),
+						'description' => __('Additional padding added to the top of the slider', 'secondthought-hero'),
+						'default' => '0px',
+					),
 
-						'padding_sides' => array(
-							'type' => 'measurement',
-							'label' => __('Side padding', 'secondthought-hero'),
-							'default' => '15px',
-						),
+					'padding_sides' => array(
+						'type' => 'measurement',
+						'label' => __('Side padding', 'secondthought-hero'),
+						'default' => '15px',
+					),
 
-						'width' => array(
-							'type' => 'measurement',
-							'label' => __('Maximum container width', 'secondthought-hero'),
-							'default' => '1088px',
-						),
+					'width' => array(
+						'type' => 'measurement',
+						'label' => __('Maximum container width', 'secondthought-hero'),
+						'default' => '1088px',
+					),
 
-						'heading_font' => array(
-							'type' => 'font',
-							'label' => __('Heading font', 'secondthought-hero'),
-							'default' => '',
-						),
+					'heading_font' => array(
+						'type' => 'font',
+						'label' => __('Heading font', 'secondthought-hero'),
+						'default' => '',
+					),
 
-						'heading_size' => array(
-							'type' => 'measurement',
-							'label' => __('Heading size', 'secondthought-hero'),
-							'default' => '38px',
-						),
+					'heading_size' => array(
+						'type' => 'measurement',
+						'label' => __('Heading size', 'secondthought-hero'),
+						'default' => '38px',
+					),
 
-						'heading_shadow' => array(
-							'type' => 'slider',
-							'label' => __('Heading shadow intensity', 'secondthought-hero'),
-							'max' => 100,
-							'min' => 0,
-							'default' => 50,
-						),
+					'heading_shadow' => array(
+						'type' => 'slider',
+						'label' => __('Heading shadow intensity', 'secondthought-hero'),
+						'max' => 100,
+						'min' => 0,
+						'default' => 50,
+					),
 
-						'text_size' => array(
-							'type' => 'measurement',
-							'label' => __('Text size', 'secondthought-hero'),
-							'default' => '16px',
-						),
+					'text_size' => array(
+						'type' => 'measurement',
+						'label' => __('Text size', 'secondthought-hero'),
+						'default' => '16px',
+					),
 
-					)
-				),
+				)
 			)
 		);
 	}

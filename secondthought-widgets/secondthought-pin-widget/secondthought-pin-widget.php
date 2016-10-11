@@ -31,123 +31,123 @@ class Secondthought_pin_widget extends SiteOrigin_Widget {
 				'panels_icon' => 'dashicons dashicons-heart',
 				'panels_groups' => array('inzite')
 			),
-			array(
+			array(),
+			false,
+			plugin_dir_path(__FILE__)
+		);
+	}
 
+	function get_widget_form() {
+		return array(
+			'pin_map' => array(
+					'type' => 'select',
+					'label' => __('Choose map', 'widget-form-fields-text-domain'),
+					'prompt' => __( 'Select pin map', 'widget-form-fields-text-domain' ),
+					'options' => $result
 			),
-			array(
-				'pin_map' => array(
-		        'type' => 'select',
-						'label' => __('Choose map', 'widget-form-fields-text-domain'),
-		        'prompt' => __( 'Select pin map', 'widget-form-fields-text-domain' ),
-		        'options' => $result
-		    ),
-				'icon_settings' => array(
-					'type' => 'section',
-	        'label' => __( 'Icon settings' , 'widget-form-fields-text-domain' ),
-	        'hide' => true,
-	        'fields' => array(
-						'pin_icon' => array(
-				        'type' => 'icon',
-				        'label' => __('Select an icon', 'widget-form-fields-text-domain'),
-				    ),
-						'pin_icon_color' => array(
-							'type' => 'color',
-			        'label' => __( 'Icon color', 'widget-form-fields-text-domain' ),
-			        'default' => '#000000'
-						),
-						'pin_icon_size' => array(
-							'type' => 'slider',
-							'label' => __( 'Pin size', 'widget-form-fields-text-domain' ),
-							'default' => 18,
-							'min' => 0,
-							'max' => 50,
-							'integer' => true
-						),
-						'pin_icon_bg_color' => array(
-							'type' => 'color',
-			        'label' => __( 'Icon background color', 'widget-form-fields-text-domain' ),
-			        'default' => ''
-						),
-						'pin_icon_border_color' => array(
-							'type' => 'color',
-			        'label' => __( 'Icon border color', 'widget-form-fields-text-domain' ),
-			        'default' => ''
-						),
-						'pin_icon_padding' => array(
-							'type' => 'slider',
-							'label' => __( 'Icon padding', 'widget-form-fields-text-domain' ),
-							'default' => 3,
-							'min' => 0,
-							'max' => 15,
-							'integer' => true
-						),
-						'pin_icon_border_rounded' => array(
-							'type' => 'checkbox',
-			        'label' => __( 'Rounded icon', 'widget-form-fields-text-domain' ),
-			        'default' => ''
-						),
-						'pin_icon_shadow' => array(
-							'type' => 'checkbox',
-			        'label' => __( 'Shadow behind icon', 'widget-form-fields-text-domain' ),
-			        'default' => ''
-						)
-					)
-				),
-				'content_settings' => array(
-					'type' => 'section',
-	        'label' => __( 'Content settings' , 'widget-form-fields-text-domain' ),
-	        'hide' => true,
-	        'fields' => array(
-						'pin_content_size' => array(
-							'type' => 'slider',
-							'label' => __( 'Font size', 'widget-form-fields-text-domain' ),
-							'default' => 11,
-							'min' => 8,
-							'max' => 30,
-							'integer' => true
-						),
-						'pin_content_color' => array(
-							'type' => 'color',
-			        'label' => __( 'Content color', 'widget-form-fields-text-domain' ),
-			        'default' => ''
-						),
-						'pin_content_bg_color' => array(
-							'type' => 'color',
-			        'label' => __( 'Content background color', 'widget-form-fields-text-domain' ),
-			        'default' => '#ffffff'
-						),
-						'pin_content_border_color' => array(
-							'type' => 'color',
-			        'label' => __( 'Content border color', 'widget-form-fields-text-domain' ),
-			        'default' => '#dddddd'
-						),
-						'pin_content_padding' => array(
-							'type' => 'slider',
-							'label' => __( 'Padding', 'widget-form-fields-text-domain' ),
-							'default' => 10,
-							'min' => 0,
-							'max' => 50,
-							'integer' => true
-						),
-						'pin_content_border_rounded' => array(
-							'type' => 'slider',
-							'label' => __( 'Rounded corners', 'widget-form-fields-text-domain' ),
-							'default' => 0,
-							'min' => 0,
-							'max' => 25,
-							'integer' => true
-						),
-						'pin_content_shadow' => array(
-							'type' => 'checkbox',
-			        'label' => __( 'Shadow behind content', 'widget-form-fields-text-domain' ),
-			        'default' => ''
-						)
+			'icon_settings' => array(
+				'type' => 'section',
+				'label' => __( 'Icon settings' , 'widget-form-fields-text-domain' ),
+				'hide' => true,
+				'fields' => array(
+					'pin_icon' => array(
+							'type' => 'icon',
+							'label' => __('Select an icon', 'widget-form-fields-text-domain'),
+					),
+					'pin_icon_color' => array(
+						'type' => 'color',
+						'label' => __( 'Icon color', 'widget-form-fields-text-domain' ),
+						'default' => '#000000'
+					),
+					'pin_icon_size' => array(
+						'type' => 'slider',
+						'label' => __( 'Pin size', 'widget-form-fields-text-domain' ),
+						'default' => 18,
+						'min' => 0,
+						'max' => 50,
+						'integer' => true
+					),
+					'pin_icon_bg_color' => array(
+						'type' => 'color',
+						'label' => __( 'Icon background color', 'widget-form-fields-text-domain' ),
+						'default' => ''
+					),
+					'pin_icon_border_color' => array(
+						'type' => 'color',
+						'label' => __( 'Icon border color', 'widget-form-fields-text-domain' ),
+						'default' => ''
+					),
+					'pin_icon_padding' => array(
+						'type' => 'slider',
+						'label' => __( 'Icon padding', 'widget-form-fields-text-domain' ),
+						'default' => 3,
+						'min' => 0,
+						'max' => 15,
+						'integer' => true
+					),
+					'pin_icon_border_rounded' => array(
+						'type' => 'checkbox',
+						'label' => __( 'Rounded icon', 'widget-form-fields-text-domain' ),
+						'default' => ''
+					),
+					'pin_icon_shadow' => array(
+						'type' => 'checkbox',
+						'label' => __( 'Shadow behind icon', 'widget-form-fields-text-domain' ),
+						'default' => ''
 					)
 				)
-
-
 			),
-			plugin_dir_path(__FILE__)
+			'content_settings' => array(
+				'type' => 'section',
+				'label' => __( 'Content settings' , 'widget-form-fields-text-domain' ),
+				'hide' => true,
+				'fields' => array(
+					'pin_content_size' => array(
+						'type' => 'slider',
+						'label' => __( 'Font size', 'widget-form-fields-text-domain' ),
+						'default' => 11,
+						'min' => 8,
+						'max' => 30,
+						'integer' => true
+					),
+					'pin_content_color' => array(
+						'type' => 'color',
+						'label' => __( 'Content color', 'widget-form-fields-text-domain' ),
+						'default' => ''
+					),
+					'pin_content_bg_color' => array(
+						'type' => 'color',
+						'label' => __( 'Content background color', 'widget-form-fields-text-domain' ),
+						'default' => '#ffffff'
+					),
+					'pin_content_border_color' => array(
+						'type' => 'color',
+						'label' => __( 'Content border color', 'widget-form-fields-text-domain' ),
+						'default' => '#dddddd'
+					),
+					'pin_content_padding' => array(
+						'type' => 'slider',
+						'label' => __( 'Padding', 'widget-form-fields-text-domain' ),
+						'default' => 10,
+						'min' => 0,
+						'max' => 50,
+						'integer' => true
+					),
+					'pin_content_border_rounded' => array(
+						'type' => 'slider',
+						'label' => __( 'Rounded corners', 'widget-form-fields-text-domain' ),
+						'default' => 0,
+						'min' => 0,
+						'max' => 25,
+						'integer' => true
+					),
+					'pin_content_shadow' => array(
+						'type' => 'checkbox',
+						'label' => __( 'Shadow behind content', 'widget-form-fields-text-domain' ),
+						'default' => ''
+					)
+				)
+			)
 		);
 	}
 
