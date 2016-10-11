@@ -89,3 +89,5 @@ function hex2rgb($hex) {
    //return implode(",", $rgb); // returns the rgb values separated by commas
    return $rgb; // returns an array with the rgb values
 }
+// Remove references to SiteOrigin Premium
+add_filter( 'siteorigin_premium_upgrade_teaser', '__return_false' );
