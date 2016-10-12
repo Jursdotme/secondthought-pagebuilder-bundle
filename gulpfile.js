@@ -2,14 +2,12 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var sass = require('gulp-ruby-sass');
-var bless = require('gulp-bless');
 var cssmin = require('gulp-minify-css');
 var autoprefixer = require('gulp-autoprefixer');
 var scsslint = require('gulp-scss-lint');
 var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
 var cache = require('gulp-cached');
-var stylestats = require('gulp-stylestats');
 
 
 var paths = {
@@ -31,23 +29,6 @@ var paths = {
 
   ]
 };
-
-// Not all tasks need to use streams
-// A gulpfile is just another node program and you can use all packages available on npm
-gulp.task('clean', function(cb) {
-  // You can use multiple globbing patterns as you would with `gulp.src`
-  del(['build'], cb);
-});
-
-gulp.task('clean-styles', function(cb) {
-  // You can use multiple globbing patterns as you would with `gulp.src`
-  del(['build/stylesheets'], cb);
-});
-
-gulp.task('clean-scripts', function(cb) {
-  // You can use multiple globbing patterns as you would with `gulp.src`
-  del(['build/scripts'], cb);
-});
 
 gulp.task('scripts-release', function() {
   // Minify and copy all JavaScript (except vendor scripts)
@@ -78,7 +59,6 @@ gulp.task('sass-release', function () {
     .on('error', function (err) { console.log(err.message); })
     .pipe(autoprefixer())
     .pipe(cssmin())
-    .pipe(bless({ imports: true }))
     .pipe(gulp.dest('build/stylesheets'));
 });
 
@@ -105,14 +85,7 @@ gulp.task('watch-release', function() {
   gulp.watch(paths.sass, ['sass-release']);
 });
 
-gulp.task('stylestats', function () {
-  return gulp.src('build/secondthought-addons-styles.css')
-    .pipe(stylestats());
-});
-
 // The default task (called when you run `gulp` from cli)
 gulp.task('default', ['scripts', 'sass', 'watch']);
 
 gulp.task('release', ['scripts-release', 'sass-release', 'watch-release']);
-
-gulp.task('stats', ['sass-release', 'stylestats']);

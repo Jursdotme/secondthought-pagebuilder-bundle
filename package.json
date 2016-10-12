@@ -1,6 +1,6 @@
 {
   "name": "secondthought_pagebuilder_bundle",
-  "version": "1.15.8",
+  "version": "1.16.1",
   "description": "An example plugin to demonstrate extending the SiteOrigin Widgets Bundle",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,6 @@
     "gulp-ruby-sass": "^1.0.0-alpha.3",
     "gulp-scss-lint": "^0.1.9",
     "gulp-sourcemaps": "^1.5.0",
-    "gulp-stylestats": "^0.5.5",
     "gulp-uglify": "^1.1.0"
   }
 }
