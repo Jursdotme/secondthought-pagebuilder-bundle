@@ -8,16 +8,6 @@ Author URI: http://inzite.dk
 
 class Secondthought_Menu_Widget extends SiteOrigin_Widget {
 	function __construct() {
-		$menus = get_terms('nav_menu');
-		$usable_nav_menus = array();
-		foreach($menus as $menu => $value ){
-
-			$name = $value->name;
-			$slug = $value->slug;
-		 	$usable_nav_menus[$slug] = $name;
-
-		}
-
 		parent::__construct(
 			'secondthought-menu-widget',
 			__('Inzite Menu Widget', 'secondthought-menu-widget-text-domain'),
@@ -32,6 +22,16 @@ class Secondthought_Menu_Widget extends SiteOrigin_Widget {
 	}
 
 	function get_widget_form() {
+		$menus = get_terms('nav_menu');
+		$usable_nav_menus = array();
+		foreach($menus as $menu => $value ){
+
+			$name = $value->name;
+			$slug = $value->slug;
+		 	$usable_nav_menus[$slug] = $name;
+
+		}
+		
 		return array(
 			'affix' => array(
 					'type' => 'checkbox',
