@@ -77,6 +77,14 @@ $thumbnailMargin = $instance['thumbnails']['thumbnail_margin'];
 $thumbnailArrows = ($instance['thumbnails']['thumbnail_arrows'] ? 'true' : 'false');
 $thumbnailCentered = ($instance['thumbnails']['thumbnail_centered'] ? 'true' : 'false');
 
+//slide count
+$slideDesktopSize = $instance['slide_settings']['slide_count_desktop'];
+if (!$slideDesktopSize) { $slideDesktopSize = 1; }
+$slideTabletSize = $instance['slide_settings']['slide_count_tablet'];
+if (!$slideTabletSize) { $slideTabletSize = 1; }
+$slideMobileSize = $instance['slide_settings']['slide_count_mobile'];
+if (!$slideMobileSize) { $slideMobileSize = 1; }
+
 echo '<div class="secondthought-slider-2"
  data-autoplay="' . $autoplay . '"
  data-animation-speed="' . $animationSpeed . '"
@@ -94,7 +102,11 @@ echo '<div class="secondthought-slider-2"
  data-arrow-color="' . $arrowColor . '"
  data-arrow-indent="' . $arrowIndent . '"
  data-arrow-show="' . $showArrow . '"
- data-padding="' . $instance['caption_padding'] . '"';
+ data-padding="' . $instance['caption_padding'] . '"
+ data-slides-desktop="'.$slideDesktopSize.'"
+ data-slides-tablet="'.$slideTabletSize.'"
+ data-slides-mobile="'.$slideMobileSize.'"
+ ';
  if ($instance['fill_screen']) {	echo ' data-full-width="true"'; }
  if ($instance['full_height']) {	echo ' data-full-height="true"'; }
  echo 'data-slider-height="' . $instance["minimum_height"] . '"';
@@ -111,6 +123,7 @@ foreach($instance['slider_2_repeater'] as $slide) {
 				echo '<div class="caption-inner" style="';
 				if (!$instance['fill_screen']) { echo ' ' . $backgroundColor; }
 				if ( $instance['full_height']) { echo ' height:100%;'; }
+				if ($slide['font_color']) { echo ' color:' . $slide['font_color'] . ';'; }
 				echo ' padding: ' . $instance['caption_padding'] . 'px;';
 				echo ' width: '. $instance['content_width'] . '%;';
 				echo ' float: ' .$instance['horizontal_align_radio'] . ';">';

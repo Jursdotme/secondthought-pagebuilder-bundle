@@ -27,7 +27,14 @@ $(document).ready(function(){
       container_width       = $('.caption').closest('.panel-grid').width(),
       slider_height         = $slider.data('slider-height'),
       full_height           = $slider.data('full-height'),
-      full_width            = $slider.data('full-width');
+      full_width            = $slider.data('full-width'),
+      $slides_desktop       = parseInt($slider.data('slides-desktop')),
+      $slides_tablet        = parseInt($slider.data('slides-tablet')),
+      $slides_mobile        = parseInt($slider.data('slides-mobile')),
+      $slides_count = $( '.slide' , $slider ).length;
+      if ($slides_desktop > $slides_count) { $slides_desktop = $slides_count; }
+      if ($slides_tablet > $slides_count) { $slides_tablet = $slides_count; }
+      if ($slides_mobile > $slides_count) { $slides_mobile = $slides_count; }
 
     //thumbnails
     var $thumbnails = $( '.slider-thumbnails' , $slider.parent() );
@@ -72,6 +79,8 @@ $(document).ready(function(){
     }
 
       $slider.slick({
+        slidesToShow: $slides_desktop,
+        slidesToScroll: 1,
         autoplay: autoplay_setting,
         autoplaySpeed: autoplay_speed,
         fade: fade_setting,
@@ -81,6 +90,22 @@ $(document).ready(function(){
         dots: dots_show,
         arrows: arrow_show,
         asNavFor: $thumbnails,
+        infinite: true,
+        responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: $slides_tablet,
+            slidesToScroll: 1,
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: $slides_mobile,
+            slidesToScroll: 1,
+          }
+        }],
         nextArrow: '<button type="button" data-role="none" class="fa fa-'+arrow_icon_right+' slick-next" aria-label="next" style="margin-top: -'+arrow_size/2+'px;right:'+arrow_indent+'px;font-size: '+arrow_size+'px; display: block; color: '+arrow_color+';"></button>',
         prevArrow: '<button type="button" data-role="none" class="fa fa-'+arrow_icon_left+' slick-prev" aria-label="previous" style="margin-top: -'+arrow_size/2+'px;left:'+arrow_indent+'px;font-size: '+arrow_size+'px; display: block; color: '+arrow_color+';"></button>'
       });

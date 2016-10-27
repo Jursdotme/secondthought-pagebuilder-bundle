@@ -56,6 +56,12 @@ class Secondthought_slider_widget_2 extends SiteOrigin_Widget {
 								    'fallback' => true
 								),
 
+								'font_color' => array(
+						        'type' => 'color',
+						        'label' => __( 'Font Color', 'secondthought_pagebuilder_bundle' ),
+						        'default' => ''
+								),
+
 								'hide_slide' => array(
 							        'type' => 'checkbox',
 							        'label' => __( 'Skjul dette slide', 'widget-form-fields-text-domain' ),
@@ -179,6 +185,34 @@ class Secondthought_slider_widget_2 extends SiteOrigin_Widget {
 						    ),
 			        )
 		    	),
+					'slide_settings' => array(
+				        'type' => 'section',
+				        'label' => __( 'Slide settings' , 'secondthought_pagebuilder_bundle' ),
+				        'hide' => true,
+				        'fields' => array(
+									'slide_count_desktop' => array(
+								        'type' => 'slider',
+								        'label' => __( 'Slides per row (desktop)', 'secondthought_pagebuilder_bundle' ),
+												'min' => 1,
+        								'max' => 8,
+								        'default' => '1'
+								  ),
+									'slide_count_tablet' => array(
+								        'type' => 'slider',
+								        'label' => __( 'Slides per row (tablet)', 'secondthought_pagebuilder_bundle' ),
+												'min' => 1,
+        								'max' => 5,
+								        'default' => '1'
+								  ),
+									'slide_count_mobile' => array(
+								        'type' => 'slider',
+								        'label' => __( 'Slides per row (mobile)', 'secondthought_pagebuilder_bundle' ),
+												'min' => 1,
+        								'max' => 3,
+								        'default' => '1'
+								  )
+				    )
+					),
 
 					'thumbnails' => array(
 				        'type' => 'section',
