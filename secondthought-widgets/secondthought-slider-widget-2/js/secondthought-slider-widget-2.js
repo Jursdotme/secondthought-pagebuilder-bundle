@@ -107,6 +107,17 @@ $(document).ready(function(){
       caption.css('left', (window_size - container_width) / 2);
     }
 
+    $(window).resize(function() {
+      if (full_width) {
+        caption.css('max-width', window_size);
+      } else if ($slider.find('.left')) {
+        caption.css('max-width', container_width);
+      } else {
+        caption.css('max-width', container_width);
+        caption.css('left', (window_size - container_width) / 2);
+      }
+    });
+
 
     $(caption).each(function(){
       var single_caption = $(this)

@@ -18,7 +18,7 @@ class Secondthought_pin_widget extends SiteOrigin_Widget {
 			'post_status'      => 'publish'
 			)
 		);
-		$result = [];
+		$result = array();
 		foreach ($posts_array as $v) {
       $result[$v->ID] = $v->post_title;
     }
