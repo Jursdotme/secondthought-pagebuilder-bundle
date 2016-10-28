@@ -127,7 +127,9 @@ foreach($instance['slider_2_repeater'] as $slide) {
 				echo ' padding: ' . $instance['caption_padding'] . 'px;';
 				echo ' width: '. $instance['content_width'] . '%;';
 				echo ' float: ' .$instance['horizontal_align_radio'] . ';">';
+				if ($slide['icon'] && $instance['icons']['icon_placement'] == 'top') { echo '<div class="slide-icon" style="font-size:'.$instance['icons']['icon_size'].'px;text-align:'.$instance['icons']['icon_alignment'].';">'.siteorigin_widget_get_icon($slide['icon']).'</div>'; }
 					echo $slide['tinymce_editor'];
+				if ($slide['icon'] && $instance['icons']['icon_placement'] == 'bottom') { echo '<div class="slide-icon" style="font-size:'.$instance['icons']['icon_size'].'px;text-align:'.$instance['icons']['icon_alignment'].';">'.siteorigin_widget_get_icon($slide['icon']).'</div>'; }
 				echo '</div>';
 			echo '</div>';
 		}
