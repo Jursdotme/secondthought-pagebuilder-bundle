@@ -1,4 +1,5 @@
-<?php if( empty($instance['slider_2_repeater']) ) return;?>
+<?php
+if( empty($instance['slider_2_repeater']) && (empty($instance['posts']['posts_query']) || !$instance['posts']['posts_visibility']) ) return;?>
 
 <?php if (!function_exists('secondthought_hex2rgba')) {
 	function secondthought_hex2rgba($color, $opacity = false) {
@@ -136,6 +137,54 @@ foreach($instance['slider_2_repeater'] as $slide) {
 	echo '</div>';
 	}
 }
+
+if ($instance['posts']['posts_visibility']) {
+	$query = siteorigin_widget_post_selector_process_query( $instance['posts']['posts_query'] );
+	$posts = new WP_Query($query);
+	if($posts->have_posts()) {
+		while($posts->have_posts()) {
+			$posts->the_post();
+			$post_image[0] = '';
+			$background_image[0] = '';
+			if (has_post_thumbnail() ) {
+				if ($instance['posts']['posts_images']) {
+					$post_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'secondthought_slider_image');
+				} else {
+					$background_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+				}
+			}
+
+			echo '<div class="slide '.$instance['horizontal_align_radio'].' ' . $instance['vertical_align_radio'] . ' is_post_slide" style="height: 100%; background-image: url(\'' . $background_image[0] . '\');">';
+				echo '<div class="caption"';
+				if ($instance['fill_screen']) { echo ' style="'.$backgroundColor.'"'; }
+				echo '>';
+
+					echo '<div class="caption-inner" style="';
+					if (!$instance['fill_screen']) { echo ' ' . $backgroundColor; }
+					if ( $instance['full_height']) { echo ' height:100%;'; }
+					echo ' padding: ' . $instance['caption_padding'] . 'px;';
+					echo ' width: '. $instance['content_width'] . '%;';
+					echo ' float: ' .$instance['horizontal_align_radio'] . ';">';
+
+						echo '<a href="' . get_the_permalink() . '">';
+							if ($instance['posts']['posts_images'])
+								echo '<img class="slider_post_image" src="' . $post_image[0] . '"/>';
+							echo '<h3>' . get_the_title() .'</h3>';
+							echo '<p>' . get_the_excerpt() .'</p>';
+						echo '</a>';
+
+					echo '</div>';
+
+				echo '</div>';
+
+			echo '</div>';
+
+		}
+		wp_reset_postdata();
+	}
+}
+
+
 echo '</div>';
 
 if ($thumbDisplay) {

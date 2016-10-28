@@ -80,7 +80,27 @@ class Secondthought_slider_widget_2 extends SiteOrigin_Widget {
 							    )
 								)
 					   ),
-
+				'posts'  => array(
+			        'type' => 'section',
+			        'label' => __( 'Get post content' , 'secondthought_pagebuilder_bundle' ),
+			        'hide' => true,
+			        'fields' => array(
+								  'posts_visibility' => array(
+											'type' => 'checkbox',
+											'label' => __( 'Show posts', 'secondthought_pagebuilder_bundle' ),
+											'default' => false
+									),
+									'posts_query' => array(
+										'type' => 'posts',
+										'label' => __('Posts query', 'secondthought_pagebuilder_bundle'),
+									),
+									'posts_images' => array(
+											'type' => 'checkbox',
+											'label' => __( 'Show image above content instead of background', 'secondthought_pagebuilder_bundle' ),
+											'default' => false
+									),
+							)
+				),
 				'dots' => array(
 			        'type' => 'section',
 			        'label' => __( 'Dots' , 'secondthought_pagebuilder_bundle' ),
@@ -301,7 +321,7 @@ class Secondthought_slider_widget_2 extends SiteOrigin_Widget {
 				    )
 					),
 				'minimum_height' => array(
-			        'type' => 'number',
+			        'type' => 'text',
 			        'label' => __( 'Slider height', 'secondthought_pagebuilder_bundle' ),
 			        'default' => '300'
 			    ),
@@ -377,6 +397,7 @@ class Secondthought_slider_widget_2 extends SiteOrigin_Widget {
 			),
 			plugin_dir_path(__FILE__)
 		);
+		add_image_size('secondthought_slider_image', 400, 300, true);
 	}
 
 	function get_template_name($instance) {
