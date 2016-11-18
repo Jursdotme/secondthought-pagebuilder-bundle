@@ -51,9 +51,11 @@ class Secondthought_Menu_Widget extends SiteOrigin_Widget {
 	function get_template_name($instance) {
 		return 'secondthought-menu-widget-template';
 	}
+
 	function get_style_name($instance) {
-		return 'secondthought-menu-widget-style';
+		return 'secondthought-menu-widget';
 	}
+
 }
 siteorigin_widget_register('secondthought-menu-widget', __FILE__, 'Secondthought_Menu_Widget');
 

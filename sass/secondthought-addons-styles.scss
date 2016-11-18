@@ -1,4 +1,3 @@
-
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import '../../../themes/secondthought/sass/base/helpers';
 @import '../../../themes/secondthought/sass/base/variables';
@@ -6,13 +5,12 @@
 @import '../bower_components/neat/app/assets/stylesheets/neat-helpers';
 @import '../../../themes/secondthought/sass/base/grid-settings';
 
-
 // Center content
 
 %center-content {
-  position: relative;
-  //top: 50%;
-  //transform: translateY(-50%);
+    position: relative;
+    //top: 50%;
+    //transform: translateY(-50%);
 }
 
 //.secondthought-center-content {
@@ -32,18 +30,17 @@
 //  > div {
 //  }
 //}
-
 @import '../../../themes/secondthought/sass/base/mixins';
 
-@import '../secondthought-widgets/secondthought-feature-widget/styles/secondthought-feature-widget-style';
+// @import '../secondthought-widgets/secondthought-feature-widget/styles/secondthought-feature-widget-style';
 @import '../secondthought-widgets/secondthought-slider-widget/styles/secondthought-slider-widget-style';
 @import '../secondthought-widgets/secondthought-slider-widget-2/styles/secondthought-slider-widget-2-style';
 @import '../secondthought-widgets/secondthought-tabs-widget/styles/secondthought-tabs-widget-style';
-@import '../secondthought-widgets/secondthought-accordion-widget/styles/secondthought-accordion-widget-style.scss';
+// @import '../secondthought-widgets/secondthought-accordion-widget/styles/secondthought-accordion-widget-style.scss';
 @import '../secondthought-widgets/secondthought-device-widget/styles/secondthought-device-widget-style.scss';
 @import '../secondthought-widgets/secondthought-menu-widget/styles/secondthought-menu-widget.scss';
 @import '../secondthought-widgets/secondthought-pin-widget/styles/secondthought-pin-widget-style.scss';
-@import '../secondthought-widgets/secondthought-hidden-content-widget/styles/secondthought-hidden-content-widget.scss';
+// @import '../secondthought-widgets/secondthought-hidden-content-widget/styles/secondthought-hidden-content-widget.scss';
 
 //body:after {
 //  position: absolute;
@@ -58,53 +55,48 @@
 //  content: '';
 //}
 
-
 //.wrapper {
 //  overflow: hidden;
 //}
 
 .fill-left {
-  position: relative;
-
-  @include media($sm-up) {
-    padding-left: 0;
-  }
-
-  &:after {
-    position: absolute;
-    top: 0;
-    right: 100%;
-    width: 2000px;
-    height: 100%;
-    background-color: inherit;
-    content: '';
-
-    @include media($xs) {
-      display: none;
+    position: relative;
+    @include media($sm-up) {
+        padding-left: 0;
     }
-  }
+
+    &:after {
+        position: absolute;
+        top: 0;
+        right: 100%;
+        width: 2000px;
+        height: 100%;
+        background-color: inherit;
+        content: '';
+        @include media($xs) {
+            display: none;
+        }
+    }
 }
 
 .fill-right {
-  position: relative;
-
-  @include media($sm-up) {
-    padding-right: 0;
-  }
-
-  &:after {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    width: 2000px;
-    height: 100%;
-    background-color: inherit;
-    content: '';
-
-    @include media($xs) {
-      display: none;
+    position: relative;
+    @include media($sm-up) {
+        padding-right: 0;
     }
-  }
+
+    &:after {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 2000px;
+        height: 100%;
+        background-color: inherit;
+        content: '';
+        @include media($xs) {
+            display: none;
+        }
+    }
 }
 
 //.parallax {
@@ -120,7 +112,7 @@
 //}
 
 .border-radius {
-  border-radius: $base-border-radius;
+    border-radius: $base-border-radius;
 }
 
 //.no-text-margin {
@@ -179,127 +171,114 @@
 //}
 
 .scroll-button {
-  position: relative;
+    position: relative;
 }
 
 .scroll-arrow {
-  position: absolute;
-  bottom: 25px;
-  //background: #fff;
-  left: 0;
-  right:0;
-  width: 250px;
-  margin: 0 auto;
-  display: block;
-  text-align: center;
-  z-index: 9999;
-  h4 {
-  	margin-bottom:10px;
-  }
-  .fa {
-    font-size: 40px;
-    color: inherit;
-  }
+    position: absolute;
+    bottom: 25px;
+    //background: #fff;
+    left: 0;
+    right: 0;
+    width: 250px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    z-index: 9999;
+
+    h4 {
+        margin-bottom: 10px;
+    }
+
+    .fa {
+        font-size: 40px;
+        color: inherit;
+    }
 }
 
 .fill-image {
-  background-position: center;
-  @include media($xs) {
-    height: 500px !important;
-    margin: 0 -15px;
-  }
+    background-position: center;
+    @include media($xs) {
+        height: 500px !important;
+        margin: 0 -15px;
+    }
 }
 
 .panel-last-child p:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 // Focus shadow mixin.
 $shadow-key-umbra-opacity: 0.2;
 $shadow-key-penumbra-opacity: 0.14;
 $shadow-ambient-shadow-opacity: 0.12;
-
 @mixin focus-shadow() {
-  box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36);
+    box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36);
 }
-
 @mixin shadow-2dp() {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
-              0 3px 1px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity),
-              0 1px 5px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 3px 1px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0 1px 5px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
 }
 @mixin shadow-3dp() {
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
-              0 3px 3px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity),
-              0 1px 8px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 3px 3px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0 1px 8px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
 }
 @mixin shadow-4dp() {
-  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
-              0 1px 10px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity),
-              0 2px 4px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 1px 10px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0 2px 4px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity);
 }
 @mixin shadow-6dp() {
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
-              0 1px 18px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity),
-              0 3px 5px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 1px 18px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0 3px 5px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity);
 }
 @mixin shadow-8dp() {
-  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, $shadow-key-penumbra-opacity),
-              0 3px 14px 2px rgba(0, 0, 0, $shadow-ambient-shadow-opacity),
-              0 5px 5px -3px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 3px 14px 2px rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0 5px 5px -3px rgba(0, 0, 0, $shadow-key-umbra-opacity);
 }
-
 @mixin shadow-16dp() {
-  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, $shadow-key-penumbra-opacity),
-              0  6px 30px 5px rgba(0, 0, 0, $shadow-ambient-shadow-opacity),
-              0  8px 10px -5px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 6px 30px 5px rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0 8px 10px -5px rgba(0, 0, 0, $shadow-key-umbra-opacity);
 }
 
 .mdl-shadow--2dp {
-  @include shadow-2dp();
+    @include shadow-2dp();
 }
 
 .mdl-shadow--3dp {
-  @include shadow-3dp();
+    @include shadow-3dp();
 }
 
 .mdl-shadow--4dp {
-  @include shadow-4dp();
+    @include shadow-4dp();
 }
 
 .mdl-shadow--6dp {
-  @include shadow-6dp();
+    @include shadow-6dp();
 }
 
 .mdl-shadow--8dp {
-  @include shadow-8dp();
+    @include shadow-8dp();
 }
 
 .mdl-shadow--16dp {
-  @include shadow-16dp();
+    @include shadow-16dp();
 }
 
 // alternatives
 .shadow-1 {
-  @include shadow-2dp();
+    @include shadow-2dp();
 }
 
 .shadow-2 {
-  @include shadow-3dp();
+    @include shadow-3dp();
 }
 
 .shadow-3 {
-  @include shadow-4dp();
+    @include shadow-4dp();
 }
 
 .shadow-4 {
-  @include shadow-6dp();
+    @include shadow-6dp();
 }
 
 .shadow-5 {
-  @include shadow-8dp();
+    @include shadow-8dp();
 }
 
 .shadow-6 {
-  @include shadow-16dp();
+    @include shadow-16dp();
 }

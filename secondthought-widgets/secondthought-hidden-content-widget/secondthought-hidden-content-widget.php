@@ -53,7 +53,7 @@ class secondthought_hidden_content_widget extends SiteOrigin_Widget {
 	}
 
 	function get_style_name($instance) {
-		return 'secondthought-hidden-content-widget-style';
+		return 'secondthought-hidden-content-widget';
 	}
 
 	/**

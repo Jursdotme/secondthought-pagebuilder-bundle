@@ -30,6 +30,29 @@ class Secondthought_accordion_widget extends SiteOrigin_Widget {
 				'type' => 'text',
 				'label' => __( 'Overskrift', 'secondthought_pagebuilder_bundle' )
 			),
+			'colors_section' => array(
+	        'type' => 'section',
+	        'label' => __( 'Colors' , 'widget-form-fields-text-domain' ),
+	        'hide' => true,
+	        'fields' => array(
+						'trigger_bg_color' => array(
+							'type' => 'color',
+							'label' => __( 'Accordion top background color', 'widget-form-fields-text-domain' ),
+							'default' => '#bada55'
+						),
+						'trigger_text_color' => array(
+							'type' => 'color',
+							'label' => __( 'Accordion top text color', 'widget-form-fields-text-domain' ),
+							'default' => '#fff'
+						),
+						'content_bg_color' => array(
+							'type' => 'color',
+							'label' => __( 'Accordion content background color', 'widget-form-fields-text-domain' ),
+							'default' => '#fafafa'
+						),
+
+	        )
+	    ),
 			'accordion_repeater' => array(
 				'type' => 'repeater',
 				'label' => __( 'Accordion Tabs' , 'secondthought_pagebuilder_bundle' ),
@@ -61,6 +84,14 @@ class Secondthought_accordion_widget extends SiteOrigin_Widget {
 				),
 			)
 		);
+	}
+
+	function get_less_variables( $instance ) {
+	    return array(
+	        'trigger_bg_color' => $instance['colors_section']['trigger_bg_color'],
+					'content_bg_color' => $instance['colors_section']['content_bg_color'],
+					'trigger_text_color' => $instance['colors_section']['trigger_text_color'],
+	    );
 	}
 
 	function get_template_name($instance) {
