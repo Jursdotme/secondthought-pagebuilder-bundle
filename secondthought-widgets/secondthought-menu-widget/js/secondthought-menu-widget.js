@@ -181,5 +181,73 @@ $(document).ready(function(){
     });
   }
 
+});
+
+
+$(function(){
+  // Find container <ul>
+  var nav_container = $('.content_navigation');
+
+  var $result = $('.content_navigation');
+  var curDepth = 0;
+
+
+  // Find all H2 tags
+  var targets = $(secondthought_menu_widget_vars.targets);
+
+  if (secondthought_menu_widget_vars.hierarchical == false) {
+    nav_container.append($('<ul/>'));
+  }
+
+  // Give each target an id an add a link to the nav.
+  targets.each(function(index, value) {
+    $(this).prepend('<a name="target-'+index + '"></a>');
+
+    // Check if hierarchical
+    if (secondthought_menu_widget_vars.hierarchical == false) {
+      // Add each of the h2 tags to the nav as links
+      $('ul', nav_container).append('<li><a href="#target-' + index + '" class="internal_link">' + $(this).text() + '</a></li>');
+
+    } else {
+
+      var $li = $('<li/>').html('<a href="#target-' + index + '" class="internal_link">' + $(this).text() + '</a>');
+
+      var depth = parseInt(this.tagName.substring(1));
+
+      if(depth > curDepth) { // going deeper
+
+          $result.append($('<ul/>').append($li));
+          $result = $li;
+
+      } else if (depth < curDepth) { // going shallower
+
+          $result.parents('ul:eq(' + (curDepth - depth - 1) + ')').append($li);
+          $result = $li;
+
+      } else { // same level
+
+          $result.parent().append($li);
+          $result = $li;
+
+      }
+
+      curDepth = depth;
+    }
+  });
+
+  console.log(secondthought_menu_widget_vars.hierarchical);
+
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
 
 });

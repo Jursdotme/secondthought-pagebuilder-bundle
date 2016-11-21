@@ -5,13 +5,17 @@
     echo "<div>";
   }
 
-
   if ( $instance['another_selection'] == 'subpages') {
 
-    echo '<div class="menu-about-menu-container">';
+    echo '<div>';
       echo '<ul class="menu">';
         pages_menu();
       echo '</ul>';
+    echo '</div>';
+
+  } elseif ( $instance['another_selection'] == 'page_content') {
+
+    echo '<div class="content_navigation">';
     echo '</div>';
 
   } else {
@@ -22,6 +26,6 @@
 
   }
 
-
   echo "</div>";
+
 ?>
