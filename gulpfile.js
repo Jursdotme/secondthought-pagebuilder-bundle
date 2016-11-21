@@ -26,7 +26,6 @@ var paths = {
     'bower_components/fillerup/jquery.fillerup.js',
     'bower_components/throttle/src/js/throttle.js',
     'javascripts/*.js',
-
   ]
 };
 
