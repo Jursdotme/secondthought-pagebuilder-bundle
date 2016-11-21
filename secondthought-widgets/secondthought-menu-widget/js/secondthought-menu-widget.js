@@ -215,12 +215,12 @@ $(function(){
 
         var depth = parseInt(this.tagName.substring(1));
 
-        if(depth > curDepth) { // going deeper
+        if(depth > curDepth) { // going down
 
             $result.append($('<ul/>').append($li));
             $result = $li;
 
-        } else if (depth < curDepth) { // going shallower
+        } else if (depth < curDepth) { // going up
 
             $result.parents('ul:eq(' + (curDepth - depth - 1) + ')').append($li);
             $result = $li;

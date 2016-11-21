@@ -40,8 +40,24 @@ class Secondthought_Menu_Widget extends SiteOrigin_Widget {
 			'affix' => array(
 					'type' => 'checkbox',
 					'label' => __( 'Fix menu', 'widget-form-fields-text-domain' ),
-					'default' => true
+					'default' => true,
+					'state_emitter' => array(
+						'callback' => 'select',
+						'args'     => array(
+							'affix[1]: val == true',
+						 	'affix[0]: val == false'
+						)
+					)
 			),
+			'affix_top_margin' => array(
+	        'type' => 'number',
+	        'label' => __('Top margin when fixed', 'widget-form-fields-text-domain'),
+	        'default' => '2',
+					'state_handler' => array(
+						'affix[1]'     => array( 'show' ),
+						'affix[0]'     => array( 'hide' ),
+					),
+	    ),
 			'another_selection' => array(
 					'type' => 'select',
 					'prompt' => __( 'Choose a what the menu shows', 'widget-form-fields-text-domain' ),
@@ -162,7 +178,7 @@ function wbe_filter_widget_css( $css, $instance, $widget ){
 		.affix {
 			-webkit-transition: all 0.4s ease-in-out;
 			transition: all 0.4s ease-in-out;
-			margin-top: 2rem;
+			margin-top: " . $instance['affix_top_margin'] . "rem;
 		}";
 
 	$css .= $custom_css;
