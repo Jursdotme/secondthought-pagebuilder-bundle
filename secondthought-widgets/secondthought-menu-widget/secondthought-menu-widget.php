@@ -37,27 +37,6 @@ class Secondthought_Menu_Widget extends SiteOrigin_Widget {
 		$usable_nav_menus['page_content'] = __('Page content');
 
 		return array(
-			'affix' => array(
-					'type' => 'checkbox',
-					'label' => __( 'Fix menu', 'widget-form-fields-text-domain' ),
-					'default' => true,
-					'state_emitter' => array(
-						'callback' => 'select',
-						'args'     => array(
-							'affix[1]: val == true',
-						 	'affix[0]: val == false'
-						)
-					)
-			),
-			'affix_top_margin' => array(
-	        'type' => 'number',
-	        'label' => __('Top margin when fixed', 'widget-form-fields-text-domain'),
-	        'default' => '2',
-					'state_handler' => array(
-						'affix[1]'     => array( 'show' ),
-						'affix[0]'     => array( 'hide' ),
-					),
-	    ),
 			'another_selection' => array(
 					'type' => 'select',
 					'prompt' => __( 'Choose a what the menu shows', 'widget-form-fields-text-domain' ),
@@ -93,25 +72,58 @@ class Secondthought_Menu_Widget extends SiteOrigin_Widget {
 						'_else[another_selection]'     => array( 'hide' ),
 					),
 			),
-			'type_scale' => array(
-	        'type' => 'number',
-	        'label' => __('Text scaling', 'widget-form-fields-text-domain'),
-	        'default' => '.85',
-					'state_handler' => array(
-						'another_selection[page_content]'     => array( 'show' ),
-						'_else[another_selection]'     => array( 'hide' ),
-					),
+			'layout_section' => array(
+	        'type' => 'section',
+	        'label' => __( 'Layout' , 'widget-form-fields-text-domain' ),
+	        'hide' => true,
+	        'fields' => array(
+						'affix' => array(
+								'type' => 'checkbox',
+								'label' => __( 'Fix menu', 'widget-form-fields-text-domain' ),
+								'default' => true,
+								'state_emitter' => array(
+									'callback' => 'select',
+									'args'     => array(
+										'affix[1]: val == true',
+										'affix[0]: val == false'
+									)
+								)
+						),
+						'affix_top_margin' => array(
+								'type' => 'number',
+								'label' => __('Top margin when fixed', 'widget-form-fields-text-domain'),
+								'default' => 2,
+								'state_handler' => array(
+									'affix[1]'     => array( 'show' ),
+									'affix[0]'     => array( 'hide' ),
+								),
+						),
+						'type_scale' => array(
+				        'type' => 'number',
+				        'label' => __('Text scaling', 'widget-form-fields-text-domain'),
+				        'default' => '0.9',
+				    ),
+	        )
 	    ),
-			'hover-color' => array(
-				'type' => 'color',
-        'label' => __( 'Hover color', 'widget-form-fields-text-domain' ),
-        'default' => '#bada55'
-			),
-			'text-color' => array(
-				'type' => 'color',
-        'label' => __( 'Text color', 'widget-form-fields-text-domain' ),
-        'default' => '#333'
-			),
+			'color_section' => array(
+	        'type' => 'section',
+	        'label' => __( 'Color' , 'widget-form-fields-text-domain' ),
+	        'hide' => true,
+	        'fields' => array(
+							'hover-color' => array(
+								'type' => 'color',
+								'label' => __( 'Hover color', 'widget-form-fields-text-domain' ),
+								'default' => '#bada55'
+							),
+							'text-color' => array(
+								'type' => 'color',
+								'label' => __( 'Text color', 'widget-form-fields-text-domain' ),
+								'default' => '#333'
+							),
+	        )
+	    )
+
+
 		);
 
 	}
@@ -137,12 +149,11 @@ class Secondthought_Menu_Widget extends SiteOrigin_Widget {
 
 	function get_less_variables( $instance ) {
 	    return array(
-	        'hover-color' => $instance['hover-color'],
-					'text-color' => $instance['text-color'],
-					'text-scale' => $instance['type_scale']
+	        'hover-color' => $instance['color_section']['hover-color'],
+					'text-color' => $instance['color_section']['text-color'],
+					'text-scale' => $instance['layout_section']['type_scale']
 	    );
 	}
-
 
 }
 siteorigin_widget_register('secondthought-menu-widget', __FILE__, 'Secondthought_Menu_Widget');
@@ -210,22 +221,37 @@ function pages_menu() {
     $page_id = get_queried_object_id();
     $ancestors = get_post_ancestors($page_id);
     $ancestors_count = count($ancestors);
-    if( $ancestors_count > 1 ) {
+    if( $ancestors_count > 0 ) {
 
         //the last item in $ancestors will be the top parent page, that is "Services"
         //but we want the before top parent ("Service One", "Service Two", etc)
-        $top_menu_page = $ancestors[$ancestors_count - 2];
+        $top_menu_page = $ancestors[$ancestors_count - 1];
 
     } else {
         //We are actually on one of our top menu pages ("Service One", "Service Two", etc)
         $top_menu_page = $page_id;
     }
 
-    $args = array(
+		$args = array(
         'child_of'    => $top_menu_page,
         'link_before' => '',
         'link_after'  => '',
 				'title_li' => '',
+    );
+		$children = get_pages($args);
+		$childen_array = array();
+
+		foreach ($children as $child ) {
+			$childen_array[] = $child->ID;
+		}
+
+		$childen_array[] = $top_menu_page;
+
+    $args = array(
+        'link_before' => '',
+        'link_after'  => '',
+				'title_li' => '',
+				'include' => $childen_array,
     );
     wp_list_pages( $args );
 

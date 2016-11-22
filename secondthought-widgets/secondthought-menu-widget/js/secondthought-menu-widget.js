@@ -221,6 +221,11 @@ $(function(){
             $result = $li;
 
         } else if (depth < curDepth) { // going up
+            console.log(curDepth + ', '+ depth +', '+ (curDepth - depth));
+
+            for (var i = 1; i < (curDepth - depth); i++) {
+              $result = $result.parent();
+            }
 
             $result.parents('ul:eq(' + (curDepth - depth - 1) + ')').append($li);
             $result = $li;
