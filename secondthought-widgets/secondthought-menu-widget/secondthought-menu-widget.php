@@ -98,6 +98,11 @@ class Secondthought_Menu_Widget extends SiteOrigin_Widget {
 									'affix[0]'     => array( 'hide' ),
 								),
 						),
+						'top_margin' => array(
+				        'type' => 'number',
+				        'label' => __( 'Top Margin (in pixels)', 'widget-form-fields-text-domain' ),
+				        'default' => '30'
+				    ),
 						'type_scale' => array(
 				        'type' => 'number',
 				        'label' => __('Text scaling', 'widget-form-fields-text-domain'),
@@ -130,18 +135,19 @@ class Secondthought_Menu_Widget extends SiteOrigin_Widget {
 
 	function get_template_name($instance) {
 
-
 		return 'secondthought-menu-widget-template';
 	}
 
 	function get_style_name($instance) {
-
-		// Localize the script with new data
-		$translation_array = array(
-			'targets' => implode(', ', $instance['internal_link_targets']),
-			'hierarchical' => $instance['hierarchy']
-		);
-		wp_localize_script( 'secondthought_menu_widget_script', 'secondthought_menu_widget_vars', $translation_array );
+		if ($instance['internal_link_targets']) {
+			// Localize the script with new data
+			$translation_array = array(
+				'targets' => implode(', ', $instance['internal_link_targets']),
+				'hierarchical' => $instance['hierarchy'],
+				'top_margin' => $instance['layout_section']['top_margin']
+			);
+			wp_localize_script( 'secondthought_menu_widget_script', 'secondthought_menu_widget_vars', $translation_array );
+		}
 
 		// Return styles
 		return 'secondthought-menu-widget';
@@ -151,56 +157,13 @@ class Secondthought_Menu_Widget extends SiteOrigin_Widget {
 	    return array(
 	        'hover-color' => $instance['color_section']['hover-color'],
 					'text-color' => $instance['color_section']['text-color'],
-					'text-scale' => $instance['layout_section']['type_scale']
+					'text-scale' => $instance['layout_section']['type_scale'],
+					'margin-top' => $instance['layout_section']['type_scale']
 	    );
 	}
 
 }
 siteorigin_widget_register('secondthought-menu-widget', __FILE__, 'Secondthought_Menu_Widget');
-
-// Add affix styles
-function wbe_filter_widget_css( $css, $instance, $widget ){
-	$custom_css = "
-	.affix {
-			position: fixed;
-			top: 0;
-		}
-		@media (max-width: 780px) {
-			.affix {
-				position: relative;
-			}
-		}
-
-		.affix-bottom {
-			position: absolute;
-		}
-		@media (max-width: 780px) {
-			.affix-bottom {
-				position: relative;
-			}
-		}
-
-		.affix-top {
-			-webkit-transition: all 0.4s ease-in-out;
-			transition: all 0.4s ease-in-out;
-			margin-top: 0;
-		}
-
-		.affix {
-			-webkit-transition: all 0.4s ease-in-out;
-			transition: all 0.4s ease-in-out;
-			margin-top: " . $instance['affix_top_margin'] . "rem;
-		}";
-
-	$css .= $custom_css;
-
-	return $css;
-}
-add_filter('siteorigin_widgets_instance_css', 'wbe_filter_widget_css', 10, 3);
-
-
-
-
 
 /**
  * Register all the device scripts
@@ -211,6 +174,7 @@ wp_register_script( 'secondthought_menu_widget_script', siteorigin_widget_get_pl
 
 // Enqueued script with localized data.
 wp_enqueue_script( 'secondthought_menu_widget_script' );
+
 
 function pages_menu() {
 

@@ -1,6 +1,7 @@
 @hover-color: #f97a43;
 @text-color: #767676;
 @text-scale: 1;
+@margin-top: 30;
 
 .parent-page {
     position: relative;
@@ -53,4 +54,12 @@ li a {
     &:before {
         background-color: @hover-color;
     }
+}
+
+.so-panel .affix {
+  margin-top: @margin-top + 'px';
+}
+
+.so-panel .affix-top {
+  margin-top: 0;
 }

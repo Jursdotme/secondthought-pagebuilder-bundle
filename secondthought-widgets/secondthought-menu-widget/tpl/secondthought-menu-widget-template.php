@@ -1,5 +1,5 @@
 <?php
-  if ($instance['affix']) {
+  if ($instance['layout_section']['affix']) {
     echo "<div class='myAffix' data-spy='scroll'>";
   } else {
     echo "<div>";
@@ -27,5 +27,7 @@
   }
 
   echo "</div>";
+
+  echo $instance['layout_section']['top_margin'];
 
 ?>
