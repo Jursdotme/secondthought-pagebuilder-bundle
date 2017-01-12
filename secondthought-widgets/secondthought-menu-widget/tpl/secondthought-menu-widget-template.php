@@ -27,7 +27,4 @@
   }
 
   echo "</div>";
-
-  echo $instance['layout_section']['top_margin'];
-
 ?>

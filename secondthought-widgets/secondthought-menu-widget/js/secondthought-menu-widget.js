@@ -166,14 +166,12 @@ $(window).load(function(){
 
   var affixTarget = $('.myAffix').closest('.so-panel');
 
-  console.log(secondthought_menu_widget_vars.top_margin);
-
   if (affixTarget.length > 0) {
     affixTarget.width(affixTarget.parent().width());
 
     affixTarget.affix({
       offset: {
-        top: affixTarget.offset().top - secondthought_menu_widget_vars.top_margin,
+        top: affixTarget.offset().top,
         bottom: function () {
           return (this.bottom = $('.footer-container').outerHeight(true));
         }

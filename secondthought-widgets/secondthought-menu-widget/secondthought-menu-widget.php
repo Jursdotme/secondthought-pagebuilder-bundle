@@ -89,20 +89,6 @@ class Secondthought_Menu_Widget extends SiteOrigin_Widget {
 									)
 								)
 						),
-						'affix_top_margin' => array(
-								'type' => 'number',
-								'label' => __('Top margin when fixed', 'widget-form-fields-text-domain'),
-								'default' => 2,
-								'state_handler' => array(
-									'affix[1]'     => array( 'show' ),
-									'affix[0]'     => array( 'hide' ),
-								),
-						),
-						'top_margin' => array(
-				        'type' => 'number',
-				        'label' => __( 'Top Margin (in pixels)', 'widget-form-fields-text-domain' ),
-				        'default' => '30'
-				    ),
 						'type_scale' => array(
 				        'type' => 'number',
 				        'label' => __('Text scaling', 'widget-form-fields-text-domain'),
@@ -138,32 +124,71 @@ class Secondthought_Menu_Widget extends SiteOrigin_Widget {
 		return 'secondthought-menu-widget-template';
 	}
 
+	function get_less_variables( $instance ) {
+	    return array(
+	        'hover-color' => $instance['color_section']['hover-color'],
+					'text-color' => $instance['color_section']['text-color'],
+					'text-scale' => $instance['layout_section']['type_scale']
+	    );
+	}
+
 	function get_style_name($instance) {
 		if ($instance['internal_link_targets']) {
 			// Localize the script with new data
 			$translation_array = array(
 				'targets' => implode(', ', $instance['internal_link_targets']),
-				'hierarchical' => $instance['hierarchy'],
-				'top_margin' => $instance['layout_section']['top_margin']
+				'hierarchical' => $instance['hierarchy']
 			);
 			wp_localize_script( 'secondthought_menu_widget_script', 'secondthought_menu_widget_vars', $translation_array );
 		}
 
 		// Return styles
-		return 'secondthought-menu-widget';
+		return 'secondthought-menu-widget-style';
 	}
 
-	function get_less_variables( $instance ) {
-	    return array(
-	        'hover-color' => $instance['color_section']['hover-color'],
-					'text-color' => $instance['color_section']['text-color'],
-					'text-scale' => $instance['layout_section']['type_scale'],
-					'margin-top' => $instance['layout_section']['type_scale']
-	    );
-	}
+
 
 }
 siteorigin_widget_register('secondthought-menu-widget', __FILE__, 'Secondthought_Menu_Widget');
+
+function wbe_filter_widget_css( $css, $instance, $widget ){
+	$custom_css = "
+	.affix {
+			position: fixed;
+			top: 0;
+		}
+		@media (max-width: 780px) {
+			.affix {
+				position: relative;
+			}
+		}
+
+		.affix-bottom {
+			position: absolute;
+		}
+		@media (max-width: 780px) {
+			.affix-bottom {
+				position: relative;
+			}
+		}
+
+		.affix-top {
+			-webkit-transition: all 0.4s ease-in-out;
+			transition: all 0.4s ease-in-out;
+			margin-top: 0;
+		}
+
+		.affix {
+			-webkit-transition: all 0.4s ease-in-out;
+			transition: all 0.4s ease-in-out;
+			margin-top: 2rem;
+		}";
+
+	$css .= $custom_css;
+
+	return $css;
+}
+add_filter('siteorigin_widgets_instance_css', 'wbe_filter_widget_css', 10, 3);
 
 /**
  * Register all the device scripts
