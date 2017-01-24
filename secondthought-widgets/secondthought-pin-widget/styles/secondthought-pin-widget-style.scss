@@ -2,6 +2,8 @@
   position: relative;
   img.pin-image {
     z-index: 1;
+    display: block;
+    width: 100%;
   }
   .pin {
     position: absolute;
