@@ -19,7 +19,7 @@ if (!empty($pin_icon_padding)) {
 if (!empty($pin_icon_size)) { $pin_icon_size = ' font-size:' . $pin_icon_size . 'px; width:' . $pin_icon_size_int . 'px; height:' . $pin_icon_size_int . 'px; line-height:' . $pin_icon_size . 'px;'; }
 
 $pin_icon_color = $instance['icon_settings']['pin_icon_color'];
-if (!empty($pin_icon_color)) { $pin_icon_color = ' color:' . $pin_icon_bg_color . ';'; }
+if (!empty($pin_icon_color)) { $pin_icon_color = ' color:' . $pin_icon_color . ';'; }
 
 $pin_icon_bg_color = $instance['icon_settings']['pin_icon_bg_color'];
 if (!empty($pin_icon_bg_color)) { $pin_icon_bg_color = ' background-color:' . $pin_icon_bg_color . ';'; }

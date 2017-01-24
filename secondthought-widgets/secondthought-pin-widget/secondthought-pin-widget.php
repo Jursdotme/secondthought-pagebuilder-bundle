@@ -10,18 +10,7 @@ class Secondthought_pin_widget extends SiteOrigin_Widget {
 	function __construct() {
 		add_action('wp_enqueue_scripts', array($this ,'secondthought_pin_register_scripts'), 1);
 		add_action('admin_enqueue_scripts', array($this ,'secondthought_pin_register_admin_scripts') );
-		$posts_array = get_posts( $args = array(
-			'posts_per_page'   => -1,
-			'orderby'          => 'date',
-			'order'            => 'DESC',
-			'post_type'        => 'inz_pin_widget',
-			'post_status'      => 'publish'
-			)
-		);
-		$result = array();
-		foreach ($posts_array as $v) {
-      $result[$v->ID] = $v->post_title;
-    }
+
 
 		parent::__construct(
 			'secondthought-pin-widget',
@@ -37,13 +26,30 @@ class Secondthought_pin_widget extends SiteOrigin_Widget {
 		);
 	}
 
+	function get_pin_posts() {
+
+		$posts_array = get_posts( $args = array(
+			'posts_per_page'   => -1,
+			'orderby'          => 'date',
+			'order'            => 'DESC',
+			'post_type'        => 'inz_pin_widget',
+			'post_status'      => 'publish'
+			)
+		);
+		$result = array();
+		foreach ($posts_array as $v) {
+      		$result[$v->ID] = $v->post_title;
+    	}
+    	return $result;
+	}
+
 	function get_widget_form() {
 		return array(
 			'pin_map' => array(
 					'type' => 'select',
 					'label' => __('Choose map', 'widget-form-fields-text-domain'),
 					'prompt' => __( 'Select pin map', 'widget-form-fields-text-domain' ),
-					'options' => $result
+					'options' => $this->get_pin_posts()
 			),
 			'icon_settings' => array(
 				'type' => 'section',
