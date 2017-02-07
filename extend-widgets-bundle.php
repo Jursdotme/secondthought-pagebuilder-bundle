@@ -3,7 +3,7 @@
 /*
 Plugin Name: Secondthought Widget Pack
 Description: A bundle of additional widgets and functions used with Secondthought theme framework and Site Origin Pagebuilder.
-Version: 1.19.5
+Version: 1.19.6
 Author: Rasmus Jürs / Johnnie Bertelsen
 Author URI: http://jurs.me
 License: GPL3
