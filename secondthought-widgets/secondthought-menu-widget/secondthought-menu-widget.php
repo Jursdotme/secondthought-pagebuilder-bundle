@@ -195,7 +195,7 @@ add_filter('siteorigin_widgets_instance_css', 'wbe_filter_widget_css', 10, 3);
  */
 
 // Register the script
-wp_register_script( 'secondthought_menu_widget_script', siteorigin_widget_get_plugin_dir_url('secondthought-menu-widget').'js/secondthought-menu-widget.js',array('jquery'), SOW_BUNDLE_VERSION, '', 0 );
+wp_register_script( 'secondthought_menu_widget_script', siteorigin_widget_get_plugin_dir_url('secondthought-menu-widget').'js/secondthought-menu-widget.js',array('jQuery'), SOW_BUNDLE_VERSION, '', 0 );
 
 // Enqueued script with localized data.
 wp_enqueue_script( 'secondthought_menu_widget_script' );

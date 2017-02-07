@@ -199,7 +199,7 @@ $(function(){
 
     // Give each target an id an add a link to the nav.
     targets.each(function(index, value) {
-      $(this).prepend('<a name="target-'+index + '"></a>');
+      $(this).prepend('<a id="target-'+index + '"></a>');
 
       // Check if hierarchical
       if (secondthought_menu_widget_vars.hierarchical == false) {
