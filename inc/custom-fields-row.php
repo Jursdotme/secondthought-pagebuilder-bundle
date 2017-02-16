@@ -342,13 +342,6 @@ function my_custom_row_styles($css, $panels_data, $post_id) {
         'background-color' => 'rgba(' . $grad_color[0] . ', ' . $grad_color[1] . ', ' . $grad_color[2] . ', ' . $background_opacity/100 . ')',
       ));
     }
-    $typography_tags = array('p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li');
-
-    foreach ($typography_tags as $typography_tag => $tag) {
-      $css->add_row_css($post_id, $gi, $tag, array(
-        'color' => 'inherit',
-      ));
-    }
 
   }
   return $css;
