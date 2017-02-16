@@ -188,6 +188,8 @@ $(function(){
   var $result = $('.content_navigation');
   var curDepth = 0;
 
+  console.log(secondthought_menu_widget_vars);
+
   if( typeof secondthought_menu_widget_vars !== 'undefined' ) {
 
     // Find all H2 tags
@@ -199,7 +201,7 @@ $(function(){
 
     // Give each target an id an add a link to the nav.
     targets.each(function(index, value) {
-      $(this).prepend('<a id="target-'+index + '"></a>');
+      $(this).prepend('<a name="target-'+index + '" id="target-'+index + '"></a>');
 
       // Check if hierarchical
       if (secondthought_menu_widget_vars.hierarchical == false) {
